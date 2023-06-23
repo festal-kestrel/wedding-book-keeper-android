@@ -3,7 +3,7 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/KyoboHandwriting2020"/>
+        android:font="@font/kyobohandwriting2020"/>
 
 
 </font-family>

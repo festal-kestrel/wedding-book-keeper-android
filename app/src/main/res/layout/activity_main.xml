@@ -9,11 +9,46 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:fontFamily="@font/kyobohandwriting2020"
         android:text="Hello World!안녕하세요!"
-        android:fontFamily="@font/KyoboHandwriting2020"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+<!--
+        tools:ignore="MissingConstraints"
+        이거 빼면 에러남
+-->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_square"
+        android:text="테스트 영역입니다"
+        android:textSize="16dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/tx_dark_gray"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/edit_text_search"
+        android:text="검색 버튼_wrap_content로잡으세요"
+        android:textSize="12dp"
+        android:textColor="@color/tx_dark_gray"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/square_pink_btn"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="204dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
