@@ -1,7 +1,8 @@
-package com.example.wedding_book_keeper
+package com.example.wedding_book_keeper.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.wedding_book_keeper.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
