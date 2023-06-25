@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--  xmlns:tools="http://schemas.android.com/tools"-->
+<!--  android:layout_width="match_parent"-->
+<!--  android:layout_height="match_parent"-->
+<!--  tools:context=".presentation.view.mypage.fragment.DatePickerFragment">-->
+
+<!--  &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+<!--  <TextView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:text="@string/hello_blank_fragment" />-->
+
+<!--</FrameLayout>-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!-- Top Bar -->
+  <RelativeLayout
+    android:id="@+id/topBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEEEEE">
+
+    <Button
+      android:id="@+id/backButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Back"
+      android:layout_alignParentStart="true"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="16dp" />
+
+    <TextView
+      android:id="@+id/titleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Date Picker"
+      android:textSize="18sp"
+      android:layout_centerInParent="true" />
+
+    <Button
+      android:id="@+id/submitButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Submit"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:layout_marginEnd="16dp" />
+  </RelativeLayout>
+
+  <!-- Date Picker -->
+  <DatePicker
+    android:id="@+id/datePicker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true" />
+
+  <!-- Text Input -->
+  <EditText
+    android:id="@+id/textInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/datePicker"
+    android:hint="Enter text"
+    android:padding="16dp" />
+
+</RelativeLayout>

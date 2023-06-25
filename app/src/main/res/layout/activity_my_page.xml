@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!-- Image -->
+  <ImageView
+    android:id="@+id/profileImage"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/profile_image"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="150dp"/>
+
+
+  <!-- Item 1 -->
+    <LinearLayout
+      android:id="@+id/item1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      >
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Text"
+        android:textSize="16sp"
+        android:gravity="center_horizontal" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Text"
+        android:textSize="16sp"
+        android:gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <!-- Button -->
+    <Button
+      android:id="@+id/item1ImageView"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:background="@drawable/right_arrow"
+      android:layout_marginRight="16dp"/>
+
+
+
+
+  <!-- Item 2 -->
+  <LinearLayout
+    android:id="@+id/item2"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_below="@id/item1"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Item 2"
+      android:textSize="16sp"
+      android:layout_weight="1" />
+
+    <Button
+      android:id="@+id/item2ImageView"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:background="@drawable/right_arrow" />
+
+  </LinearLayout>
+
+  <!-- Item 3 -->
+  <LinearLayout
+    android:id="@+id/item3"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_below="@id/item2"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Item 3"
+      android:textSize="16sp"
+      android:layout_weight="1" />
+
+    <Button
+      android:id="@+id/item3ImageView"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:background="@drawable/right_arrow" />
+
+  </LinearLayout>
+
+  <!-- Item 4 -->
+  <LinearLayout
+    android:id="@+id/item4"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_below="@id/item3"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Item 4"
+      android:textSize="16sp"
+      android:layout_weight="1" />
+
+    <Button
+      android:id="@+id/item4ImageView"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:background="@drawable/right_arrow" />
+
+  </LinearLayout>
+
+
+
+  <!-- Fragment Container -->
+  <FrameLayout
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/profileImage" />
+
+</RelativeLayout>
