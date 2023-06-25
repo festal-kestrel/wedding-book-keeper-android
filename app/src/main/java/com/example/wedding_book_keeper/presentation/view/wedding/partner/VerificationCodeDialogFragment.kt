@@ -11,7 +11,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.wedding_book_keeper.databinding.FragmentVerificationCodeDialogBinding
 
 class VerificationCodeDialogFragment : DialogFragment() {
-    
+
     private var _binding: FragmentVerificationCodeDialogBinding? = null
     private val binding get() = _binding!!
 

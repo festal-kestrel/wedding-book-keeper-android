@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/txt_schedule_desc"
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="100dp"
+      android:text="결혼식 날짜를 입력해 주세요"
+      android:textColor="#333333"
+      android:textSize="18sp" />
+    <TextView
+      android:id="@+id/txt_notice_desc"
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="하객들에게 알림이 가요"
+      android:textColor="#333333"
+      android:textSize="18sp" />
+    <TextView
+      android:id="@+id/txt_selected_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:text="2023년 6월 26일"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+    <DatePicker
+      android:id="@+id/dp_wedding_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="30dp"
+      android:calendarViewShown="false"
+      android:datePickerMode="spinner" />
+
+  </LinearLayout>
+</layout>
