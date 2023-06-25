@@ -14,9 +14,16 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
 
     private fun initEvent() {
         binding.btnPartnerConnect.setOnClickListener {
-            /**
-             * 인증번호 다이얼로그 창
-             */
+            val dialogFragment = VerificationCodeDialogFragment.newInstance()
+            dialogFragment.setOnVerificationCodeEnteredListener(object :
+                VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
+                override fun onVerificationCodeEntered(verificationCode: String) {
+                    /**
+                     * 입력된 인증번호 처리 로직
+                     */
+                }
+            })
+            dialogFragment.show(supportFragmentManager, VerificationCodeDialogFragment.TAG)
         }
     }
 }
