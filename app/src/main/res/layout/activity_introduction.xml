@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".presentation.view.wedding.introduction.IntroductionActivity">
+
+    <ImageView
+      android:id="@+id/img_celebration"
+      android:layout_width="220dp"
+      android:layout_height="220dp"
+      android:layout_marginTop="60dp"
+      tools:srcCompat="@tools:sample/avatars" />
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1" />
+    <TextView
+      android:id="@+id/txt_introduction"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="신랑 신부의  특별한 순간을 기록하고 관리하는 도구입니다."
+      android:textAlignment="center" />
+    <TextView
+      android:id="@+id/txt_introduction2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="30dp"
+      android:text="하객들의 참여 목록, 축의금 내역 등을 한 곳에서 효과적으로 관리할 수 있습니다."
+      android:textAlignment="center" />
+    <TextView
+      android:id="@+id/txt_introduction3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="50dp"
+      android:text="이 앱이 여러분의 결혼식을 더욱 특별하게 만들어 드릴 것입니다"
+      android:textAlignment="center" />
+    
+  </LinearLayout>
+</layout>
