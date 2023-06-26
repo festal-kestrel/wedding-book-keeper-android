@@ -33,12 +33,13 @@
                     android:text="전달한 축의금 금액을 입력해주세요"
                     android:fontFamily="@font/kyobohandwriting2020"
                     android:textColor="@color/tx_gray"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
                     android:layout_marginTop="50dp"
 
                     android:textAlignment="center" />
 
             <EditText
+                    android:id="@+id/edit_gift"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="100,000원"
