@@ -1,6 +1,7 @@
 package com.example.wedding_book_keeper.presentation.view.guest
 
-import android.R
+import com.example.wedding_book_keeper.R
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -17,8 +18,6 @@ class GiftAmountActivity :
     BaseActivity<ActivityGiftAmountBinding>(com.example.wedding_book_keeper.R.layout.activity_gift_amount) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.wedding_book_keeper.R.layout.activity_gift_amount)
-
 
         val editText = findViewById<EditText>(com.example.wedding_book_keeper.R.id.edit_gift)
         editText.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -63,6 +62,19 @@ class GiftAmountActivity :
             }
         })
 
+        binding.btnPrevPage.setOnClickListener {
+            val intent = Intent(this, GuestRelationsActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        binding.btnGoGiftComplete.setOnClickListener {
+            val intent = Intent(this, GIftCompleteActivity::class.java)
+            startActivity(intent)
+
+        }
+
 
     }
+
 }
