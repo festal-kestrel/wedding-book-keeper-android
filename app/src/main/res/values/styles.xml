@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="edit_text_square" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/edit_text_square</item>
-    </style>
-
-
+  <style name="edit_text_square" parent="Widget.AppCompat.EditText">
+    <item name="android:background">@drawable/edit_text_square</item>
+  </style>
 </resources>

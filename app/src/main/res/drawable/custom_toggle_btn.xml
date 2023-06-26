@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/toggle_on_resource" android:state_checked="true" /> <!-- 토글이 켜질 때의 이미지 -->
-    <item android:drawable="@drawable/toggle_off_resource" android:state_checked="false" /> <!-- 토글이 꺼질 때의 이미지 -->
-    <size android:width="30dp" android:height="15dp" />
-
+  <item android:drawable="@drawable/toggle_on_resource" android:state_checked="true" /> <!-- 토글이 켜질 때의 이미지 -->
+  <item android:drawable="@drawable/toggle_off_resource" android:state_checked="false" /> <!-- 토글이 꺼질 때의 이미지 -->
+  <size android:height="15dp" android:width="30dp" />
 </selector>
