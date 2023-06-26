@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityMainBinding
 import com.example.wedding_book_keeper.databinding.ActivityMyPageBinding
@@ -45,5 +46,20 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         binding.btnPartnerRegister.setOnClickListener {
             // Handle redirect logic
         }
+
+
+        fun onClick(habitId: Long) {
+            Log.d("hong", "")
+//            val intent = habitUpdateNavigator.intent(requireContext())
+//            intent.putExtra(HABIT_ID, habitId)
+//            addResultLauncher.launch(intent)
+        }
+        binding.btnToolbarSeeMore.setOnClickListener {
+            ChangeRoleFragment.newInstance(
+                onClick = ::onClick
+            ).show(supportFragmentManager, ChangeRoleFragment.TAG)
+        }
+
+
     }
 }

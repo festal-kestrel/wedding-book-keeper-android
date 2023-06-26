@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ChangeRoleFragment">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="20dp">
+      <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/guest_icon"/>
+    <TextView
+      android:id="@+id/txt_hello1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="하객"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="20dp">
+      <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/couple_icon"/>
+      <TextView
+        android:id="@+id/txt_hello2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신랑/신부"/>
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="20dp">
+      <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/admin_icon"/>
+      <TextView
+        android:id="@+id/txt_hello3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="관리자"/>
+    </LinearLayout>
+  </LinearLayout>
+</layout>
