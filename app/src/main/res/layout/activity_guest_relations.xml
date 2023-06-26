@@ -53,7 +53,7 @@
                         android:layout_marginTop="150dp">
 
                     <RadioButton
-                            android:id="@+id/radioButton2"
+                            android:id="@+id/radio_btn_male"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:background="@drawable/male_radio_btn"
@@ -69,15 +69,15 @@
                             android:layout_width="50dp"
                             android:layout_height="1dp"
                             android:visibility="invisible"
-                            app:layout_constraintStart_toEndOf="@+id/radioButton2"
-                            app:layout_constraintEnd_toStartOf="@+id/radioButton" />
+                            app:layout_constraintStart_toEndOf="@+id/radio_btn_male"
+                            app:layout_constraintEnd_toStartOf="@+id/radio_btn_female" />
 
                     <RadioButton
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:background="@drawable/female_radio_btn"
                             android:button="@android:color/transparent"
-                            android:id="@+id/radioButton"
+                            android:id="@+id/radio_btn_female"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -100,6 +100,7 @@
                     android:textAlignment="center" />
 
             <EditText
+                    android:id="@+id/edit_relation"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:background="@drawable/edit_text_square"
@@ -111,19 +112,13 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_go_gift_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/square_pink_btn"
                 android:text="금액 입력하러 가기"
                 android:fontFamily="@font/inter_black"
                 android:textColor="@color/tx_white" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/kakao_login_btn"
-                android:layout_marginTop="300dp" />
     </LinearLayout>
 
 </layout>
