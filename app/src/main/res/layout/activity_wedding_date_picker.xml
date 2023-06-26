@@ -9,7 +9,7 @@
 
 
     <ImageView
-      android:id="@+id/profileImage"
+      android:id="@+id/img_profile"
       android:layout_width="150dp"
       android:layout_height="150dp"
       android:layout_marginTop="100dp"
@@ -17,30 +17,29 @@
       android:src="@drawable/couple_circle" />
 
     <TextView
-      android:id="@+id/picker_label"
+      android:id="@+id/txt_dp_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="50dp"
       android:layout_marginBottom="-20dp"
       android:layout_marginLeft="30dp"
-      android:layout_below="@id/profileImage"
+      android:layout_below="@id/img_profile"
       android:gravity="center_horizontal"
       android:text="결혼식 날짜 및 시간"
       android:textColor="@color/tx_gray"
       android:textSize="15sp" />
 
     <LinearLayout
-      android:id="@+id/picker_layout"
+      android:id="@+id/layout_row_dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginLeft="30dp"
       android:layout_marginRight="30dp"
-      android:layout_below="@id/picker_label"
+      android:layout_below="@id/txt_dp_label"
       android:gravity="center"
       android:orientation="horizontal">
 
       <DatePicker
-        android:id="@+id/dp_wedding_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-30dp"
@@ -65,10 +64,10 @@
       android:orientation="vertical"
       android:layout_marginLeft="30dp"
       android:layout_marginRight="30dp"
-      android:layout_below="@id/picker_layout"
+      android:layout_below="@id/layout_row_dp"
       >
       <TextView
-        android:id="@+id/location_label"
+        android:id="@+id/txt_location_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/picker_layout"
@@ -83,7 +82,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_square"
         android:padding="13sp"
-        android:layout_below="@id/location_label" />
+        android:layout_below="@id/txt_location_label" />
 
 
     </LinearLayout>
@@ -92,7 +91,7 @@
 
 
     <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-      android:id="@+id/toolbar"
+      android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:background="@null"
@@ -104,7 +103,7 @@
         android:layout_height="match_parent">
 
         <ImageButton
-          android:id="@+id/toolbar_back_button"
+          android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_alignParentStart="true"
@@ -114,7 +113,7 @@
           android:src="@drawable/back_arrow" />
 
         <TextView
-          android:id="@+id/toolbar_title"
+          android:id="@+id/btn_toolbar_title"
           android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -124,7 +123,7 @@
           android:textSize="18sp" />
 
         <TextView
-          android:id="@+id/confirm_btn"
+          android:id="@+id/btn_toolbar_confirm"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginRight="10dp"

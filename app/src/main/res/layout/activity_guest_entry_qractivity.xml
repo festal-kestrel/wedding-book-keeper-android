@@ -7,10 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-      android:id="@+id/toolbar"
+      android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:background="@null"
@@ -22,7 +20,7 @@
         android:layout_height="match_parent">
 
         <ImageButton
-          android:id="@+id/toolbar_back_button"
+          android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_alignParentStart="true"
@@ -32,7 +30,7 @@
           android:src="@drawable/back_arrow" />
 
         <TextView
-          android:id="@+id/toolbar_title"
+          android:id="@+id/btn_toolbar_title"
           android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -40,8 +38,6 @@
           android:text="하객입장 QR"
           android:textColor="@color/tx_light_gray"
           android:textSize="18sp" />
-
-
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -54,7 +50,7 @@
       android:gravity="center">
 
     <ImageView
-      android:id="@+id/qr_image"
+      android:id="@+id/img_qr"
       android:layout_width="250dp"
       android:layout_height="250dp"
       android:background="@color/bg_dark_gray"/>
@@ -62,17 +58,18 @@
 
 
       <TextView
-        android:id="@+id/custom_button"
-        android:layout_below="@id/qr_image"
+        android:id="@+id/text_save_qr_btn"
+        android:layout_below="@id/img_qr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:padding="17dp"
         android:background="@drawable/square_pink_btn"
         android:text="QR 코드 저장하기"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="18sp"
-        android:textColor="@color/tx_gray" />
+        android:textColor="@color/tx_white" />
     </LinearLayout>
 
 

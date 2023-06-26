@@ -11,6 +11,11 @@ import com.example.wedding_book_keeper.presentation.config.BaseActivity
 class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activity_admin_code) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        binding.btnToolbarBack.setOnClickListener {
+            finish()
+        }
     }
 
 
