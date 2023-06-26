@@ -26,11 +26,13 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         item4Button = findViewById(R.id.item4ImageView)
 
         item1Button.setOnClickListener {
-            var intent = Intent(this,WeddingDatePickerActivity::class.java)
+            var intent = Intent(this, WeddingDatePickerActivity::class.java)
             startActivity(intent)
         }
 
         item2Button.setOnClickListener {
+            var intent = Intent(this, GuestEntryQRActivity::class.java)
+            startActivity(intent)
         }
 
         item3Button.setOnClickListener {
