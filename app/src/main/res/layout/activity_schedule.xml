@@ -3,49 +3,68 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools">
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
-
-    <TextView
-      android:id="@+id/txt_schedule_desc"
-      android:textStyle="bold"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="100dp"
-      android:text="결혼식 날짜를 입력해 주세요"
-      android:textColor="#333333"
-      android:textSize="18sp" />
-    <TextView
-      android:id="@+id/txt_notice_desc"
-      android:textStyle="bold"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:text="하객들에게 알림이 가요"
-      android:textColor="#333333"
-      android:textSize="18sp" />
-    <TextView
-      android:id="@+id/txt_selected_date"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="50dp"
-      android:text="2023년 6월 26일"
-      android:textColor="#333333"
-      android:textSize="30sp" />
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1" />
-    <DatePicker
-      android:id="@+id/dp_wedding_date"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="30dp"
-      android:calendarViewShown="false"
-      android:datePickerMode="spinner" />
+      android:layout_height="match_parent"
+      android:gravity="center_horizontal">
 
-  </LinearLayout>
+        <TextView
+          android:id="@+id/txt_schedule_desc"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="100dp"
+          android:text="결혼식 날짜를 입력해 주세요"
+          android:textColor="#333333"
+          android:textSize="24sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:id="@+id/txt_notice_desc"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:text="하객들에게 알림이 가요"
+          android:textColor="@color/pt_light_pink"
+          android:textSize="16sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/txt_schedule_desc" />
+
+        <TextView
+          android:id="@+id/txt_selected_date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="50dp"
+          android:text="2023년 6월 26일"
+          android:textColor="#333333"
+          android:textSize="30sp"
+          app:layout_constraintTop_toBottomOf="@id/txt_notice_desc"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
+
+        <DatePicker
+          android:id="@+id/dp_wedding_date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="30dp"
+          android:calendarViewShown="false"
+          android:datePickerMode="spinner"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="250dp"
+          android:layout_marginEnd="20dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:srcCompat="@drawable/back_arrow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
