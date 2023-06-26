@@ -36,6 +36,8 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         }
 
         item3Button.setOnClickListener {
+            var intent = Intent(this, AdminCodeActivity::class.java)
+            startActivity(intent)
         }
 
         item4Button.setOnClickListener {
