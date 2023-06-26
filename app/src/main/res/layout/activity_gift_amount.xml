@@ -55,14 +55,12 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_go_gift_complete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/square_pink_btn"
-                android:textSize="@dimen/font_btn"
-                android:text="눌러서 완료하기"
-                android:fontFamily="@font/inter_black"
-                android:textColor="@color/tx_white" />
+                android:text="눌러서 완료하기" />
     </LinearLayout>
 
 </layout>

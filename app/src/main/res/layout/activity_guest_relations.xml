@@ -113,12 +113,12 @@
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_go_gift_amount"
+                style="@style/ButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/square_pink_btn"
                 android:text="금액 입력하러 가기"
-                android:fontFamily="@font/inter_black"
-                android:textColor="@color/tx_white" />
+                />
     </LinearLayout>
 
 </layout>
