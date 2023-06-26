@@ -34,7 +34,7 @@
                     android:text="전달한 축의금 금액을 입력해주세요"
                     android:fontFamily="@font/kyobohandwriting2020"
                     android:textColor="@color/tx_gray"
-                    android:textSize="18dp"
+                    android:textSize="@dimen/font_medium"
                     android:layout_marginTop="50dp"
 
                     android:textAlignment="center" />
@@ -47,7 +47,7 @@
                     android:fontFamily="@font/inter_semi_bold"
                     android:background="@null"
                     android:gravity="center"
-                    android:textSize="36dp"
+                    android:textSize="@dimen/font_largest"
                     android:textColor="@color/tx_gray"
                     android:layout_marginTop="30dp" />
 
@@ -59,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/square_pink_btn"
+                android:textSize="@dimen/font_btn"
                 android:text="눌러서 완료하기"
                 android:fontFamily="@font/inter_black"
                 android:textColor="@color/tx_white" />

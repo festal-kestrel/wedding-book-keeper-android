@@ -36,7 +36,7 @@
                         android:gravity="center"
                         android:text="신랑, 신부 측을 선택해주세요"
                         android:textFontWeight="100"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/font_large"
                         android:fontFamily="@font/kyobohandwriting2020"
                         android:layout_marginTop="100dp" />
             </LinearLayout>
@@ -94,7 +94,7 @@
                     android:text="세부 관계를 입력해주세요"
                     android:fontFamily="@font/kyobohandwriting2020"
                     android:textColor="@color/tx_light_gray"
-                    android:textSize="12dp"
+                    android:textSize="@dimen/font_medium"
                     android:layout_marginTop="50dp"
 
                     android:textAlignment="center" />
@@ -105,7 +105,7 @@
                     android:layout_height="45dp"
                     android:background="@drawable/edit_text_square"
                     android:hint="ex)현대ITE 7기 동기 일동"
-                    android:textSize="12dp"
+                    android:textSize="@dimen/font_small"
                     android:layout_marginTop="10dp" />
 
 
