@@ -58,7 +58,6 @@
                             android:layout_height="100dp"
                             android:background="@drawable/male_radio_btn"
                             android:button="@android:color/transparent"
-                            android:checked="true"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/gap"
                             app:layout_constraintTop_toTopOf="parent"
