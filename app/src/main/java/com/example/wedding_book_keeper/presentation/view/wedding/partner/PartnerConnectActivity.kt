@@ -16,7 +16,7 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
 
     private fun initEvent() {
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, ScheduleActivity::class.java);
+            val intent = Intent(this, ScheduleActivity::class.java)
             startActivity(intent)
         }
         binding.btnPartnerConnect.setOnClickListener {

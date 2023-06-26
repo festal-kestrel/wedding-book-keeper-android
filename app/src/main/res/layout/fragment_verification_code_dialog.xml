@@ -3,57 +3,79 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools">
 
-  <LinearLayout
-    android:layout_width="match_parent"
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@android:color/white">
+    tools:context=".util.RangeTimePickerDialogFragment">
 
     <TextView
-      android:id="@+id/txt_verification_code"
+      android:id="@+id/txt_verification_code_desc"
       android:textStyle="bold"
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
       android:text="인증번호 입력"
       android:textColor="#333333"
-      android:textSize="18sp" />
+      android:textSize="18sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
       android:id="@+id/edit_verification_code"
-      android:layout_width="match_parent"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="16dp"
+      android:padding="8dp"
+      android:background="@android:color/transparent"
       android:hint="인증번호를 입력하세요"
-      android:padding="8dp" />
-    <!--      android:background="@drawable/edittext_background_apple"-->
+      android:textAlignment="center"
+      android:textColor="#333333"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_verification_code_desc" />
 
-    <LinearLayout
-      android:layout_width="match_parent"
+    <View
+      android:id="@+id/divider"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:background="@color/bg_gray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/edit_verification_code" />
+
+    <TextView
+      android:id="@+id/btn_cancel"
+      android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:gravity="end">
+      android:gravity="center"
+      android:paddingVertical="22dp"
+      android:text="@string/cancel"
+      app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/edit_verification_code" />
 
-      <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="취소"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:padding="8dp" />
+    <TextView
+      android:id="@+id/btn_submit"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:gravity="center"
+      android:text="@string/confirm"
+      app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/btn_cancel"
+      app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+    <!--    android:background="@color/gray_200"-->
 
-      <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="확인"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:padding="8dp" />
-
-    </LinearLayout>
-
-  </LinearLayout>
-
+    <View
+      android:id="@+id/divider_button"
+      android:layout_width="1dp"
+      android:layout_height="0dp"
+      android:background="@color/bg_gray"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+      app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+      app:layout_constraintTop_toBottomOf="@+id/edit_verification_code" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
