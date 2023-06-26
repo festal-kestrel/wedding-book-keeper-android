@@ -1,15 +1,15 @@
 package com.example.wedding_book_keeper.presentation.view.mypage
 
-import WeddingDatePickerFragment
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wedding_book_keeper.R
-import com.example.wedding_book_keeper.presentation.view.mypage.fragment.ImageFragment
-import com.example.wedding_book_keeper.presentation.view.mypage.fragment.TextFragment
+import com.example.wedding_book_keeper.databinding.ActivityMainBinding
+import com.example.wedding_book_keeper.databinding.ActivityMyPageBinding
+import com.example.wedding_book_keeper.presentation.config.BaseActivity
 
-
-class MyPageActivity : AppCompatActivity() {
+class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_page) {
 
     private lateinit var item1Button: Button
     private lateinit var item2Button: Button
@@ -26,29 +26,14 @@ class MyPageActivity : AppCompatActivity() {
         item4Button = findViewById(R.id.item4ImageView)
 
         item1Button.setOnClickListener {
-            val datePickerFragment = WeddingDatePickerFragment()
-//            datePickerFragment.show(supportFragmentManager, "datePicker")
-//            val datePickerFragment = DatePickerFragment()
-            supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, datePickerFragment)
-            .addToBackStack(null)
-            .commit()
+            var intent = Intent(this,WeddingDatePickerActivity::class.java)
+            startActivity(intent)
         }
 
         item2Button.setOnClickListener {
-            val imageFragment = ImageFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, imageFragment)
-                .addToBackStack(null)
-                .commit()
         }
 
         item3Button.setOnClickListener {
-            val textFragment = TextFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, textFragment)
-                .addToBackStack(null)
-                .commit()
         }
 
         item4Button.setOnClickListener {

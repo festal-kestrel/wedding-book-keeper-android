@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+      android:id="@+id/profileImage"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_marginTop="100dp"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/couple_circle" />
+
+    <TextView
+      android:id="@+id/picker_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:layout_marginBottom="-20dp"
+      android:layout_marginLeft="30dp"
+      android:layout_below="@id/profileImage"
+      android:gravity="center_horizontal"
+      android:text="결혼식 날짜 및 시간"
+      android:textColor="@color/tx_gray"
+      android:textSize="15sp" />
+
+    <LinearLayout
+      android:id="@+id/picker_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_below="@id/picker_label"
+      android:gravity="center"
+      android:orientation="horizontal">
+
+      <DatePicker
+        android:id="@+id/dp_wedding_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-30dp"
+        android:layout_marginRight="-30dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:scaleX="0.8" />
+
+      <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-30dp"
+        android:layout_marginRight="-30dp"
+        android:scaleX="0.8"
+        android:timePickerMode="spinner" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_below="@id/picker_layout"
+      >
+      <TextView
+        android:id="@+id/location_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/picker_layout"
+        android:gravity="center_horizontal"
+        android:text="결혼식 장소"
+        android:textColor="@color/tx_gray"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp" />
+
+      <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_square"
+        android:padding="13sp"
+        android:layout_below="@id/location_label" />
+
+
+    </LinearLayout>
+
+
+
+
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="@null"
+      app:contentInsetStart="0dp"
+      app:contentInsetLeft="0dp">
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+          android:id="@+id/toolbar_back_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentStart="true"
+          android:layout_centerVertical="true"
+          android:background="@null"
+          android:layout_marginLeft="10dp"
+          android:src="@drawable/back_arrow" />
+
+        <TextView
+          android:id="@+id/toolbar_title"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="결혼식 정보 수정"
+          android:textColor="@color/tx_light_gray"
+          android:textSize="18sp" />
+
+        <TextView
+          android:id="@+id/confirm_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="10dp"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:text="완료"
+          android:textColor="@color/tx_dark_gray"
+          android:textSize="18sp" />
+
+      </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+  </RelativeLayout>
+</layout>
