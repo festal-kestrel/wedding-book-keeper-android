@@ -3,11 +3,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".presentation.view.guest.LoginActivity"
-            android:background="@drawable/gradient_background_source">
+            android:background="@drawable/gradient_background_source"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            tools:context=".presentation.view.guest.LoginActivity">
 
         <TextView
                 android:layout_width="match_parent"
@@ -16,29 +18,23 @@
                 android:text="너에게 난, 나에게 넌"
                 android:textFontWeight="600"
                 android:textSize="36dp"
-                android:fontFamily="@font/kyobohandwriting2020"
-                tools:layout_editor_absoluteY="200dp"
-                tools:ignore="MissingConstraints" />
-s
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/kyobohandwriting2020" />
+
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="간편하게 로그인하고\n다양한 서비스를 이용해보세요."
                 android:textAlignment="center"
                 android:fontFamily="@font/inter_black"
-                tools:layout_editor_absoluteY="350dp"
-                android:textSize="16dp"
-                tools:ignore="MissingConstraints" />
+                android:layout_marginTop="150dp"
+                android:textSize="16dp" />
 
-        <android.widget.Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/kakao_login_btn"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                tools:layout_editor_absoluteY="700dp"
-                app:layout_constraintHorizontal_bias="0.495" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginTop="300dp" />
+    </LinearLayout>
+
 </layout>
-
-
