@@ -8,7 +8,5 @@ import com.example.wedding_book_keeper.presentation.config.BaseActivity
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        
     }
 }

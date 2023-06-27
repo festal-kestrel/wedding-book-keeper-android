@@ -1,14 +1,13 @@
 package com.example.wedding_book_keeper.presentation.view.guest
 
-import com.example.wedding_book_keeper.R
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextUtils
 import android.text.TextWatcher
-import android.widget.EditText
 import android.widget.Toast
+import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import java.text.DecimalFormat
@@ -16,12 +15,12 @@ import java.text.NumberFormat
 import java.util.Locale
 
 class GiftAmountActivity :
-    BaseActivity<ActivityGiftAmountBinding>(com.example.wedding_book_keeper.R.layout.activity_gift_amount) {
+    BaseActivity<ActivityGiftAmountBinding>(R.layout.activity_gift_amount) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val editText = findViewById<EditText>(com.example.wedding_book_keeper.R.id.edit_gift)
+        val editText = binding.editGift
         editText.setInputType(InputType.TYPE_CLASS_NUMBER)
 
         editText.addTextChangedListener(object : TextWatcher {
@@ -39,7 +38,7 @@ class GiftAmountActivity :
                     }
 
                     val cleanString = originalString.replace(",", "")
-                    if(TextUtils.isEmpty(cleanString)) {
+                    if (TextUtils.isEmpty(cleanString)) {
                         editText.setText("")
                     } else {
                         val parsed = cleanString.toLong()

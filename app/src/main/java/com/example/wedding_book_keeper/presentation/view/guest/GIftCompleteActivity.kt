@@ -8,8 +8,5 @@ import com.example.wedding_book_keeper.databinding.ActivityGuestRelationsBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 
 class GIftCompleteActivity : BaseActivity<ActivityGiftCompleteBinding>(R.layout.activity_gift_complete) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gift_complete)
-    }
+
 }
