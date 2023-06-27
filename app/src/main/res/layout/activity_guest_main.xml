@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="20dp"
+      android:paddingStart="20dp"
+      android:paddingEnd="20dp">
+
+      <ImageButton
+        android:id="@+id/btn_mypage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mypage_icon_source" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:fontFamily="@font/kyobohandwriting2020"
+        android:text="너에게 난, 나에게 넌" />
+
+    </RelativeLayout>
+
+    <TextView
+      android:layout_width="160dp"
+      android:layout_height="50dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginBottom="40dp"
+      android:layout_marginStart="20dp"
+      android:fontFamily="@font/kyobohandwriting2020"
+      android:text="너에게 난..."
+      android:textSize="34sp" />
+
+    <EditText
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="30dp"
+      android:layout_marginLeft="25dp"
+      android:layout_marginRight="25dp"
+      android:layout_gravity="center_horizontal"
+      android:paddingStart="15dp"
+      android:paddingEnd="15dp"
+      android:background="@drawable/edit_text"
+      android:drawableEnd="@drawable/search_source"
+      android:drawablePadding="10dp"
+      android:drawableStart="@drawable/filter_source" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white">
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_wedding_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_qrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/pt_light_pink"
+        android:src="@drawable/ic_qrcode"
+        app:tint="@null" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+  </LinearLayout>
+
+</layout>
