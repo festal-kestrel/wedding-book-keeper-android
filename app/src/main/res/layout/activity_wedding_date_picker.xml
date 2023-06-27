@@ -52,12 +52,6 @@
       android:layout_marginRight="30dp"
       android:layout_below="@id/layout_row_dp"
       android:orientation="vertical">
-      <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_location_label"
-        android:padding="13sp"
-        android:background="@drawable/edit_text_square" />
 
       <TextView
         android:id="@+id/txt_location_label"
@@ -69,6 +63,15 @@
         android:text="결혼식 장소"
         android:textColor="@color/tx_gray"
         android:textSize="15sp" />
+
+      <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_location_label"
+        android:padding="13sp"
+        android:background="@drawable/edit_text_square" />
+
+
 
 
     </LinearLayout>

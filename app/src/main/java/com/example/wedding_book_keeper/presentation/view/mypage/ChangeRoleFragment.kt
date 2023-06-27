@@ -31,14 +31,11 @@ class ChangeRoleFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
     }
-
 
     companion object {
         const val TAG = "MoreActionModal"

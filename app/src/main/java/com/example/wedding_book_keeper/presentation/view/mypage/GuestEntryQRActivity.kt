@@ -12,7 +12,6 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding.btnToolbarBack.setOnClickListener {
             finish()
         }

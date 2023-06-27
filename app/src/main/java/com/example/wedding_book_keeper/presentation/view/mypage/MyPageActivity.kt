@@ -12,11 +12,8 @@ import com.example.wedding_book_keeper.databinding.ActivityMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 
 class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_page) {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         binding.btnToolbarBack.setOnClickListener {
             finish()
@@ -28,13 +25,8 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         }
 
         binding.btnQr.setOnClickListener {
-            try {
-                var intent = Intent(this, GuestEntryQRActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
+            var intent = Intent(this, GuestEntryQRActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnAdminCode.setOnClickListener {
@@ -43,12 +35,9 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         }
 
         binding.btnPartnerRegister.setOnClickListener {
-            // Handle redirect logic
         }
 
-
         fun onClick(habitId: Long) {
-
         }
 
         binding.btnToolbarSeeMore.setOnClickListener {
@@ -56,7 +45,5 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
                 onClick = ::onClick
             ).show(supportFragmentManager, ChangeRoleFragment.TAG)
         }
-
-
     }
 }

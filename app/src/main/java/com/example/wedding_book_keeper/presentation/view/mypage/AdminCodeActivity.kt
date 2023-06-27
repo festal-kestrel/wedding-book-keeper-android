@@ -12,7 +12,6 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding.btnToolbarBack.setOnClickListener {
             finish()
         }
