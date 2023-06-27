@@ -3,6 +3,7 @@
   <color name="bg_light_gray">#F6F2F5</color>
   <color name="bg_gray">#C1BCC0</color>
   <color name="bg_dark_gray">#282527</color>
+  <color name="db_light2_gray">#FAFAFB</color>
   <color name="tx_white">#F6F2F5</color>
   <color name="tx_light_gray">#8D94A0</color>
   <color name="tx_gray">#505866</color>
@@ -10,4 +11,6 @@
   <color name="pt_light_pink">#EAB4B8</color>
   <color name="pt_pink">#DA5157</color>
   <color name="pt_blue">#AEC2E6</color>
+  <color name="black">#FF000000</color>
+  <color name="white">#FFFFFFFF</color>
 </resources>
