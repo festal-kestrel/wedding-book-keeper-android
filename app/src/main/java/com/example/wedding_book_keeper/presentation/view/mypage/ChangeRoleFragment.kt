@@ -47,7 +47,6 @@ class ChangeRoleFragment(
             onClick: (Long) -> Unit,
         ): ChangeRoleFragment {
             val modal = ChangeRoleFragment(onClick)
-//            modal.setStyle(DialogFragment.STYLE_NORMAL, R.style.RoundCornerBottomSheetDialogTheme)
             return modal
         }
     }

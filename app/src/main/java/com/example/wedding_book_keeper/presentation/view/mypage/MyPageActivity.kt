@@ -28,7 +28,6 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
         }
 
         binding.btnQr.setOnClickListener {
-            Log.d("hong", "here")
             try {
                 var intent = Intent(this, GuestEntryQRActivity::class.java)
                 startActivity(intent)
