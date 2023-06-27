@@ -13,9 +13,9 @@ import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
 import com.example.wedding_book_keeper.presentation.config.BaseFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ChangeRoleFragment (
-val onClick: (Long) -> Unit,
-) : BottomSheetDialogFragment(){
+class ChangeRoleFragment(
+    val onClick: (Long) -> Unit,
+) : BottomSheetDialogFragment() {
     lateinit var binding: FragmentChangeRoleBinding
 
     override fun onCreateView(
@@ -40,14 +40,13 @@ val onClick: (Long) -> Unit,
     }
 
 
-
     companion object {
         const val TAG = "MoreActionModal"
 
         fun newInstance(
             onClick: (Long) -> Unit,
         ): ChangeRoleFragment {
-            val modal = ChangeRoleFragment( onClick)
+            val modal = ChangeRoleFragment(onClick)
 //            modal.setStyle(DialogFragment.STYLE_NORMAL, R.style.RoundCornerBottomSheetDialogTheme)
             return modal
         }

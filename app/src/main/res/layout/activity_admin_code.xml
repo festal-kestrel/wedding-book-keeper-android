@@ -7,13 +7,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_centerInParent="true"
+      android:gravity="center"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="관리자 코드"
+          android:textSize="20dp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="LQ23ST6X"
+          android:textSize="40dp" />
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="위 코드를 축의금 관리자에게 전해주세요" />
+      </LinearLayout>
+
+
+      <TextView
+        android:id="@+id/txt_copy_code_btn"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:padding="17dp"
+        android:background="@drawable/square_pink_btn"
+        android:gravity="center"
+        android:text="코드 복사하기"
+        android:textColor="@color/tx_white"
+        android:textSize="18sp" />
+    </LinearLayout>
+
     <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
       android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:background="@null"
-      app:contentInsetStart="0dp"
-      app:contentInsetLeft="0dp">
+      app:contentInsetLeft="0dp"
+      app:contentInsetStart="0dp">
 
       <RelativeLayout
         android:layout_width="match_parent"
@@ -23,10 +66,10 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
           android:layout_alignParentStart="true"
           android:layout_centerVertical="true"
           android:background="@null"
-          android:layout_marginLeft="10dp"
           android:src="@drawable/back_arrow" />
 
         <TextView
@@ -41,50 +84,6 @@
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
-
-    <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:orientation="vertical"
-      android:layout_centerInParent="true"
-      android:gravity="center">
-
-      <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textSize="20dp"
-          android:text="관리자 코드"/>
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textSize="40dp"
-          android:text="LQ23ST6X"/>
-        <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="위 코드를 축의금 관리자에게 전해주세요"/>
-      </LinearLayout>
-
-
-
-      <TextView
-        android:id="@+id/txt_copy_code_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:padding="17dp"
-        android:background="@drawable/square_pink_btn"
-        android:text="코드 복사하기"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textColor="@color/tx_white" />
-    </LinearLayout>
 
 
   </RelativeLayout>

@@ -29,7 +29,7 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
 
         binding.btnQr.setOnClickListener {
             Log.d("hong", "here")
-            try{
+            try {
                 var intent = Intent(this, GuestEntryQRActivity::class.java)
                 startActivity(intent)
             } catch (e: Exception) {
@@ -49,11 +49,9 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_
 
 
         fun onClick(habitId: Long) {
-            Log.d("hong", "")
-//            val intent = habitUpdateNavigator.intent(requireContext())
-//            intent.putExtra(HABIT_ID, habitId)
-//            addResultLauncher.launch(intent)
+
         }
+
         binding.btnToolbarSeeMore.setOnClickListener {
             ChangeRoleFragment.newInstance(
                 onClick = ::onClick
