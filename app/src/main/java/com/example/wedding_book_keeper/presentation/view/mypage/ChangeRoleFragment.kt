@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.fragment.app.DialogFragment
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
@@ -29,8 +31,6 @@ val onClick: (Long) -> Unit,
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        binding.
 
 
     }
