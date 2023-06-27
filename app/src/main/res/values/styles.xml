@@ -3,4 +3,11 @@
   <style name="edit_text_square" parent="Widget.AppCompat.EditText">
     <item name="android:background">@drawable/edit_text_square</item>
   </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+      <item name="android:textSize">@dimen/font_btn</item> <!-- 텍스트 크기 설정 -->
+      <item name="android:fontFamily">@font/inter_extra_bold</item> <!-- 원하는 폰트 적용 -->
+      <item name="android:textColor">@color/tx_white</item> <!-- 텍스트 색상 설정 -->
+    </style>
+
 </resources>

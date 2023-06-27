@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+      android:id="@+id/btn_wedding_info"
+      android:layout_width="20dp"
+      android:layout_height="20dp"
+      android:layout_marginRight="16dp"
+      android:layout_alignParentEnd="true"
+      android:layout_centerVertical="true"
+      android:background="@drawable/right_bracket_arrow" />
+
+    <!-- Image -->
+    <ImageView
+      android:id="@+id/img_profile"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_marginTop="190dp"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/couple_circle" />
+
+    <!-- Item 1 -->
+    <LinearLayout
+      android:id="@+id/layout_row_wedding_info"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:layout_centerInParent="true"
+      android:gravity="center"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <ImageView
+          android:layout_width="25dp"
+          android:layout_height="25dp"
+          android:layout_marginLeft="3dp"
+          android:layout_marginRight="3dp"
+          android:src="@drawable/heart_source" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="홍길동"
+          android:textColor="@color/tx_gray"
+          android:textSize="20sp" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="김길순"
+          android:textColor="@color/tx_gray"
+          android:textSize="20sp" />
+
+      </LinearLayout>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="2023년 07월 01일 03:30"
+        android:textColor="@color/tx_gray"
+        android:textSize="20sp" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="프라자호텔 3층 웨딩홀"
+        android:textColor="@color/tx_gray"
+        android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!-- Button -->
+    <LinearLayout
+      android:id="@+id/layout_row_qr"
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_marginTop="60dp"
+      android:layout_marginLeft="40dp"
+      android:layout_below="@id/layout_row_wedding_info"
+      android:padding="16dp"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="하객 입장 QR"
+        android:textColor="@color/tx_gray"
+        android:textSize="18sp" />
+
+      <Button
+        android:id="@+id/btn_qr"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8sp"
+        android:background="@drawable/right_bracket_arrow" />
+
+    </LinearLayout>
+
+    <!-- Item 2 -->
+    <LinearLayout
+      android:id="@+id/layout_row_admin_code"
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_marginLeft="40dp"
+      android:layout_below="@id/layout_row_qr"
+      android:padding="16dp"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="축의금 접수 관리자 추가하기"
+        android:textColor="@color/tx_gray"
+        android:textSize="18sp" />
+
+      <Button
+        android:id="@+id/btn_admin_code"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8sp"
+        android:background="@drawable/right_bracket_arrow" />
+
+    </LinearLayout>
+
+    <!-- Item 3 -->
+    <LinearLayout
+      android:id="@+id/layout_row_partner_register"
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_marginLeft="40dp"
+      android:layout_below="@id/layout_row_admin_code"
+      android:padding="16dp"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="배우자 등록하기"
+        android:textColor="@color/tx_gray"
+        android:textSize="18sp" />
+
+      <Button
+        android:id="@+id/btn_partner_register"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8sp"
+        android:background="@drawable/right_bracket_arrow" />
+
+    </LinearLayout>
+
+    <!-- Item 4 -->
+    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/toolbar_mypage"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="@null"
+      app:contentInsetLeft="0dp"
+      app:contentInsetStart="0dp">
+
+      <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+          android:id="@+id/btn_toolbar_back"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_alignParentStart="true"
+          android:layout_centerVertical="true"
+          android:background="@null"
+
+          android:src="@drawable/back_arrow" />
+
+        <ImageButton
+          android:id="@+id/btn_toolbar_see_more"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="10dp"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:background="@null"
+          android:src="@drawable/see_more" />
+
+        <TextView
+          android:id="@+id/btn_toolbar_title"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="마이페이지"
+          android:textColor="@color/tx_light_gray"
+          android:textSize="18sp" />
+
+      </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+  </RelativeLayout>
+</layout>

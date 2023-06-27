@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ChangeRoleFragment">
+
+    <TextView
+      android:id="@+id/txt_role_guest"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10sp"
+      android:padding="20sp"
+      android:text="하객"
+      android:textColor="@color/tx_gray"
+      android:textSize="18sp" />
+
+
+    <TextView
+      android:id="@+id/txt_role_couple"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10sp"
+      android:padding="20sp"
+      android:text="신랑/신부"
+      android:textColor="@color/tx_gray"
+      android:textSize="18sp" />
+
+
+    <TextView
+      android:id="@+id/txt_role_admin"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="10sp"
+      android:padding="20sp"
+      android:text="관리자"
+      android:textColor="@color/tx_gray"
+      android:textSize="18sp" />
+  </LinearLayout>
+</layout>
