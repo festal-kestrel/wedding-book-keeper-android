@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background_source"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            tools:context=".presentation.view.guest.LoginActivity">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="너에게 난, 나에게 넌"
+                android:textFontWeight="600"
+                android:textSize="@dimen/font_largest"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/kyobohandwriting2020" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="간편하게 로그인하고\n다양한 서비스를 이용해보세요."
+                android:textAlignment="center"
+                android:fontFamily="@font/inter_black"
+                android:layout_marginTop="150dp"
+                android:textSize="@dimen/font_medium" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_kakao"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:background="@drawable/kakao_login_btn"
+                android:layout_marginTop="300dp" />
+    </LinearLayout>
+
+</layout>
