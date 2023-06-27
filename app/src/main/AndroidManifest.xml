@@ -17,33 +17,28 @@
       android:name=".presentation.view.mypage.AdminCodeActivity" />
     <activity
       android:exported="false"
-      android:name=".presentation.view.mypage.GuestEntryQRActivity"/>
+      android:name=".presentation.view.mypage.GuestEntryQRActivity" />
 
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.MyPageActivity">
-
-       <intent-filter>
-       <action android:name="android.intent.action.MAIN" />
-
-
-       <category android:name="android.intent.category.LAUNCHER" />
-       </intent-filter>
-    </activity>
+      android:name=".presentation.view.mypage.MyPageActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.MainActivity">
-
-      <!-- <intent-filter> -->
-      <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-      <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-      <!-- </intent-filter> -->
-    </activity>
+      android:name=".presentation.view.guest.GIftCompleteActivity"></activity>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GiftAmountActivity"></activity>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GuestRelationsActivity"></activity>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.LoginActivity"></activity>
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.MainActivity"></activity>
   </application>
-
 </manifest>

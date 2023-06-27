@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <TextView
+      android:id="@+id/txt_connect_desc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="100dp"
+      android:text="배우자를 연결하세요"
+      android:textColor="@color/tx_dark_gray"
+      android:textSize="24sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/img_partner"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:layout_marginTop="50dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_connect_desc"
+      app:srcCompat="@drawable/single_source" />
+
+    <TextView
+      android:id="@+id/txt_code_desc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="70dp"
+      android:text="나의 코드 복사"
+      android:textColor="@color/tx_dark_gray"
+      android:textSize="18sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/img_partner" />
+
+    <EditText
+      android:id="@+id/txt_code"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:focusableInTouchMode="false"
+      android:singleLine="true"
+      android:text="1uwws9ri6"
+      android:textColor="@color/tx_dark_gray"
+      android:textSize="18sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_code_desc" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_partner_connect"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="100dp"
+      android:background="@drawable/square_pink_btn"
+      android:inputType="none"
+      android:text="상대방 코드로 연결하기"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+      android:id="@+id/txt_admin_link"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:text="결혼식 관리자이신가요?"
+      android:textColor="@color/tx_dark_gray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btn_partner_connect" />
+
+    <ImageView
+      android:id="@+id/btn_next"
+      android:layout_width="30dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="250dp"
+      android:layout_marginEnd="20dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:srcCompat="@drawable/next_arrow" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
