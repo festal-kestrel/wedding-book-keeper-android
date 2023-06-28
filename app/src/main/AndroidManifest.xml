@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools">
-  <uses-permission android:name="android.permission.INTERNET" />
   <application
     android:allowBackup="true"
     android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,10 +15,10 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.WebViewActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
+<!--      <intent-filter>-->
+<!--        <action android:name="android.intent.action.MAIN" />-->
+<!--        <category android:name="android.intent.category.LAUNCHER" />-->
+<!--      </intent-filter>-->
     </activity>
     <activity
       android:exported="false"
@@ -28,8 +27,13 @@
       android:exported="false"
       android:name=".presentation.view.guest.QrActivity" />
     <activity
-      android:exported="false"
-      android:name=".presentation.view.mypage.AdminCodeActivity" />
+      android:exported="true"
+      android:name=".presentation.view.mypage.AdminCodeActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
