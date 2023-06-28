@@ -4,28 +4,36 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityWebViewBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.google.zxing.integration.android.IntentIntegrator
-import com.journeyapps.barcodescanner.ScanContract
-import com.journeyapps.barcodescanner.ScanOptions
 
 class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_web_view) {
-    private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
-        if (result.contents == null) {
-            Log.d("hong", "cancelled")
-        } else {
-            val info = result.contents
-            Log.d("hong", "info=$info")
-            parseQRInfo(info)
-            updateUI() // Update the UI based on the QR code scan result
+
+    private val scanQRCode = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val scanResult = IntentIntegrator.parseActivityResult(result.resultCode, result.data)
+            if (scanResult != null) {
+                if (scanResult.contents == null) {
+                    Log.d("hong", "cancelled")
+                } else {
+                    val info = scanResult.contents
+                    Log.d("hong", "info=$info")
+                    parseQRInfo(info)
+                    updateUI()
+                }
+            }
         }
     }
 
-//    val options = ScanOptions()
-    val options = ScanOptions().apply {
-        setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+    private fun initiateScan() {
+        val integrator = IntentIntegrator(this)
+        integrator.setOrientationLocked(false)
+        integrator.setBeepEnabled(false)
+        integrator.setPrompt("QR코드를 사각형 안에 맞춰주세요")
+        scanQRCode.launch(integrator.createScanIntent())
     }
 
     private fun parseQRInfo(info: String) {
@@ -59,9 +67,8 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
             }
         }
 
-
         Log.d("hong","변수에 저장된 값 확인 : "+memberName + partnerName + weddingDate)
-        if (memberName != null && partnerName != null && weddingDate != null) {
+        if (memberName.isNotEmpty() && partnerName.isNotEmpty() && weddingDate.isNotEmpty()) {
             val sharedPref = getSharedPreferences("MyPref", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()
             editor.putString("memberName", memberName)
@@ -99,16 +106,15 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding.btnScanQr.setOnClickListener {
-            barcodeLauncher.launch(options)
+            initiateScan()
         }
         binding.btnGoRelation.setOnClickListener{
             val intent = Intent(this, GuestRelationsActivity::class.java)
-
             startActivity(intent)
         }
 
-        // Start the barcode scan
-        barcodeLauncher.launch(options)
+        initiateScan()
     }
 }
