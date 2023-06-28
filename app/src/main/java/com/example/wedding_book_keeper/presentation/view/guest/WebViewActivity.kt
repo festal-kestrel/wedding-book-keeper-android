@@ -101,6 +101,7 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
         }
         binding.btnGoRelation.setOnClickListener{
             val intent = Intent(this, GuestRelationsActivity::class.java)
+
             startActivity(intent)
         }
 
