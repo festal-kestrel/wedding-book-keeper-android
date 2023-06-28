@@ -23,7 +23,10 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
         }
     }
 
-    val options = ScanOptions()
+//    val options = ScanOptions()
+    val options = ScanOptions().apply {
+        setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+    }
 
     private fun parseQRInfo(info: String) {
         Log.d("hong","parseQRInfo로 넘어온 값 확인 :"+info)
