@@ -13,7 +13,7 @@ class GuestRelationsActivity :
         super.onCreate(savedInstanceState)
 
         val radioGroup = binding.radioGroup
-        var guestSide = ""
+        var guestSide = "-1"
 
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             if (checkedId == binding.radioBtnMale.id) {
@@ -28,10 +28,10 @@ class GuestRelationsActivity :
         binding.btnGoGiftAmount.setOnClickListener {
             var relationDesc = binding.editRelation.text.toString()
             val intent = Intent(this, GiftAmountActivity::class.java)
-            intent.putExtra("guestSide", guestSide)
+            intent.putExtra("guestSide", if (guestSide != "-1") guestSide.toInt() else -1)
             intent.putExtra("relationDesc", relationDesc)
             Log.d("hong", "relationDesc: ${intent.getStringExtra("relationDesc")}")
-            Log.d("hong", "guestSide: ${intent.getIntExtra("guestSide", 0)}")
+            Log.d("hong", "guestSide: ${intent.getIntExtra("guestSide", -1)}")
             startActivity(intent)
 
         }
