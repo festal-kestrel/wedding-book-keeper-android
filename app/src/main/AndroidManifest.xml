@@ -13,12 +13,20 @@
     android:theme="@style/Theme.Weddingbookkeeper"
     tools:targetApi="31">
     <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.couple.CoupleMainActivity"/>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.guest.GuestMainActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.manager.ManagerMainActivity" />
+    <activity
       android:exported="false"
       android:name=".presentation.view.mypage.AdminCodeActivity" />
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
-
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />

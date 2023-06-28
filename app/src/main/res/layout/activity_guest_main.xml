@@ -55,8 +55,7 @@
       android:paddingEnd="15dp"
       android:background="@drawable/edit_text"
       android:drawableEnd="@drawable/search_source"
-      android:drawablePadding="10dp"
-      android:drawableStart="@drawable/filter_source" />
+      android:drawablePadding="10dp" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
