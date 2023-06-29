@@ -34,6 +34,7 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
         }
         initView()
 
+
         binding.txtSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 (binding.rvWeddingList.adapter as GuestMainWeddingAdapter).filter(s.toString())

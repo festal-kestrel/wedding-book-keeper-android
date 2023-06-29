@@ -3,6 +3,8 @@ package com.example.wedding_book_keeper.presentation.view.donation.couple
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
@@ -28,28 +30,45 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
     private fun initView() {
         val guestList = mutableListOf<GuestDonationInfo>()
 
+        val adapter = CoupleMainDonationAdapter(guestList)
         binding.rvGuestListByCouple.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvGuestListByCouple.setHasFixedSize(true)
-        binding.rvGuestListByCouple.adapter = CoupleMainDonationAdapter(guestList)
+        binding.rvGuestListByCouple.adapter = adapter
 
         // 샘플 데이터
         val newDonations = mutableListOf(
             GuestDonationInfo(
                 "신부측",
                 "친한친구",
-                "김길순",
+                "김길순kks",
+                50000,
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
+            ),
+            GuestDonationInfo(
+                "신랑측",
+                "지나가던사람",
+                "박보선bbs",
+                70000,
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
+            ),
+            GuestDonationInfo(
+                "신랑측",
+                "코사동기",
+                "오혁진ohj",
                 100000,
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
             ),
             GuestDonationInfo(
                 "신부측",
-                "친한친구",
-                "김길순",
-                100000,
+                "총무",
+                "송민진smj",
+                500000,
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
             )
         )
+
+        adapter.setItems(newDonations)
 
         CoupleMainDonationAdapter(guestList).setItems(newDonations)
 
@@ -57,8 +76,20 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
             /**
              * 스위치 금액 숨기기 이벤트 처리
              */
-        }
 
+
+        }
+        binding.editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                (binding.rvGuestListByCouple.adapter as CoupleMainDonationAdapter).filter(s.toString())
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
         binding.btnSide.setOnClickListener {
             fun onClick(l: Long) {
             }
