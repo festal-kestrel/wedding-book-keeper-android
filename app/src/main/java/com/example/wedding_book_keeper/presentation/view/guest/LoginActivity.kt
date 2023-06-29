@@ -7,22 +7,14 @@ import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityLoginBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.kakao.sdk.auth.model.OAuthToken
-//import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
-//import com.kakao.sdk.v2.common.BuildConfig
-//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
-//import kotlin.coroutines.jvm.internal.CompletedContinuation.context
-
-//import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.example.wedding_book_keeper.BuildConfig
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.guest.api.LoginService
 import com.example.wedding_book_keeper.presentation.view.guest.dto.TokenResponse
-import com.kakao.sdk.common.KakaoSdk
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +22,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-//import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
     private lateinit var loginService: LoginService
@@ -38,7 +29,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        KakaoSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
 
         binding.btnKakao.setOnClickListener {
 
