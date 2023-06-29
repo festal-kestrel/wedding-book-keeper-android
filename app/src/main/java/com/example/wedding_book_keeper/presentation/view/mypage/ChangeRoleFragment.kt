@@ -17,6 +17,7 @@ import com.example.wedding_book_keeper.presentation.config.BaseFragment
 import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.manager.ManagerMainActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ChangeRoleFragment(
@@ -40,7 +41,7 @@ class ChangeRoleFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.txtRoleAdmin.setOnClickListener {
-            val intent = Intent(requireContext(), ManagerMainActivity::class.java)
+            val intent = Intent(requireContext(), PartnerConnectActivity::class.java)
             startActivity(intent)
         }
 

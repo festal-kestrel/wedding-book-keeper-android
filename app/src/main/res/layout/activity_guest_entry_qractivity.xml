@@ -21,22 +21,18 @@
         android:background="@color/bg_dark_gray" />
 
 
-      <TextView
+      <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/text_save_qr_btn"
-        android:textStyle="bold"
+        style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="300dp"
         android:layout_below="@id/img_qr"
-        android:padding="17dp"
         android:background="@drawable/square_pink_btn"
-        android:gravity="center"
-        android:text="QR 코드 저장하기"
-        android:textColor="@color/tx_white"
-        android:textSize="18sp" />
+        android:text="QR 코드 저장하기" />
     </LinearLayout>
 
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
       android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
@@ -66,7 +62,7 @@
           android:layout_centerInParent="true"
           android:text="하객입장 QR"
           android:textColor="@color/tx_light_gray"
-          android:textSize="18sp" />
+          android:textSize="@dimen/font_medium" />
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

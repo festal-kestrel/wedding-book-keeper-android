@@ -37,26 +37,31 @@
       <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
+
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
+          android:fontFamily="@font/kyobohandwriting2020"
           android:text="홍길동"
           android:textColor="@color/tx_gray"
-          android:textSize="20sp" />
+          android:textSize="@dimen/font_larger" />
         <ImageView
           android:layout_width="25dp"
           android:layout_height="25dp"
+          android:layout_marginTop="5dp"
           android:layout_marginLeft="3dp"
           android:layout_marginRight="3dp"
           android:src="@drawable/heart_source" />
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:fontFamily="@font/kyobohandwriting2020"
           android:text="김길순"
           android:textColor="@color/tx_gray"
-          android:textSize="20sp" />
+          android:textSize="@dimen/font_larger" />
 
       </LinearLayout>
 
@@ -66,15 +71,17 @@
         android:gravity="center_horizontal"
         android:text="2023년 07월 01일 03:30"
         android:textColor="@color/tx_gray"
-        android:textSize="20sp" />
+        android:fontFamily="@font/kyobohandwriting2020"
+        android:textSize="@dimen/font_large" />
 
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="프라자호텔 3층 웨딩홀"
+        android:fontFamily="@font/kyobohandwriting2020"
         android:textColor="@color/tx_gray"
-        android:textSize="20sp" />
+        android:textSize="@dimen/font_larger" />
 
     </LinearLayout>
 
@@ -87,7 +94,8 @@
       android:layout_marginLeft="40dp"
       android:layout_below="@id/layout_row_wedding_info"
       android:padding="16dp"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+      android:gravity="center">
 
       <TextView
         android:layout_width="wrap_content"
@@ -95,13 +103,12 @@
         android:layout_weight="1"
         android:text="하객 입장 QR"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_qr"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="8sp"
         android:background="@drawable/right_bracket_arrow" />
 
     </LinearLayout>
@@ -114,7 +121,8 @@
       android:layout_marginLeft="40dp"
       android:layout_below="@id/layout_row_qr"
       android:padding="16dp"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+      android:gravity="center">
 
       <TextView
         android:layout_width="wrap_content"
@@ -122,13 +130,12 @@
         android:layout_weight="1"
         android:text="축의금 접수 관리자 추가하기"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_admin_code"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="8sp"
         android:background="@drawable/right_bracket_arrow" />
 
     </LinearLayout>
@@ -141,7 +148,8 @@
       android:layout_marginLeft="40dp"
       android:layout_below="@id/layout_row_admin_code"
       android:padding="16dp"
-      android:orientation="horizontal">
+      android:orientation="horizontal"
+      android:gravity="center">
 
       <TextView
         android:layout_width="wrap_content"
@@ -149,19 +157,18 @@
         android:layout_weight="1"
         android:text="배우자 등록하기"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_partner_register"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="8sp"
         android:background="@drawable/right_bracket_arrow" />
 
     </LinearLayout>
 
     <!-- Item 4 -->
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
       android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
@@ -202,7 +209,7 @@
           android:layout_centerInParent="true"
           android:text="마이페이지"
           android:textColor="@color/tx_light_gray"
-          android:textSize="18sp" />
+          android:textSize="@dimen/font_medium" />
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
