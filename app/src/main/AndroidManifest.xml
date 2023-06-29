@@ -21,10 +21,16 @@
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.couple.CoupleMainActivity" />
+      android:name=".presentation.view.donation.couple.CoupleMainActivity">
+    </activity>
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity" />
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
@@ -34,10 +40,6 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.mypage.AdminCodeActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:exported="false"
@@ -67,6 +69,15 @@
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
       android:screenOrientation="fullSensor"
       tools:replace="screenOrientation" />
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.wedding.partner.PartnerConnectActivity"/>
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.wedding.schedule.ScheduleActivity"/>
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.wedding.introduction.IntroductionActivity"/>
   </application>
 
 </manifest>

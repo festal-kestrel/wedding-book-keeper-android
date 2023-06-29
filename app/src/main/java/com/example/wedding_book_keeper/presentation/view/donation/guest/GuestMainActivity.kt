@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.presentation.view.donation.guest
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
@@ -7,6 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityGuestMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.guest.GuestRelationsActivity
+import com.example.wedding_book_keeper.presentation.view.guest.ViewQrcodeActivity
+import com.example.wedding_book_keeper.presentation.view.guest.WebViewActivity
+import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -17,18 +22,14 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
         super.onCreate(savedInstanceState)
 
         binding.btnMypage.setOnClickListener {
-            /*
-            * 마이페이지 화면 호출
-            */
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnQrcode.setOnClickListener {
-            /*
-             * QR 인식 화면 호출
-             */
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
         }
-
-
         initView()
     }
 
