@@ -33,7 +33,7 @@ class ManagerMainDonationAdapter(val guestList: MutableList<GuestDonationInfo>) 
         val side = itemView.findViewById<TextView>(R.id.txt_side)
         val relation = itemView.findViewById<TextView>(R.id.txt_relation)
         val guestName = itemView.findViewById<TextView>(R.id.txt_guest_name)
-        val amount = itemView.findViewById<TextView>(R.id.txt_amount)
+        val amount = itemView.findViewById<TextView>(R.id.txt_gift_amount)
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
     }
 

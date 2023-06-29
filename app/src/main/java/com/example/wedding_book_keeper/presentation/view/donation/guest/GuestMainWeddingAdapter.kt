@@ -32,7 +32,7 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val groomName = itemView.findViewById<TextView>(R.id.txt_groom_name)
         val bridalName = itemView.findViewById<TextView>(R.id.txt_bridal_name)
-        val amount = itemView.findViewById<TextView>(R.id.txt_amount)
+        val amount = itemView.findViewById<TextView>(R.id.txt_gift_amount)
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
     }
 

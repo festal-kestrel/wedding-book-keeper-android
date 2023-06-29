@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.config.setStatusBarTransparent
 import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -22,9 +23,12 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
         binding.btnMypage.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
+
         }
 
         initView()
+        setStatusBarTransparent()
+
     }
 
     private fun initView() {
@@ -72,13 +76,11 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
 
         CoupleMainDonationAdapter(guestList).setItems(newDonations)
 
-        binding.switchAmount.setOnCheckedChangeListener { p0, isCheck ->
-            /**
-             * 스위치 금액 숨기기 이벤트 처리
-             */
-
-
+        binding.switchAmount.setOnCheckedChangeListener { p0, isChecked ->
+            (binding.rvGuestListByCouple.adapter as CoupleMainDonationAdapter).isAmountHidden = isChecked
+            (binding.rvGuestListByCouple.adapter as CoupleMainDonationAdapter).notifyDataSetChanged()
         }
+
         binding.editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 (binding.rvGuestListByCouple.adapter as CoupleMainDonationAdapter).filter(s.toString())
