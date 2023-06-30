@@ -50,8 +50,10 @@
       android:exported="true"
       android:name=".presentation.view.donation.couple.CoupleMainActivity" />
     <activity
-      android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity" />
+      android:exported="false"
+      android:name=".presentation.view.donation.guest.GuestMainActivity"
+      tools:ignore="DuplicateActivity">
+    </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
