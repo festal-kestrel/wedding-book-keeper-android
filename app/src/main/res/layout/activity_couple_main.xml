@@ -101,20 +101,35 @@
 
     </LinearLayout>
 
-    <EditText
+    <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="40dp"
-      android:layout_marginTop="10dp"
-      android:layout_marginBottom="30dp"
-      android:layout_marginLeft="25dp"
-      android:layout_marginRight="25dp"
-      android:layout_gravity="center_horizontal"
-      android:paddingStart="15dp"
-      android:paddingEnd="15dp"
-      android:background="@drawable/edit_text"
-      android:drawableEnd="@drawable/search_source"
-      android:drawablePadding="10dp"
-      android:drawableStart="@drawable/filter_source" />
+      android:layout_height="wrap_content">
+
+      <ImageButton
+        android:id="@+id/btn_side"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/filter_source"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        android:layout_marginRight="5dp"/>
+
+      <EditText
+        android:id="@+id/editText"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:background="@drawable/edit_text"
+        android:drawableEnd="@drawable/search_source"
+        android:drawablePadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rv_guest_list_by_couple"

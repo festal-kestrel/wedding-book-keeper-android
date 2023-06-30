@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextUtils
+import android.text.TextUtils.replace
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding
@@ -19,6 +21,14 @@ class GiftAmountActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val intent = getIntent() // 현재 액티비티의 인텐트를 가져옵니다
+
+        val guestSide = intent.getIntExtra("guestSide", 0)
+        val relationDesc = intent.getStringExtra("relationDesc")
+
+        Log.d("hong", "받아온 guestSide: $guestSide")
+        Log.d("hong", "받아온 relationDesc: $relationDesc")
 
         val editText = binding.editGift
         editText.setInputType(InputType.TYPE_CLASS_NUMBER)
@@ -63,13 +73,23 @@ class GiftAmountActivity :
         }
 
         binding.btnGoGiftComplete.setOnClickListener {
-            val editTextContent = editText.text.toString()
-            if (editTextContent.isEmpty() || editTextContent == "원") {
+            var donationAmount: Int
+            val editGiftAmount = editText.text.toString()
+            if (editGiftAmount.isEmpty() || editGiftAmount == "원") {
                 Toast.makeText(this, "금액을 입력해주세요.", Toast.LENGTH_SHORT).show()
             } else {
                 val intent = Intent(this, GIftCompleteActivity::class.java)
                 startActivity(intent)
             }
+            try {
+                donationAmount = editGiftAmount.replace(",", "").replace("원", "").toInt()
+            } catch (e: NumberFormatException) {
+                donationAmount = editGiftAmount.replace("원", "").toInt()
+            }
+            Log.d(
+                "hong",
+                "전달될 데이터\n\n하객이름 : " + "person1" + "\n신랑(0),신부(1)측 : " + guestSide + "\n세부관계 : " + relationDesc + "\n축의금 : " + donationAmount
+            )
         }
     }
 }

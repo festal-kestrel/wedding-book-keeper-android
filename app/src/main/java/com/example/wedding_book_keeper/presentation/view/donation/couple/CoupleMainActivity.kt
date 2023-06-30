@@ -57,6 +57,13 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
              * 스위치 금액 숨기기 이벤트 처리
              */
         }
-    }
 
+        binding.btnSide.setOnClickListener {
+            fun onClick(l: Long) {
+            }
+            FilterFragment.newInstance(
+                onClick = ::onClick
+            ).show(supportFragmentManager, FilterFragment.TAG)
+        }
+    }
 }

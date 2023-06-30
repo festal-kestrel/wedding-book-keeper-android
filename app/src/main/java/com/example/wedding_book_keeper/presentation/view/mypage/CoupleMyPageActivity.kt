@@ -2,16 +2,11 @@ package com.example.wedding_book_keeper.presentation.view.mypage
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.wedding_book_keeper.R
-import com.example.wedding_book_keeper.databinding.ActivityMainBinding
-import com.example.wedding_book_keeper.databinding.ActivityMyPageBinding
+import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 
-class MyPageActivity : BaseActivity<ActivityMyPageBinding>(R.layout.activity_my_page) {
+class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.activity_couple_my_page) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

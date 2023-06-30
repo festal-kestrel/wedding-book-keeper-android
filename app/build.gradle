@@ -55,12 +55,12 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     // 카드뷰
     implementation "androidx.cardview:cardview:1.0.0"
-
     // 플로팅액션버튼
     implementation 'com.google.android.material:material:1.4.0'
-
+    //레트로핏2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
