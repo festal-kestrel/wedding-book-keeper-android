@@ -3,14 +3,13 @@
   xmlns:tools="http://schemas.android.com/tools">
 
   <application
-    android:name=".presentation.GlobalApplication"
+    android:name=".WeddingBookKeeperApplication"
     android:allowBackup="true"
     android:dataExtractionRules="@xml/data_extraction_rules"
     android:fullBackupContent="@xml/backup_rules"
     android:hardwareAccelerated="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
-    android:name=".presentation.GlobalApplication"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Weddingbookkeeper"
@@ -52,9 +51,6 @@
       android:name=".presentation.view.donation.couple.CoupleMainActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity" />
-    <activity
-      android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
     <activity
       android:exported="false"
@@ -91,17 +87,12 @@
       android:name=".presentation.view.guest.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
