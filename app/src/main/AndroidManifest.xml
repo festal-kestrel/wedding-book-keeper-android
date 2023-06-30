@@ -7,6 +7,7 @@
     android:allowBackup="true"
     android:dataExtractionRules="@xml/data_extraction_rules"
     android:fullBackupContent="@xml/backup_rules"
+    android:hardwareAccelerated="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
@@ -37,7 +38,28 @@
       android:name=".presentation.view.donation.guest.GuestMainActivity" />
 
     <activity
+      android:exported="true"
+      android:name=".presentation.view.mypage.GuestMyPageActivity"/>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.WebViewActivity" />
+    <activity
       android:exported="false"
+      android:name=".presentation.view.guest.ViewQrcodeActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.couple.CoupleMainActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.guest.GuestMainActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.manager.ManagerMainActivity" />
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.guest.QrActivity" />
+    <activity
+      android:exported="true"
       android:name=".presentation.view.mypage.AdminCodeActivity" />
     <activity
       android:exported="false"
@@ -48,19 +70,7 @@
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.MyPageActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GIftCompleteActivity"></activity>
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GiftAmountActivity"></activity>
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GuestRelationsActivity"></activity>
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity">
+      android:name=".presentation.view.mypage.CoupleMyPageActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -68,8 +78,24 @@
       </intent-filter>
     </activity>
     <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GIftCompleteActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GiftAmountActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GuestRelationsActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.LoginActivity" />
+    <activity
       android:exported="false"
-      android:name=".presentation.view.MainActivity"></activity>
+      android:name=".presentation.view.MainActivity" />
+    <activity
+      android:name="com.journeyapps.barcodescanner.CaptureActivity"
+      android:screenOrientation="fullSensor"
+      tools:replace="screenOrientation" />
   </application>
 
   <uses-permission android:name="android.permission.INTERNET" />

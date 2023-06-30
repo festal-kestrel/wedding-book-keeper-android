@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_marginTop="170dp"
+    tools:context=".presentation.view.guest.QRActivity">
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="이 결혼식이 맞나요?"
+      android:textColor="@color/tx_gray"
+      android:textSize="@dimen/font_larger"
+      android:fontFamily="@font/inter_extra_bold"/>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="100dp"
+      android:gravity="center">
+      <TextView
+        android:id="@+id/txt_groom_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kyobohandwriting2020"
+        android:text="홍길동"
+        android:textColor="@color/tx_dark_gray"
+        android:textSize="@dimen/font_largest" />
+      <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/heart_source" />
+      <TextView
+        android:id="@+id/txt_bridal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kyobohandwriting2020"
+        android:text="김길순"
+        android:textColor="@color/tx_dark_gray"
+        android:textSize="@dimen/font_largest" />
+    </LinearLayout>
+    <TextView
+      android:id="@+id/weddingdate"
+      android:gravity="center"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:fontFamily="@font/kyobohandwriting2020"
+      android:text="2023.06.27"
+      android:textColor="@color/tx_dark_gray"
+      android:textSize="@dimen/font_large" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_scan_qr"
+      style="@style/ButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@null"
+      android:layout_marginTop="260dp"
+      android:textColor="@color/tx_gray"
+      android:text="이 결혼식이 아니에요..." />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_go_relation"
+      style="@style/ButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/square_pink_btn"
+      android:layout_marginTop="20dp"
+      android:text="네, 맞아요!" />
+  </LinearLayout>
+
+</layout>

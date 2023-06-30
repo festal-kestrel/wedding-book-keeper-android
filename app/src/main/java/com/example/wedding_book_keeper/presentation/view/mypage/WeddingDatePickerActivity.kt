@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.example.wedding_book_keeper.R
-import com.example.wedding_book_keeper.databinding.ActivityMyPageBinding
 import com.example.wedding_book_keeper.databinding.ActivityWeddingDatePickerBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 
