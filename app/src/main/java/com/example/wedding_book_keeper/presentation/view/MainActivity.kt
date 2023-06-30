@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
-import com.example.wedding_book_keeper.data.remote.response.TestResponse
+import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import retrofit2.Call
@@ -22,21 +22,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun initRetrofitTest() {
-        WeddingBookKeeperClient.weddingApi.getTestApi().enqueue(object : Callback<TestResponse> {
-            override fun onResponse(call: Call<TestResponse>, response: Response<TestResponse>) {
+        WeddingBookKeeperClient.weddingApi.getWeddingInfo(3).enqueue(object : Callback<WeddingInfoResponse> {
+            override fun onResponse(call: Call<WeddingInfoResponse>, response: Response<WeddingInfoResponse>) {
                 if (response.isSuccessful) {
                     Log.d(TAG, "onResponse: ${response.body()}")
                     showToastMessage("성공")
 
-                    // TestResponse의 groomName, brideName 조회
-                    Log.d(TAG, "onResponse: ${response.body()?.groomName}")
-                    Log.d(TAG, "onResponse: ${response.body()?.brideName}")
+                    // WeddingInfoResponse의 groomName, brideName 조회
+                    Log.d(TAG, "groomName: ${response.body()?.groomName}")
+                    Log.d(TAG, "brideName: ${response.body()?.brideName}")
                     return;
                 }
                 showToastMessage("실패")
             }
 
-            override fun onFailure(call: Call<TestResponse>, t: Throwable) {
+            override fun onFailure(call: Call<WeddingInfoResponse>, t: Throwable) {
                 Log.d(TAG, "onFailure: ${t.message}")
                 showToastMessage("실패")
             }
