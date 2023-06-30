@@ -69,6 +69,13 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
                 "송민진smj",
                 500000,
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
+            ),
+            GuestDonationInfo(
+                "신부측",
+                "코사7기",
+                "교수님msw",
+                300000,
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))
             )
         )
 
