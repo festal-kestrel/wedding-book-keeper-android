@@ -172,6 +172,7 @@
       android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
+      android:layout_marginTop="40dp"
       android:background="@null"
       app:contentInsetLeft="0dp"
       app:contentInsetStart="0dp">

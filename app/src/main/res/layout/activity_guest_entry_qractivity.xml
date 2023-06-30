@@ -16,6 +16,7 @@
 
       <ImageView
         android:id="@+id/img_qr"
+        android:layout_marginTop="100dp"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:background="@color/bg_dark_gray" />
@@ -37,6 +38,7 @@
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:background="@null"
+      android:layout_marginTop="40dp"
       app:contentInsetLeft="0dp"
       app:contentInsetStart="0dp">
 
