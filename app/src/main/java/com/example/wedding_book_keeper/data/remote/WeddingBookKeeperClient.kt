@@ -10,7 +10,7 @@ object WeddingBookKeeperClient {
 
     private val BASE_URL = "http://10.0.2.2:8080/api/v1/"
 
-    val weddingApi: WeddingService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+    val weddingService: WeddingService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         provideApiRetrofit(WeddingService::class.java)
     }
 

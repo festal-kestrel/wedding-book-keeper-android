@@ -22,7 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun initRetrofitTest() {
-        WeddingBookKeeperClient.weddingApi.getWeddingInfo(3).enqueue(object : Callback<WeddingInfoResponse> {
+        WeddingBookKeeperClient.weddingService.getWeddingInfo(3).enqueue(object : Callback<WeddingInfoResponse> {
             override fun onResponse(call: Call<WeddingInfoResponse>, response: Response<WeddingInfoResponse>) {
                 if (response.isSuccessful) {
                     Log.d(TAG, "onResponse: ${response.body()}")
