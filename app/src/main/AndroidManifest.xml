@@ -34,15 +34,22 @@
     </activity>
 
     <activity
-      android:exported="false"
-      android:name=".presentation.view.donation.guest.GuestMainActivity" />
+      android:exported="true"
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+    </activity>
 
     <activity
       android:exported="true"
       android:name=".presentation.view.mypage.GuestMyPageActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.WebViewActivity" />
+      android:name=".presentation.view.guest.WebViewActivity" >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="false"
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
@@ -67,11 +74,6 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.mypage.CoupleMyPageActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:exported="true"
@@ -84,11 +86,16 @@
       android:name=".presentation.view.guest.GuestRelationsActivity" />
     <activity
       android:exported="true"
+      android:name=".presentation.view.wedding.introduction.IntroductionActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.partner.PartnerConnectActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
+    <activity
+      android:exported="true"
       android:name=".presentation.view.guest.LoginActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:exported="true"
