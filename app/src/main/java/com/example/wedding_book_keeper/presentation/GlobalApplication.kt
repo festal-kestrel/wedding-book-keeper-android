@@ -1,12 +1,11 @@
-package com.example.wedding_book_keeper
+package com.example.wedding_book_keeper.presentation
 
 import android.app.Application
 import com.kakao.sdk.common.KakaoSdk
-import dagger.hilt.android.HiltAndroidApp
+import com.example.wedding_book_keeper.BuildConfig
 
-//@HiltAndroidApp
-class WeddingBookKeeperApplication : Application() {
 
+class GlobalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 

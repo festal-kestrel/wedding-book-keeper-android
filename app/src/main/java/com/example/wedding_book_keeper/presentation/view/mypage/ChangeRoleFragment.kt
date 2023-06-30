@@ -1,16 +1,10 @@
 package com.example.wedding_book_keeper.presentation.view.mypage
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import androidx.fragment.app.DialogFragment
-import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
-import com.example.wedding_book_keeper.presentation.config.BaseFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ChangeRoleFragment(
