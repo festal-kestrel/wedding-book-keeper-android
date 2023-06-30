@@ -52,12 +52,11 @@ class CoupleMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
         notifyDataSetChanged()
     }
 
-    fun filter(query: String) {
-        filteredGuestList = if (query.isEmpty()) {
-            guestList
-        } else {
-            guestList.filter { it.guestName.contains(query, true) }.toMutableList()
-        }
+    fun filter(query: String, sideFilter: String? = null) {
+        filteredGuestList = guestList.filter {
+            it.guestName.contains(query, true) &&
+                    (sideFilter == null || it.side == sideFilter)
+        }.toMutableList()
         notifyDataSetChanged()
     }
 

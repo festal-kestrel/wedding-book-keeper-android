@@ -15,26 +15,27 @@ import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-@RequiresApi(Build.VERSION_CODES.O)
 class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.activity_couple_main) {
+    private lateinit var adapter: CoupleMainDonationAdapter
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding.btnMypage.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
-
         }
 
         initView()
         setStatusBarTransparent()
-
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun initView() {
         val guestList = mutableListOf<GuestDonationInfo>()
 
-        val adapter = CoupleMainDonationAdapter(guestList)
+        adapter = CoupleMainDonationAdapter(guestList)
         binding.rvGuestListByCouple.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvGuestListByCouple.setHasFixedSize(true)
@@ -100,11 +101,11 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
             }
         })
         binding.btnSide.setOnClickListener {
-            fun onClick(l: Long) {
-            }
-            FilterFragment.newInstance(
-                onClick = ::onClick
-            ).show(supportFragmentManager, FilterFragment.TAG)
+            FilterFragment.newInstance(::applyFilter).show(supportFragmentManager, FilterFragment.TAG)
         }
+    }
+    private fun applyFilter(side: String?) {
+        val query = binding.editText.text.toString()
+        adapter.filter(query, side)
     }
 }
