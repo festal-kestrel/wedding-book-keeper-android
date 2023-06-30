@@ -1,15 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Weddingbookkeeper" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-    <style name="Theme.TransparentStatusBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-    <style name="Theme.Weddingbookkeeper" parent="Theme.TransparentStatusBar" />
+
+  <style name="Base.Theme.Weddingbookkeeper" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:statusBarColor">@color/white</item> <!-- 상태바 색상-->
+    <item name="android:windowLightStatusBar">true</item>   <!-- 상태바 아이콘(true: 검정 / false: 흰색) -->
+  </style>
+
+  <style name="Theme.Weddingbookkeeper" parent="Base.Theme.Weddingbookkeeper" />
+
 </resources>

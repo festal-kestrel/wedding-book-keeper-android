@@ -28,7 +28,6 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
         }
 
         initView()
-        setStatusBarTransparent()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
