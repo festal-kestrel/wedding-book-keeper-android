@@ -10,6 +10,7 @@
     android:hardwareAccelerated="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
+    android:name=".presentation.GlobalApplication"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Weddingbookkeeper"
@@ -39,7 +40,7 @@
 
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.GuestMyPageActivity"/>
+      android:name=".presentation.view.mypage.GuestMyPageActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.WebViewActivity" />
@@ -64,13 +65,12 @@
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
-
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.CoupleMyPageActivity" >
+      android:name=".presentation.view.mypage.CoupleMyPageActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -88,7 +88,13 @@
       android:name=".presentation.view.guest.GuestRelationsActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity" />
+      android:name=".presentation.view.guest.LoginActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="false"
       android:name=".presentation.view.MainActivity" />
@@ -99,4 +105,5 @@
   </application>
 
   <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
