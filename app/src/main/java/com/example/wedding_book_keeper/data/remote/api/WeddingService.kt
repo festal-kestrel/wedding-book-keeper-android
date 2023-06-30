@@ -11,5 +11,4 @@ interface WeddingService {
     fun getWeddingInfo(
         @Path("weddingId") weddingId: Int
     ): Call<WeddingInfoResponse>
-
 }
