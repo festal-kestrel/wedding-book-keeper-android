@@ -64,6 +64,7 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
         val memberName = sharedPref.getString("memberName", null)
         val partnerName = sharedPref.getString("partnerName", null)
         val weddingDate = sharedPref.getString("weddingDate", null)
+        val location = sharedPref.getString("location", null)
 
         if (memberName != null) {
             this.binding.txtGroomName.text = memberName
@@ -73,6 +74,9 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
         }
         if (weddingDate != null) {
             this.binding.weddingdate.text = weddingDate
+        }
+        if (location != null) {
+            this.binding.txtLocation.text = location
         }
     }
 
@@ -102,6 +106,7 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
                         val editor = sharedPref.edit()
                         editor.putString("memberName", it.groomName)
                         editor.putString("partnerName", it.brideName)
+                        editor.putString("location", it.location)
                         editor.putString("weddingDate", it.weddingDate?.let { it1 -> formatDate(it1) })
                         editor.apply()
                         updateUI()

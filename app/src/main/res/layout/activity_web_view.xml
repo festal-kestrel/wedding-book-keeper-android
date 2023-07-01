@@ -44,15 +44,27 @@
         android:textColor="@color/tx_dark_gray"
         android:textSize="@dimen/font_largest" />
     </LinearLayout>
+
     <TextView
-      android:id="@+id/weddingdate"
+      android:id="@+id/txt_location"
       android:gravity="center"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="30dp"
       android:fontFamily="@font/kyobohandwriting2020"
-      android:text="2023.06.27"
+      android:text="결혼식 위치정보 필드"
       android:textColor="@color/tx_dark_gray"
+      android:textSize="@dimen/font_larger" />
+
+    <TextView
+      android:id="@+id/weddingdate"
+      android:gravity="center"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:fontFamily="@font/kyobohandwriting2020"
+      android:text="2023.06.27 13시 00분"
+      android:textColor="@color/tx_gray"
       android:textSize="@dimen/font_large" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -61,7 +73,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:background="@null"
-      android:layout_marginTop="260dp"
+      android:layout_marginTop="220dp"
       android:textColor="@color/tx_gray"
       android:text="이 결혼식이 아니에요..." />
 
