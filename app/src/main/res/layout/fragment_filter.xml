@@ -10,33 +10,33 @@
 
     <TextView
       android:id="@+id/txt_total_side"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginLeft="10sp"
       android:padding="20sp"
       android:text="전체"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
 
     <TextView
       android:id="@+id/txt_groom_side"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginLeft="10sp"
       android:padding="20sp"
       android:text="신랑측"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
 
     <TextView
       android:id="@+id/txt_bridal_side"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginLeft="10sp"
       android:padding="20sp"
       android:text="신부측"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
 
   </LinearLayout>
 </layout>

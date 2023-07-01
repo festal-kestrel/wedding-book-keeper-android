@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
 
-class GuestMainWeddingAdapter(private val weddingList: MutableList<GuestWeddingInfo>) :
+class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingInfo>) :
     RecyclerView.Adapter<GuestMainWeddingAdapter.CustomViewHolder>() {
+    private var filteredWeddingList: MutableList<GuestWeddingInfo> = weddingList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view =
@@ -17,11 +18,11 @@ class GuestMainWeddingAdapter(private val weddingList: MutableList<GuestWeddingI
     }
 
     override fun getItemCount(): Int {
-        return weddingList.size
+        return filteredWeddingList.size
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val item = weddingList[position]
+        val item = filteredWeddingList[position]
         holder.groomName.text = item.groomName
         holder.bridalName.text = item.bridalName
         holder.amount.text = item.formattedAmount.toString()
@@ -31,11 +32,22 @@ class GuestMainWeddingAdapter(private val weddingList: MutableList<GuestWeddingI
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val groomName = itemView.findViewById<TextView>(R.id.txt_groom_name)
         val bridalName = itemView.findViewById<TextView>(R.id.txt_bridal_name)
-        val amount = itemView.findViewById<TextView>(R.id.txt_amount)
+        val amount = itemView.findViewById<TextView>(R.id.txt_gift_amount)
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
     }
 
-    fun setItems(items: MutableList<GuestWeddingInfo>) {
-        weddingList.addAll(items)
+    fun setItems(items: List<GuestWeddingInfo>) {
+        weddingList = items.toMutableList()
+        filteredWeddingList = items.toMutableList()
+        notifyDataSetChanged()
+    }
+
+    fun filter(query: String) {
+        filteredWeddingList = if (query.isEmpty()) {
+            weddingList
+        } else {
+            weddingList.filter { it.groomName.contains(query, true) || it.bridalName.contains(query, true) }.toMutableList()
+        }
+        notifyDataSetChanged()
     }
 }

@@ -28,6 +28,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding.btnKakao.setOnClickListener {
 
             val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
@@ -97,4 +98,3 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         })
     }
 }
-

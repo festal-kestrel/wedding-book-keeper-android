@@ -1,6 +1,10 @@
 package com.example.wedding_book_keeper.presentation.config
 
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -18,4 +22,6 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRe
 
     protected fun showToastMessage(message: String) =
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+
 }

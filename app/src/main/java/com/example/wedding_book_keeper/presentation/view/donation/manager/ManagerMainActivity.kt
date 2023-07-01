@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.presentation.view.donation.manager
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
@@ -8,6 +9,8 @@ import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityManagerMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
+import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
+
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -18,9 +21,8 @@ class ManagerMainActivity :
         super.onCreate(savedInstanceState)
 
         binding.btnMypage.setOnClickListener {
-            /*
-            * 마이페이지 화면 호출
-            */
+            val intent = Intent(this, CoupleMyPageActivity::class.java)
+            startActivity(intent)
         }
 
         initView()

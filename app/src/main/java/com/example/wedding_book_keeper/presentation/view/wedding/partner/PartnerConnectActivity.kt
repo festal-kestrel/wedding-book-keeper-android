@@ -1,7 +1,11 @@
 package com.example.wedding_book_keeper.presentation.view.wedding.partner
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityPartnerConnectBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
@@ -12,6 +16,22 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
         super.onCreate(savedInstanceState)
 
         initEvent()
+        copyCode()
+    }
+
+    private fun copyCode(){
+        binding.txtCode.setOnClickListener {
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val adminCode = binding.txtCode.text.toString()
+            val clipData = ClipData.newPlainText("admin_code", adminCode)
+            clipboardManager.setPrimaryClip(clipData)
+
+            showToast("복사 완료")
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun initEvent() {
@@ -22,7 +42,7 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
         binding.btnPartnerConnect.setOnClickListener {
             val dialogFragment = VerificationCodeDialogFragment.newInstance()
             dialogFragment.setOnVerificationCodeEnteredListener(object :
-                    VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
+                VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
                     /**
                      * 입력된 인증번호 처리 로직

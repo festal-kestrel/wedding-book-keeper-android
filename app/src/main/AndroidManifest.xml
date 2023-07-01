@@ -35,8 +35,7 @@
 
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity">
-    </activity>
+      android:name=".presentation.view.donation.guest.GuestMainActivity"/>
 
     <activity
       android:exported="true"
@@ -55,7 +54,7 @@
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.couple.CoupleMainActivity" />
+      android:name=".presentation.view.donation.couple.CoupleMainActivity"/>
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.guest.GuestMainActivity"
@@ -68,7 +67,7 @@
       android:name=".presentation.view.guest.QrActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.AdminCodeActivity" />
+      android:name=".presentation.view.mypage.AdminCodeActivity"/>
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
@@ -77,8 +76,7 @@
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.CoupleMyPageActivity">
-    </activity>
+      android:name=".presentation.view.mypage.CoupleMyPageActivity"/>
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.GIftCompleteActivity" />
@@ -99,8 +97,7 @@
       android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity">
-    </activity>
+      android:name=".presentation.view.guest.LoginActivity"/>
     <activity
       android:exported="false"
       android:name=".presentation.view.MainActivity" />

@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
 
 class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.activity_couple_my_page) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,22 +15,24 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
             finish()
         }
 
-        binding.btnWeddingInfo.setOnClickListener {
+        binding.layoutRowWeddingInfo.setOnClickListener {
             var intent = Intent(this, WeddingDatePickerActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnQr.setOnClickListener {
+        binding.layoutRowQr.setOnClickListener {
             var intent = Intent(this, GuestEntryQRActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnAdminCode.setOnClickListener {
+        binding.layoutRowAdminCode.setOnClickListener {
             var intent = Intent(this, AdminCodeActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnPartnerRegister.setOnClickListener {
+        binding.layoutRowPartnerRegister.setOnClickListener {
+            var intent = Intent(this, PartnerConnectActivity::class.java)
+            startActivity(intent)
         }
 
         fun onClick(habitId: Long) {

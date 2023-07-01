@@ -12,10 +12,11 @@
       android:id="@+id/txt_connect_desc"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="100dp"
+      android:layout_marginTop="150dp"
+      android:fontFamily="@font/kyobohandwriting2020"
       android:text="배우자를 연결하세요"
       android:textColor="@color/tx_dark_gray"
-      android:textSize="24sp"
+      android:textSize="@dimen/font_larger"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +25,7 @@
       android:id="@+id/img_partner"
       android:layout_width="120dp"
       android:layout_height="120dp"
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="100dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/txt_connect_desc"
@@ -42,22 +43,21 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/img_partner" />
 
-    <EditText
+    <TextView
       android:id="@+id/txt_code"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="20dp"
-      android:focusableInTouchMode="false"
-      android:singleLine="true"
       android:text="1uwws9ri6"
       android:textColor="@color/tx_dark_gray"
-      android:textSize="18sp"
+      android:textSize="@dimen/font_medium"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/txt_code_desc" />
 
     <androidx.appcompat.widget.AppCompatButton
       android:id="@+id/btn_partner_connect"
+      style="@style/ButtonStyle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginBottom="100dp"
@@ -74,7 +74,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="30dp"
       android:text="결혼식 관리자이신가요?"
-      android:textColor="@color/tx_dark_gray"
+      android:textColor="@color/tx_gray"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/btn_partner_connect" />
