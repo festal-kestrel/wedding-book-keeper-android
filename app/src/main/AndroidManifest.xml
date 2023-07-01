@@ -9,13 +9,47 @@
     android:hardwareAccelerated="true"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
+    android:name=".presentation.GlobalApplication"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.Weddingbookkeeper"
+    android:usesCleartextTraffic="true"
     tools:targetApi="31">
+
+
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.WebViewActivity" />
+      android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+        <data
+          android:host="oauth"
+          android:scheme="@string/kakao_oauth_host" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+    </activity>
+
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.mypage.GuestMyPageActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.WebViewActivity" >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="false"
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
@@ -25,12 +59,8 @@
     </activity>
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+      android:name=".presentation.view.donation.guest.GuestMainActivity"
+      tools:ignore="DuplicateActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
@@ -39,8 +69,7 @@
       android:name=".presentation.view.guest.QrActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.AdminCodeActivity">
-    </activity>
+      android:name=".presentation.view.mypage.AdminCodeActivity"/>
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
@@ -49,7 +78,8 @@
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.MyPageActivity" />
+      android:name=".presentation.view.mypage.CoupleMyPageActivity">
+    </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.GIftCompleteActivity" />
@@ -61,7 +91,17 @@
       android:name=".presentation.view.guest.GuestRelationsActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity" />
+      android:name=".presentation.view.wedding.introduction.IntroductionActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.partner.PartnerConnectActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.LoginActivity">
+    </activity>
     <activity
       android:exported="false"
       android:name=".presentation.view.MainActivity" />
@@ -79,5 +119,7 @@
       android:exported="false"
       android:name=".presentation.view.wedding.introduction.IntroductionActivity"/>
   </application>
+
+  <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
