@@ -12,7 +12,7 @@ import com.example.wedding_book_keeper.databinding.ActivityGiftCompleteBinding
 import com.example.wedding_book_keeper.databinding.ActivityGuestRelationsBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
-import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
+
 
 class GIftCompleteActivity : BaseActivity<ActivityGiftCompleteBinding>(R.layout.activity_gift_complete) {
     private val delayMillis: Long = 3000 // 3초

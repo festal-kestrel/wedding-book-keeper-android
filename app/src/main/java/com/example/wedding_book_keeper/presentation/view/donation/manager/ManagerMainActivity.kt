@@ -9,7 +9,8 @@ import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityManagerMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
-import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
+import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
+
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -20,7 +21,7 @@ class ManagerMainActivity :
         super.onCreate(savedInstanceState)
 
         binding.btnMypage.setOnClickListener {
-            val intent = Intent(this, MyPageActivity::class.java)
+            val intent = Intent(this, CoupleMyPageActivity::class.java)
             startActivity(intent)
         }
 

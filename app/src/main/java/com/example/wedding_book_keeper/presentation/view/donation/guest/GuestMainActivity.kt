@@ -13,7 +13,7 @@ import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.guest.GuestRelationsActivity
 import com.example.wedding_book_keeper.presentation.view.guest.ViewQrcodeActivity
 import com.example.wedding_book_keeper.presentation.view.guest.WebViewActivity
-import com.example.wedding_book_keeper.presentation.view.mypage.MyPageActivity
+import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -24,7 +24,7 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
         super.onCreate(savedInstanceState)
 
         binding.btnMypage.setOnClickListener {
-            val intent = Intent(this, MyPageActivity::class.java)
+            val intent = Intent(this, CoupleMyPageActivity::class.java)
             startActivity(intent)
         }
 

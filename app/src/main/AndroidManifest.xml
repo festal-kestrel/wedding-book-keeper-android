@@ -35,8 +35,7 @@
 
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity">
-    </activity>
+      android:name=".presentation.view.donation.guest.GuestMainActivity"/>
 
     <activity
       android:exported="true"
@@ -55,8 +54,7 @@
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.couple.CoupleMainActivity">
-    </activity>
+      android:name=".presentation.view.donation.couple.CoupleMainActivity"/>
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.guest.GuestMainActivity"
@@ -78,8 +76,7 @@
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.CoupleMyPageActivity">
-    </activity>
+      android:name=".presentation.view.mypage.CoupleMyPageActivity"/>
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.GIftCompleteActivity" />
@@ -100,8 +97,7 @@
       android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity">
-    </activity>
+      android:name=".presentation.view.guest.LoginActivity"/>
     <activity
       android:exported="false"
       android:name=".presentation.view.MainActivity" />
@@ -109,15 +105,6 @@
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
       android:screenOrientation="fullSensor"
       tools:replace="screenOrientation" />
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.wedding.partner.PartnerConnectActivity"/>
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.wedding.schedule.ScheduleActivity"/>
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.wedding.introduction.IntroductionActivity"/>
   </application>
 
   <uses-permission android:name="android.permission.INTERNET" />
