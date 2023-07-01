@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat.startActivity
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
@@ -19,6 +21,8 @@ import java.util.Locale
 
 class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_web_view) {
     var weddingId: Int = 0
+    var validationChk: Int = 0
+
     private val scanQRCode = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             val scanResult = IntentIntegrator.parseActivityResult(result.resultCode, result.data)
@@ -39,12 +43,12 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
         val integrator = IntentIntegrator(this)
         integrator.setOrientationLocked(false)
         integrator.setBeepEnabled(false)
-        integrator.setPrompt("QR코드를 사각형 안에 맞춰주세요")
+        integrator.setPrompt("QR 코드를 사각형 안에 맞춰주세요")
         scanQRCode.launch(integrator.createScanIntent())
     }
 
     private fun parseQRInfo(info: String) {
-        val infoParts = info.split("\n")
+        val infoParts = info.split(",")
         for (part in infoParts) {
             val keyValuePair = part.split(":").map { it.trim() }
             if (keyValuePair.size == 2) {
@@ -52,7 +56,11 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
                 val value = keyValuePair[1]
                 when (key) {
                     "weddingId" -> {
-                        weddingId = value.replace("\"", "").toInt()
+                        weddingId = value.toInt()
+                    }
+
+                    "serviceName" -> {
+                        validationChk = if (value.toString() != "weddingBookKeeper") -1 else 0
                     }
                 }
             }
@@ -87,10 +95,16 @@ class WebViewActivity : BaseActivity<ActivityWebViewBinding>(R.layout.activity_w
             initiateScan()
         }
         binding.btnGoRelation.setOnClickListener {
-            val intent = Intent(this, GuestRelationsActivity::class.java)
-            intent.putExtra("weddingId", weddingId)
-            Log.d("qr", "Provided_weddingId: ${intent.getIntExtra("weddingId", 0)}")
-            startActivity(intent)
+            if (validationChk == 0) {
+                val intent = Intent(this, GuestRelationsActivity::class.java)
+                intent.putExtra("weddingId", weddingId)
+                Log.d("qr", "Provided_weddingId: ${intent.getIntExtra("weddingId", 0)}")
+                startActivity(intent)
+            } else {
+                // validationChk is not 0, so we don't move to the next activity.
+                // Display a toast message to inform the user.
+                Toast.makeText(this, "유효한 QR코드가 아닙니다.", Toast.LENGTH_LONG).show()
+            }
         }
 
         initiateScan()
