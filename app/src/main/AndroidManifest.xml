@@ -36,11 +36,7 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.guest.GuestMainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
 
     <activity
@@ -49,6 +45,11 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.WebViewActivity" >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
     </activity>
     <activity
       android:exported="false"
@@ -96,8 +97,10 @@
       android:exported="true"
       android:name=".presentation.view.guest.LoginActivity"/>
     <activity
-      android:exported="false"
-      android:name=".presentation.view.MainActivity" />
+      android:exported="true"
+      android:name=".presentation.view.MainActivity">
+
+    </activity>
     <activity
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
       android:screenOrientation="fullSensor"
