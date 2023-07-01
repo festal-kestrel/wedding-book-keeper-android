@@ -32,33 +32,22 @@
           android:scheme="@string/kakao_oauth_host" />
       </intent-filter>
     </activity>
-
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity"/>
-
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+    </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.mypage.GuestMyPageActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.WebViewActivity" >
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+      android:name=".presentation.view.guest.WebViewActivity"/>
     <activity
       android:exported="false"
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.couple.CoupleMainActivity"/>
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity"
-      tools:ignore="DuplicateActivity" />
+      android:name=".presentation.view.donation.couple.CoupleMainActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
@@ -67,7 +56,7 @@
       android:name=".presentation.view.guest.QrActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.AdminCodeActivity"/>
+      android:name=".presentation.view.mypage.AdminCodeActivity" />
     <activity
       android:exported="false"
       android:name=".presentation.view.mypage.GuestEntryQRActivity" />
@@ -76,7 +65,7 @@
       android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.CoupleMyPageActivity"/>
+      android:name=".presentation.view.mypage.CoupleMyPageActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.GIftCompleteActivity" />
@@ -97,10 +86,16 @@
       android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity"/>
+      android:name=".presentation.view.guest.LoginActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
-      android:exported="false"
-      android:name=".presentation.view.MainActivity" />
+      android:exported="true"
+      android:name=".presentation.view.MainActivity"/>
     <activity
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
       android:screenOrientation="fullSensor"

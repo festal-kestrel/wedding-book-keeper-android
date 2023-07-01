@@ -9,7 +9,6 @@ class GuestMyPageActivity : BaseActivity<ActivityGuestMyPageBinding>(R.layout.ac
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         fun onClick(habitId: Long) {
         }
 

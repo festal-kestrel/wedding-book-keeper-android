@@ -18,7 +18,6 @@ import java.util.Locale
 
 class GiftAmountActivity :
     BaseActivity<ActivityGiftAmountBinding>(R.layout.activity_gift_amount) {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,9 +25,7 @@ class GiftAmountActivity :
 
         val guestSide = intent.getIntExtra("guestSide", 0)
         val relationDesc = intent.getStringExtra("relationDesc")
-
-        Log.d("hong", "받아온 guestSide: $guestSide")
-        Log.d("hong", "받아온 relationDesc: $relationDesc")
+        val weddingId = intent.getIntExtra("weddingId", 0)
 
         val editText = binding.editGift
         editText.setInputType(InputType.TYPE_CLASS_NUMBER)
@@ -87,8 +84,8 @@ class GiftAmountActivity :
                 donationAmount = editGiftAmount.replace("원", "").toInt()
             }
             Log.d(
-                "hong",
-                "전달될 데이터\n\n하객이름 : " + "person1" + "\n신랑(0),신부(1)측 : " + guestSide + "\n세부관계 : " + relationDesc + "\n축의금 : " + donationAmount
+                "qr",
+                "___________________\n\nDB에 삽입될 데이터\n\n하객이름 : " + "person1" + "\n신랑(0),신부(1)측 : " + guestSide + "\n세부관계 : " + relationDesc + "\n축의금 : " + donationAmount + "\n결혼ID : " + weddingId
             )
         }
     }
