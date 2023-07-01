@@ -35,7 +35,13 @@
 
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity"/>
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
 
     <activity
       android:exported="true"
@@ -43,11 +49,6 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.WebViewActivity" >
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:exported="false"
@@ -55,10 +56,6 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.couple.CoupleMainActivity"/>
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity"
-      tools:ignore="DuplicateActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.manager.ManagerMainActivity" />
