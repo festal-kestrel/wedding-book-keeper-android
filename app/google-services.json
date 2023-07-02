@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451328045508",
+    "project_id": "wedding-bookkeeper-7",
+    "storage_bucket": "wedding-bookkeeper-7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451328045508:android:c5c26242f768ef55fb3491",
+        "android_client_info": {
+          "package_name": "com.example.wedding_book_keeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451328045508-48ovrod2eur7jnpacqirk83ld5bmr95l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLyKtUHcSBHQdxwACEkXUCYuHNAQZXwWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451328045508-48ovrod2eur7jnpacqirk83ld5bmr95l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,10 +11,13 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.guest.api.LoginService
 import com.example.wedding_book_keeper.presentation.view.guest.dto.TokenResponse
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,6 +30,25 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        val TAG = "NOTIFICATION"
+//        Log.d(TAG, "WTF")
+//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+//            if (!task.isSuccessful) {
+//                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+//                return@OnCompleteListener
+//            }
+//
+//            // Get new FCM registration token
+//            val token = task.result
+//
+//            // Log and toast
+////            val msg = getString(R.string.msg_token_fmt, token)
+//            Log.d(TAG, "$token")
+//            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+//        })
+
+
 
 
         binding.btnKakao.setOnClickListener {
