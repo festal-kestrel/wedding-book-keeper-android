@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
-import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
+import com.example.wedding_book_keeper.data.remote.response.wedding.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import retrofit2.Call

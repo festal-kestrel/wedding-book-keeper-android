@@ -44,7 +44,7 @@
       app:layout_constraintTop_toBottomOf="@id/img_partner" />
 
     <TextView
-      android:id="@+id/txt_code"
+      android:id="@+id/txt_verifiction_code"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="20dp"

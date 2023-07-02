@@ -16,7 +16,6 @@
     android:usesCleartextTraffic="true"
     tools:targetApi="31">
 
-
     <activity
       android:exported="true"
       android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
@@ -32,61 +31,32 @@
           android:scheme="@string/kakao_oauth_host" />
       </intent-filter>
     </activity>
+
+    <!-- 초기 로그인 화면 및 Retrofit Test -->
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity">
+      android:name=".presentation.view.MainActivity"/>
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.LoginActivity">
     </activity>
+
+    <!-- 축의금 납부 내역 페이지 -->
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.GuestMyPageActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.WebViewActivity"/>
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.guest.ViewQrcodeActivity" />
+      android:name=".presentation.view.donation.manager.ManagerMainActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.couple.CoupleMainActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.manager.ManagerMainActivity" />
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.guest.QrActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.mypage.AdminCodeActivity" />
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.mypage.GuestEntryQRActivity" />
-    <activity
-      android:exported="false"
-      android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
+      android:name=".presentation.view.donation.guest.GuestMainActivity">
+    </activity>
+
+    <!-- 신랑신부 결혼식 정보 입력 -->
     <activity
       android:exported="true"
-      android:name=".presentation.view.mypage.CoupleMyPageActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GIftCompleteActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GiftAmountActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.GuestRelationsActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.wedding.introduction.IntroductionActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.wedding.partner.PartnerConnectActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
-    <activity
-      android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity">
+      android:name=".presentation.view.wedding.partner.PartnerConnectActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -95,11 +65,52 @@
     </activity>
     <activity
       android:exported="true"
-      android:name=".presentation.view.MainActivity"/>
+      android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.introduction.IntroductionActivity" />
+
+    <!-- 하객 QR 관련 -->
     <activity
       android:name="com.journeyapps.barcodescanner.CaptureActivity"
       android:screenOrientation="fullSensor"
       tools:replace="screenOrientation" />
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.mypage.GuestEntryQRActivity" />
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.guest.QrActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GuestRelationsActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GiftAmountActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.GIftCompleteActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.guest.WebViewActivity"/>
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.guest.ViewQrcodeActivity" />
+
+    <!-- 마이페이지 -->
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.mypage.GuestMyPageActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.mypage.AdminCodeActivity" />
+    <activity
+      android:exported="false"
+      android:name=".presentation.view.mypage.WeddingDatePickerActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.mypage.CoupleMyPageActivity" />
+
   </application>
 
   <uses-permission android:name="android.permission.INTERNET" />

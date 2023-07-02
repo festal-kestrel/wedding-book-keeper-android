@@ -1,6 +1,6 @@
 package com.example.wedding_book_keeper.data.remote.api
 
-import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
+import com.example.wedding_book_keeper.data.remote.response.wedding.WeddingInfoResponse
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path
