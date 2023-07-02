@@ -5,13 +5,17 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextUtils
-import android.text.TextUtils.replace
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.api.WeddingService
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.Locale
@@ -87,6 +91,32 @@ class GiftAmountActivity :
                 "qr",
                 "___________________\n\nDB에 삽입될 데이터\n\n하객이름 : " + "person1" + "\n신랑(0),신부(1)측 : " + guestSide + "\n세부관계 : " + relationDesc + "\n축의금 : " + donationAmount + "\n결혼ID : " + weddingId
             )
+            postMemberWeddingInfo(weddingId, donationAmount, 0, relationDesc.toString(), guestSide)
         }
+    }
+
+    private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, hasPaid: Int, relation: String, isGroomSide: Int) {
+        val info = WeddingService.MemberWeddingInfo(
+            memberId = 2,
+            weddingId = weddingId,
+            donationAmount = donationAmount,
+            hasPaid = hasPaid,
+            relation = relation,
+            isGroomSide = isGroomSide,
+            guestName = "홍진욱"
+        )
+
+        WeddingBookKeeperClient.weddingService.postMemberWeddingInfo(info).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Log.d("qr", "Success")
+                } else {
+                    Log.d("qr", "Failure: ${response.errorBody()}")
+                }
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Log.e("qr", "Error: ${t.message}")
+            }
+        })
     }
 }
