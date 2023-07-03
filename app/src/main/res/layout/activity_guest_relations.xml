@@ -37,7 +37,7 @@
                         android:gravity="center"
                         android:text="신랑, 신부 측을 선택해주세요"
                         android:textFontWeight="100"
-                        android:textSize="@dimen/font_large"
+                        android:textSize="@dimen/font_larger"
                         android:fontFamily="@font/kyobohandwriting2020"
                         android:layout_marginTop="100dp" />
             </LinearLayout>
@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginTop="150dp">
+                        android:layout_marginTop="130dp">
 
                     <RadioButton
                             android:id="@+id/radio_btn_male"
