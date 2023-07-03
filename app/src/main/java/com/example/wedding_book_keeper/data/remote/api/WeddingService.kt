@@ -15,13 +15,11 @@ interface WeddingService {
     ): Call<WeddingInfoResponse>
 
     data class MemberWeddingInfo(
-        val memberId: Int,
         val weddingId: Int,
         val donationAmount: Int,
         val hasPaid: Int,
         val relation: String,
         val isGroomSide: Int,
-        val guestName: String
     )
 
     @POST("weddings/memberWedding")

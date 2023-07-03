@@ -87,23 +87,17 @@ class GiftAmountActivity :
             } catch (e: NumberFormatException) {
                 donationAmount = editGiftAmount.replace("원", "").toInt()
             }
-            Log.d(
-                "qr",
-                "___________________\n\nDB에 삽입될 데이터\n\n하객이름 : " + "person1" + "\n신랑(0),신부(1)측 : " + guestSide + "\n세부관계 : " + relationDesc + "\n축의금 : " + donationAmount + "\n결혼ID : " + weddingId
-            )
             postMemberWeddingInfo(weddingId, donationAmount, 0, relationDesc.toString(), guestSide)
         }
     }
 
     private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, hasPaid: Int, relation: String, isGroomSide: Int) {
         val info = WeddingService.MemberWeddingInfo(
-            memberId = 2,
             weddingId = weddingId,
             donationAmount = donationAmount,
             hasPaid = hasPaid,
             relation = relation,
-            isGroomSide = isGroomSide,
-            guestName = "홍진욱"
+            isGroomSide = isGroomSide
         )
 
         WeddingBookKeeperClient.weddingService.postMemberWeddingInfo(info).enqueue(object : Callback<Void> {
