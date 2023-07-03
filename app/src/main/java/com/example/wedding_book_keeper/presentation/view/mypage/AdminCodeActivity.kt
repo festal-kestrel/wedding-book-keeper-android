@@ -7,10 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
+import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
 import com.example.wedding_book_keeper.databinding.ActivityAdminCodeBinding
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activity_admin_code) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +35,41 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
 
             showToast("복사 완료")
         }
+        getWeddingQr(90)
     }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun getWeddingQr(weddingId: Int) {
+        WeddingBookKeeperClient.weddingService.getManagerCode(weddingId).enqueue(object : Callback<WeddingManagerCodeResponse> {
+            override fun onResponse(call: Call<WeddingManagerCodeResponse>, response: Response<WeddingManagerCodeResponse>) {
+                if (response.isSuccessful) {
+                    val body = response.body()
+                    body?.let {
+                        val sharedPref = getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+                        val editor = sharedPref.edit()
+                        editor.putString("managerCode", it.managerCode)
+                        editor.apply()
+                        Log.d("hong", "onResponse: ${response.body()}")
+                        showToastMessage("성공")
+
+                        updateUI()
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<WeddingManagerCodeResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    private fun updateUI() {
+        val sharedPref = getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+        val managerCode = sharedPref.getString("managerCode", null)
+
+        this.binding.txtAdminCode.text = managerCode
     }
 }
