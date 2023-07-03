@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.response.DonationReceiptResponse
+import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestWeddingInfo.Companion.convertToGuestWeddingInfo
 
 class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingInfo>) :
     RecyclerView.Adapter<GuestMainWeddingAdapter.CustomViewHolder>() {
@@ -24,21 +26,22 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val item = filteredWeddingList[position]
         holder.groomName.text = item.groomName
-        holder.bridalName.text = item.bridalName
-        holder.amount.text = item.formattedAmount.toString()
-        holder.donationDate.text = item.donationDate.toString()
+        holder.brideName.text = item.brideName
+        holder.amount.text = item.formattedAmount
+        holder.donationDate.text = item.weddingDate
     }
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val groomName = itemView.findViewById<TextView>(R.id.txt_groom_name)
-        val bridalName = itemView.findViewById<TextView>(R.id.txt_bridal_name)
+        val brideName = itemView.findViewById<TextView>(R.id.txt_bridal_name)
         val amount = itemView.findViewById<TextView>(R.id.txt_gift_amount)
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
     }
 
-    fun setItems(items: List<GuestWeddingInfo>) {
-        weddingList = items.toMutableList()
-        filteredWeddingList = items.toMutableList()
+    fun setItemsApi(donationReceipts: MutableList<DonationReceiptResponse>) {
+        val guestWeddingInfos = convertToGuestWeddingInfo(donationReceipts)
+        weddingList = guestWeddingInfos.toMutableList()
+        filteredWeddingList = guestWeddingInfos.toMutableList()
         notifyDataSetChanged()
     }
 
@@ -46,8 +49,18 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
         filteredWeddingList = if (query.isEmpty()) {
             weddingList
         } else {
-            weddingList.filter { it.groomName.contains(query, true) || it.bridalName.contains(query, true) }.toMutableList()
+            weddingList.filter { it.groomName!!.contains(query, true) || it.brideName!!.contains(query, true) }.toMutableList()
         }
         notifyDataSetChanged()
     }
+
+    fun convertToGuestWeddingInfo(donationReceipts: MutableList<DonationReceiptResponse>): MutableList<GuestWeddingInfo> {
+        val guestWeddingInfos = mutableListOf<GuestWeddingInfo>()
+        for (donationReceipt in donationReceipts) {
+            val guestWeddingInfo = convertToGuestWeddingInfo(donationReceipt)
+            guestWeddingInfos.add(guestWeddingInfo)
+        }
+        return guestWeddingInfos;
+    }
+
 }

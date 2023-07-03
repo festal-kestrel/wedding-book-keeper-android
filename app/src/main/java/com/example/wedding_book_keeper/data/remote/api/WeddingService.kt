@@ -1,6 +1,7 @@
 package com.example.wedding_book_keeper.data.remote.api
 
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
+import com.example.wedding_book_keeper.data.remote.response.DonationReceiptsResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
@@ -34,4 +35,6 @@ interface WeddingService {
         @Body weddingUpdateInformationRequest: WeddingUpdateInformationRequest
     ): Call<Unit>
 
+    @GET("weddings")
+    fun getDonationList(): Call<DonationReceiptsResponse>
 }
