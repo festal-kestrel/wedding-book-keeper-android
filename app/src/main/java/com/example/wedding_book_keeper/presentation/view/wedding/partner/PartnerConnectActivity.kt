@@ -5,21 +5,49 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
 import com.example.wedding_book_keeper.databinding.ActivityPartnerConnectBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.partner.VerificationCodeDialogFragment.Companion.TAG
 import com.example.wedding_book_keeper.presentation.view.wedding.schedule.ScheduleActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.layout.activity_partner_connect) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initView()
         initEvent()
         copyCode()
     }
 
-    private fun copyCode(){
+    private fun initView() {
+        WeddingBookKeeperClient.authService.getPartnerVerificationCode().enqueue(object : Callback<VerificationCodeResponse> {
+            override fun onResponse(
+                call: Call<VerificationCodeResponse>,
+                response: Response<VerificationCodeResponse>
+            ) {
+                if (response.isSuccessful) {
+                    Log.d(TAG, "onResponse: ${response.body()}")
+                    binding.txtCode.text = response.body()?.verificationCode
+                    return;
+                }
+                showToast("실패")
+            }
+
+            override fun onFailure(call: retrofit2.Call<VerificationCodeResponse>, t: Throwable) {
+                showToast("실패")
+            }
+        })
+    }
+
+    private fun copyCode() {
         binding.txtCode.setOnClickListener {
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val adminCode = binding.txtCode.text.toString()
@@ -44,12 +72,10 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
             dialogFragment.setOnVerificationCodeEnteredListener(object :
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
-                    /**
-                     * 입력된 인증번호 처리 로직
-                     */
+
                 }
             })
-            dialogFragment.show(supportFragmentManager, VerificationCodeDialogFragment.TAG)
+            dialogFragment.show(supportFragmentManager, TAG)
         }
     }
 }
