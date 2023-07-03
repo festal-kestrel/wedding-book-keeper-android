@@ -9,9 +9,11 @@ import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.request.VerificationCodeRequest
 import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
 import com.example.wedding_book_keeper.databinding.ActivityPartnerConnectBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.partner.VerificationCodeDialogFragment.Companion.TAG
 import com.example.wedding_book_keeper.presentation.view.wedding.schedule.ScheduleActivity
 import retrofit2.Call
@@ -72,7 +74,22 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
             dialogFragment.setOnVerificationCodeEnteredListener(object :
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
+                    WeddingBookKeeperClient.authService.verifyPartnerVerificationCode(
+                        VerificationCodeRequest(verificationCode)
+                    ).enqueue(object : Callback<Unit> {
+                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                            if (response.isSuccessful) {
+                                val intent = Intent(this@PartnerConnectActivity, CoupleMainActivity::class.java)
+                                startActivity(intent)
+                                return;
+                            }
+                            showToast("실패")
+                        }
 
+                        override fun onFailure(call: Call<Unit>, t: Throwable) {
+                            showToast("실패")
+                        }
+                    })
                 }
             })
             dialogFragment.show(supportFragmentManager, TAG)
