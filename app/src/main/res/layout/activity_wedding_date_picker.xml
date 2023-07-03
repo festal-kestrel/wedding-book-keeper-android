@@ -29,6 +29,7 @@
       android:orientation="horizontal">
 
       <DatePicker
+        android:id="@+id/date_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-30dp"
@@ -38,6 +39,7 @@
         android:scaleX="0.8" />
 
       <TimePicker
+        android:id="@+id/time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-30dp"
@@ -67,6 +69,7 @@
         android:textSize="@dimen/font_medium" />
 
       <EditText
+        android:id="@+id/txt_new_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_location_label"
