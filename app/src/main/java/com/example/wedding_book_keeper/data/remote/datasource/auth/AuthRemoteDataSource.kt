@@ -4,5 +4,5 @@ import com.example.wedding_book_keeper.data.remote.response.auth.VerificationCod
 import com.example.wedding_book_keeper.data.remote.response.base.BaseResponse
 
 interface AuthRemoteDataSource {
-    suspend fun getPartnerVerificationCode(): Result<BaseResponse<VerificationCodeResponse>>
+    suspend fun getPartnerVerificationCode(): Result<VerificationCodeResponse>
 }

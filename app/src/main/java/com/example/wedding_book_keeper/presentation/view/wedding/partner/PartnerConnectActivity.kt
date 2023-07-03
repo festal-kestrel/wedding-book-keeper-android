@@ -5,27 +5,42 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityPartnerConnectBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.schedule.ScheduleActivity
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.layout.activity_partner_connect) {
 
-    private lateinit var viewModel: PartnerConnectViewModel
+    private val viewModel: PartnerConnectViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PartnerConnectViewModel::class.java)
 
-        initData();
+        initData()
         initEvent()
+        setObserve()
+    }
+
+    private fun setObserve() {
+
+        lifecycleScope.launch {
+            Log.d("TAG", "setObserve: ")
+                viewModel.verificationCode.collect {
+                    binding.txtVerifictionCode.text = it
+            }
+        }
     }
 
     private fun initData() {
-        viewModel.verificationCode
+//        viewModel.verificationCode
     }
 
     private fun showToast(message: String) {
