@@ -17,11 +17,9 @@ interface WeddingService {
     data class MemberWeddingInfo(
         val weddingId: Int,
         val donationAmount: Int,
-        val hasPaid: Int,
         val relation: String,
         val isGroomSide: Int,
     )
-
-    @POST("weddings/memberWedding")
-    fun postMemberWeddingInfo(@Body info: MemberWeddingInfo): Call<Void>
+    @POST("weddings/{weddingId}/guests/new")
+    fun postMemberWeddingInfo(@Path("weddingId") weddingId: Int, @Body info: MemberWeddingInfo): Call<Void>
 }

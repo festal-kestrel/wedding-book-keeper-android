@@ -87,20 +87,19 @@ class GiftAmountActivity :
             } catch (e: NumberFormatException) {
                 donationAmount = editGiftAmount.replace("원", "").toInt()
             }
-            postMemberWeddingInfo(weddingId, donationAmount, 0, relationDesc.toString(), guestSide)
+            postMemberWeddingInfo(weddingId, donationAmount, relationDesc.toString(), guestSide)
         }
     }
 
-    private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, hasPaid: Int, relation: String, isGroomSide: Int) {
+    private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, relation: String, isGroomSide: Int) {
         val info = WeddingService.MemberWeddingInfo(
             weddingId = weddingId,
             donationAmount = donationAmount,
-            hasPaid = hasPaid,
             relation = relation,
             isGroomSide = isGroomSide
         )
 
-        WeddingBookKeeperClient.weddingService.postMemberWeddingInfo(info).enqueue(object : Callback<Void> {
+        WeddingBookKeeperClient.weddingService.postMemberWeddingInfo(weddingId, info).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
                     Log.d("qr", "Success")
