@@ -31,22 +31,21 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        val TAG = "NOTIFICATION"
-//        Log.d(TAG, "WTF")
-//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-//            if (!task.isSuccessful) {
-//                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
-//                return@OnCompleteListener
-//            }
-//
-//            // Get new FCM registration token
-//            val token = task.result
-//
-//            // Log and toast
-////            val msg = getString(R.string.msg_token_fmt, token)
-//            Log.d(TAG, "$token")
-//            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-//        })
+        val TAG = "NOTIFICATION"
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+//            val msg = getString(R.string.msg_token_fmt, token)
+            Log.d(TAG, "$token")
+            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+        })
 
 
 
