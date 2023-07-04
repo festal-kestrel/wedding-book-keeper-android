@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
 import com.example.wedding_book_keeper.databinding.ActivityAdminCodeBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
@@ -57,6 +58,26 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
 
             override fun onFailure(call: Call<WeddingManagerCodeResponse>, t: Throwable) {
                 TODO("Not yet implemented")
+            }
+        })
+    }
+
+    private fun getManagerVerificationCode() {
+        WeddingBookKeeperClient.authService.getPartnerVerificationCode().enqueue(object : Callback<VerificationCodeResponse> {
+            override fun onResponse(
+                call: Call<VerificationCodeResponse>,
+                response: Response<VerificationCodeResponse>
+            ) {
+                if (response.isSuccessful) {
+                    Log.d(TAG, "onResponse: ${response.body()}")
+                    binding.txtCode.text = response.body()?.verificationCode
+                    return;
+                }
+                showToast("유효하지 않거나 만료된 인증 코드입니다.")
+            }
+
+            override fun onFailure(call: Call<VerificationCodeResponse>, t: Throwable) {
+                showToast("실패")
             }
         })
     }

@@ -59,7 +59,6 @@ class ChangeRoleFragment(
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
                     WeddingBookKeeperClient.authService.verifyManagerVerificationCode(
-                        //verifyPartnerVerification -> 관리자 인증으로 수정 요망
                         VerificationCodeRequest(verificationCode)
                     ).enqueue(object : Callback<ManagerVerificationCodeResponse> {
                         override fun onResponse(call: Call<ManagerVerificationCodeResponse>, response: Response<ManagerVerificationCodeResponse>) {
