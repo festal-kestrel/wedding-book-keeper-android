@@ -64,6 +64,7 @@ class ChangeRoleFragment(
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
                     WeddingBookKeeperClient.authService.verifyPartnerVerificationCode(
+                        //verifyPartnerVerification -> 관리자 인증으로 수정 요망
                         VerificationCodeRequest(verificationCode)
                     ).enqueue(object : Callback<Unit> {
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
@@ -75,6 +76,7 @@ class ChangeRoleFragment(
                             }
                             else{
                                 Toast.makeText(view.getContext(),"관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                //api연결 시 else문 삭제 요망
 
                             }
                         }
