@@ -27,29 +27,30 @@
                 android:layout_width="300dp"
                 android:layout_height="660dp"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="top
+">
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="전달한 축의금 금액을 입력해주세요"
-                    android:fontFamily="@font/kyobohandwriting2020"
+                    android:text="전달한 축의금을\n입력해주세요"
+                    android:layout_marginTop="70dp"
+                    android:fontFamily="@font/spoqa_bold"
                     android:textColor="@color/tx_gray"
-                    android:textSize="@dimen/font_large"
-
-                    android:textAlignment="center" />
+                    android:textSize="@dimen/font_largest"
+                    android:textAlignment="viewStart" />
 
             <EditText
                     android:id="@+id/edit_gift"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="100,000원"
-                    android:fontFamily="@font/inter_semi_bold"
+                    android:fontFamily="@font/spoqa_bold"
                     android:background="@null"
                     android:gravity="center"
                     android:textSize="@dimen/font_largest"
                     android:textColor="@color/tx_gray"
-                    android:layout_marginTop="30dp" />
+                    android:layout_marginTop="100dp" />
 
 
         </LinearLayout>
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/square_pink_btn"
-                android:text="눌러서 완료하기" />
+                android:text="눌러서 축하하기" />
     </LinearLayout>
 
 </layout>

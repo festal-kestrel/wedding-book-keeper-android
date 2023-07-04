@@ -25,16 +25,19 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="관리자 코드"
+          android:fontFamily="@font/spoqa_regular"
           android:textSize="@dimen/font_large" />
         <TextView
           android:id="@+id/txt_admin_code"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="LQ23ST6X"
+          android:fontFamily="@font/spoqa_medium"
           android:textSize="@dimen/font_largest" />
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:fontFamily="@font/spoqa_regular"
           android:text="위 코드를 축의금 관리자에게 전해주세요"
           android:textSize="@dimen/font_small" />
       </LinearLayout>
@@ -60,7 +63,8 @@
 
       <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
         <ImageButton
           android:id="@+id/btn_toolbar_back"
@@ -74,14 +78,15 @@
 
         <TextView
           android:id="@+id/btn_toolbar_title"
-          android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerInParent="true"
+          android:paddingTop="5dp"
+
+          android:fontFamily="@font/spoqa_medium"
           android:text="관리자 등록하기"
           android:textColor="@color/tx_light_gray"
-          android:fontFamily="@font"
-          android:textSize="@dimen/font_medium" />
+          android:textSize="@dimen/font_large" />
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

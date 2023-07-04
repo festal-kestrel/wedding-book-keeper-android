@@ -9,6 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".presentation.view.guest.QRActivity">
     <LinearLayout
@@ -23,14 +24,16 @@
     </LinearLayout>
 
     <TextView
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
+      android:paddingLeft="60dp"
+      android:paddingRight="60dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="116dp"
-
-      android:text="이 결혼식이 맞나요?"
+      android:layout_marginTop="70dp"
+      android:text="아래의 결혼식이\n맞나요?"
       android:textColor="@color/tx_gray"
-      android:textSize="@dimen/font_larger"
-      android:fontFamily="@font/inter_extra_bold"/>
+      android:textAlignment="viewStart"
+      android:textSize="@dimen/font_largest"
+      android:fontFamily="@font/spoqa_bold"/>
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -87,7 +90,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:background="@null"
-      android:layout_marginTop="220dp"
+      android:layout_marginTop="195dp"
+      android:fontFamily="@font/spoqa_medium"
       android:textColor="@color/tx_gray"
       android:text="이 결혼식이 아니에요..." />
 
@@ -97,7 +101,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:background="@drawable/square_pink_btn"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="10dp"
       android:text="네, 맞아요!" />
   </LinearLayout>
 
