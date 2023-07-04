@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient_background_source"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            tools:context=".presentation.view.guest.LoginActivity">
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_source"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".presentation.view.guest.LoginActivity">
 
-        <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="너에게 난, 나에게 넌"
-                android:textFontWeight="600"
-                android:textSize="@dimen/font_largest"
-                android:layout_marginTop="200dp"
-                android:textColor="@color/tx_gray"
-                android:fontFamily="@font/kyobohandwriting2020" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="축의금과 결혼식 관리를 보다 손쉽게"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/font_medium"
-                android:textColor="@color/tx_gray"
-                android:fontFamily="@font/spoqa_light" />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="230dp"
+      android:fontFamily="@font/kyobohandwriting2020"
+      android:gravity="center"
+      android:text="너에게 난, 나에게 넌"
+      android:textColor="@color/tx_gray"
+      android:textFontWeight="600"
+      android:textSize="@dimen/font_largest" />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:fontFamily="@font/spoqa_light"
+      android:gravity="center"
+      android:text="축의금과 결혼식 관리를 보다 손쉽게"
+      android:textColor="@color/tx_gray"
+      android:textSize="@dimen/font_medium" />
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="간편하게 로그인하고\n다양한 서비스를 이용해보세요."
-                android:textAlignment="center"
-                android:fontFamily="@font/spoqa_medium"
-                android:layout_marginTop="150dp"
-                android:textSize="@dimen/font_medium" />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="350dp"
+      android:fontFamily="@font/spoqa_regular"
+      android:text="간편하게 로그인하고\n다양한 서비스를 이용해보세요."
+      android:textAlignment="center"
+      android:textSize="@dimen/font_medium" />
 
-        <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_kakao"
-                android:layout_width="300dp"
-                android:layout_height="45dp"
-                android:background="@drawable/kakao_login_btn"
-                android:layout_marginTop="270dp" />
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_kakao"
+      android:layout_width="300dp"
+      android:layout_height="45dp"
+      android:layout_marginTop="50dp"
+      android:background="@drawable/kakao_login_btn" />
+  </LinearLayout>
 
 </layout>

@@ -28,7 +28,7 @@
         style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="275dp"
         android:layout_below="@id/img_qr"
         android:background="@drawable/square_pink_btn"
         android:text="QR 코드 저장하기" />

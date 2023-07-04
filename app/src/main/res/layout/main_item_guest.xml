@@ -6,7 +6,7 @@
     android:layout_marginLeft="25dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="25dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="4dp">
 
     <LinearLayout
@@ -29,7 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/spoqa_bold"
             android:text="홍길동"
             android:textColor="@color/tx_light_gray"
             android:textSize="14sp" />
@@ -46,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:fontFamily="@font/spoqa_bold"
             android:text="김길순"
             android:textColor="@color/tx_light_gray"
             android:textSize="14sp" />
@@ -62,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+              android:fontFamily="@font/spoqa_bold"
                 android:text="100,000원"
                 android:textColor="@color/tx_light_gray"
                 android:textSize="16sp"
@@ -73,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/spoqa_regular"
                 android:text="2023.06.23 16:30"
                 android:textColor="@color/tx_light_gray"
                 android:textSize="10sp" />

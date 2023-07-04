@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
-  android:background="@color/white"
   >
 
   <LinearLayout
@@ -28,7 +27,7 @@
       android:paddingLeft="60dp"
       android:paddingRight="60dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="70dp"
+      android:layout_marginTop="50dp"
       android:text="아래의 결혼식이\n맞나요?"
       android:textColor="@color/tx_gray"
       android:textAlignment="viewStart"
@@ -90,7 +89,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:background="@null"
-      android:layout_marginTop="195dp"
+      android:layout_marginTop="215dp"
       android:fontFamily="@font/spoqa_medium"
       android:textColor="@color/tx_gray"
       android:text="이 결혼식이 아니에요..." />

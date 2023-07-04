@@ -69,7 +69,7 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
             val intent = Intent(this, ScheduleActivity::class.java)
             startActivity(intent)
         }
-        binding.btnPartnerConnect.setOnClickListener {
+        binding.btnPartnerRegister.setOnClickListener {
             val dialogFragment = VerificationCodeDialogFragment.newInstance()
             dialogFragment.setOnVerificationCodeEnteredListener(object :
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {

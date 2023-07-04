@@ -31,6 +31,7 @@
           android:id="@+id/txt_admin_code"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
           android:text="LQ23ST6X"
           android:fontFamily="@font/spoqa_medium"
           android:textSize="@dimen/font_largest" />
@@ -48,7 +49,7 @@
         style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="315dp"
         android:background="@drawable/square_pink_btn"
         android:text="코드 복사하기" />
     </LinearLayout>
