@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
+import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo.Companion.convertToGuestDonationInfo
 
 class CoupleMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
     RecyclerView.Adapter<CoupleMainDonationAdapter.CustomViewHolder>() {
@@ -18,25 +20,22 @@ class CoupleMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
         return CustomViewHolder(view)
     }
 
-
-    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val item = filteredGuestList[position]
-        holder.side.text = item.side
-        holder.relation.text = item.relation
-        holder.guestName.text = item.guestName
-        if (isAmountHidden) {
-            holder.amount.text = "*".repeat(item.formattedAmount.toString().length)
-        } else {
-            holder.amount.text = item.formattedAmount.toString()
-        }
-        holder.donationDate.text = item.donationDate.toString()
-    }
-
-
     override fun getItemCount(): Int {
         return filteredGuestList.size
     }
 
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+        val item = filteredGuestList[position]
+        holder.side.text = item.guestSide
+        holder.relation.text = item.relation
+        holder.guestName.text = item.guestName
+        if (isAmountHidden) {
+            holder.amount.text = "*".repeat(item.formattedAmount.length)
+        } else {
+            holder.amount.text = item.formattedAmount
+        }
+        holder.donationDate.text = item.weddingDate
+    }
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val side = itemView.findViewById<TextView>(R.id.txt_side)
@@ -46,18 +45,27 @@ class CoupleMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
     }
 
-    fun setItems(items: List<GuestDonationInfo>) {
-        guestList = items.toMutableList()
-        filteredGuestList = items.toMutableList()
+    fun setItemsApi(guestDonationReceipts: MutableList<GuestDonationReceiptResponse>) {
+        val guestDonationInfos = convertToGuestDonationInfo(guestDonationReceipts)
+        guestList = guestDonationInfos.toMutableList()
+        filteredGuestList = guestDonationInfos.toMutableList()
         notifyDataSetChanged()
     }
 
     fun filter(query: String, sideFilter: String? = null) {
         filteredGuestList = guestList.filter {
             it.guestName.contains(query, true) &&
-                    (sideFilter == null || it.side == sideFilter)
+                    (sideFilter == null || it.guestSide == sideFilter)
         }.toMutableList()
         notifyDataSetChanged()
     }
 
+    fun convertToGuestDonationInfo(guestDonationReceipts: MutableList<GuestDonationReceiptResponse>): MutableList<GuestDonationInfo> {
+        val guestDonationInfos = mutableListOf<GuestDonationInfo>()
+        for (guestDonationReceipt in guestDonationReceipts) {
+            val guestDonationInfo = convertToGuestDonationInfo(guestDonationReceipt)
+            guestDonationInfos.add(guestDonationInfo)
+        }
+        return guestDonationInfos
+    }
 }

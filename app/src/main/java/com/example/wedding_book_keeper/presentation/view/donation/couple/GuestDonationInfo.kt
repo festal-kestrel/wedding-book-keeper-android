@@ -1,15 +1,30 @@
 package com.example.wedding_book_keeper.presentation.view.donation.couple
 
-import java.time.LocalDate
+import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 
-class GuestDonationInfo(
-    val side: String,
-    val relation: String,
-    val guestName: String,
-    val amount: Int,
-    val donationDate: String
+data class GuestDonationInfo(
+    val guestName: String = "",
+    val guestSide: String = "",
+    val relation: String = "",
+    val hasPaid: Boolean,
+    val donationAmount: Int,
+    val weddingDate: String? = ""
 ) {
 
     val formattedAmount: String
-        get() = String.format("%,d원", amount)
+        get() = String.format("%,d원", donationAmount)
+
+    companion object {
+        fun convertToGuestDonationInfo(guestDonationReceipt: GuestDonationReceiptResponse): GuestDonationInfo {
+
+            return GuestDonationInfo(
+                guestName = guestDonationReceipt.guestName,
+                guestSide = guestDonationReceipt.guestSide,
+                relation = guestDonationReceipt.relation,
+                hasPaid = guestDonationReceipt.hasPaid,
+                donationAmount = guestDonationReceipt.donationAmount,
+                weddingDate = guestDonationReceipt.weddingDate ?: ""
+            )
+        }
+    }
 }
