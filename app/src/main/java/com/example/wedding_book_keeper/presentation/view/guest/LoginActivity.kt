@@ -31,21 +31,22 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val TAG = "NOTIFICATION"
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (!task.isSuccessful) {
-                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
-                return@OnCompleteListener
-            }
-
-            // Get new FCM registration token
-            val token = task.result
-
-            // Log and toast
-//            val msg = getString(R.string.msg_token_fmt, token)
-            Log.d(TAG, "$token")
-            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-        })
+        // TODO: 하객 등록시 토큰값 같이 저장할때 사용하는 코드. 머지 후 적절한 api로 이동 필요
+//        val TAG = "NOTIFICATION"
+//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+//            if (!task.isSuccessful) {
+//                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+//                return@OnCompleteListener
+//            }
+//
+//            // Get new FCM registration token
+//            val token = task.result
+//
+//            // Log and toast
+////            val msg = getString(R.string.msg_token_fmt, token)
+//            Log.d(TAG, "$token")
+//            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+//        })
 
 
 
