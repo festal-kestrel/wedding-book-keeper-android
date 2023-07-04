@@ -1,7 +1,6 @@
 package com.example.wedding_book_keeper.presentation.config
 
 //import android.R
-import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -11,16 +10,13 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.presentation.view.MainActivity
-import com.example.wedding_book_keeper.presentation.view.guest.LoginActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.google.firebase.messaging.ktx.remoteMessage
 
 
 class MessagingService : FirebaseMessagingService() {

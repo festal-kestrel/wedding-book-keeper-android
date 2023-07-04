@@ -3,17 +3,13 @@ package com.example.wedding_book_keeper.presentation.view.mypage
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
-import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
 import com.example.wedding_book_keeper.databinding.ActivityAdminCodeBinding
-import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -53,7 +49,6 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
                         editor.putString("managerCode", it.managerCode)
                         editor.apply()
                         Log.d("hong", "onResponse: ${response.body()}")
-                        showToastMessage("성공")
 
                         updateUI()
                     }

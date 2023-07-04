@@ -19,8 +19,6 @@ import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activity_guest_main) {
@@ -79,7 +77,6 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
                         }
 
                         Log.d("hong", "onResponse: ${donations}")
-                        showToastMessage("성공")
                     }
                 }
             }
@@ -90,6 +87,7 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
 
             override fun onFailure(call: Call<DonationReceiptsResponse>, t: Throwable) {
                 TODO("Not yet implemented")
+                Log.e("GUESTMAINACTIVITY", "retrofit error")
             }
         })
 

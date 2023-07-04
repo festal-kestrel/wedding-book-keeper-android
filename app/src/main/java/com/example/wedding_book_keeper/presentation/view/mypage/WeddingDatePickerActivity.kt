@@ -1,18 +1,13 @@
 package com.example.wedding_book_keeper.presentation.view.mypage
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.widget.Toolbar
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
-import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityWeddingDatePickerBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
-import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,7 +75,7 @@ class WeddingDatePickerActivity : BaseActivity<ActivityWeddingDatePickerBinding>
                     if (response.isSuccessful) {
                         val body = response.body()
                         body?.let {
-                            showToastMessage("성공")
+                            Log.d("Wedding", "성공")
                         }
                     }
                 }

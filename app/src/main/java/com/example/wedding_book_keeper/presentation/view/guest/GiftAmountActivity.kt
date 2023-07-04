@@ -13,7 +13,6 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.api.WeddingService
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
