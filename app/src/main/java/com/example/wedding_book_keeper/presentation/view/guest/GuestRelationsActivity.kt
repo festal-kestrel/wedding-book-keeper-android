@@ -41,6 +41,11 @@ class GuestRelationsActivity :
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
             }
         }
+        binding.btnGoBack.setOnClickListener{
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
+        }
 
     }
 }

@@ -28,6 +28,7 @@ object WeddingBookKeeperClient {
 
     val loginService: LoginService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         provideApiRetrofit(LoginService::class.java)
+    }
 
     val authService: AuthService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         provideApiRetrofit(AuthService::class.java)

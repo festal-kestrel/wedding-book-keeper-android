@@ -11,10 +11,21 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".presentation.view.guest.QRActivity">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="30dp">
+      <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_go_back"
+        android:layout_width="31dp"
+        android:layout_height="24dp"
+        android:background="@drawable/back_arrow" />
+    </LinearLayout>
+
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="170dp"
+      android:layout_marginTop="116dp"
 
       android:text="이 결혼식이 맞나요?"
       android:textColor="@color/tx_gray"

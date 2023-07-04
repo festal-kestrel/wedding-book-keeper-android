@@ -17,6 +17,7 @@
                 android:layout_margin="30dp">
 
             <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_go_back"
                     android:layout_width="31dp"
                     android:layout_height="24dp"
                     android:background="@drawable/back_arrow" />
