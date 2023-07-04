@@ -1,6 +1,7 @@
 package com.example.wedding_book_keeper.data.remote.response
 
 data class GuestDonationReceiptResponse(
+    val guestId: Int,
     val guestName: String = "",
     val guestSide: String = "",
     val relation: String = "",

@@ -3,6 +3,7 @@ package com.example.wedding_book_keeper.presentation.view.donation.couple
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 
 data class GuestDonationInfo(
+    val guestId: Int,
     val guestName: String = "",
     val guestSide: String = "",
     val relation: String = "",
@@ -19,6 +20,7 @@ data class GuestDonationInfo(
         fun convertToGuestDonationInfo(guestDonationReceipt: GuestDonationReceiptResponse): GuestDonationInfo {
 
             return GuestDonationInfo(
+                guestId = guestDonationReceipt.guestId,
                 guestName = guestDonationReceipt.guestName,
                 guestSide = guestDonationReceipt.guestSide,
                 relation = guestDonationReceipt.relation,

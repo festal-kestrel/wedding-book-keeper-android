@@ -36,6 +36,7 @@ class ManagerMainActivity :
 
         getGuestList(90)
         initView()
+        initEvent()
     }
 
     private fun initView() {
@@ -53,11 +54,15 @@ class ManagerMainActivity :
         })
     }
 
+    private fun initEvent() {
+//        binding.btnCheck
+    }
+
     private fun getGuestList(weddingId: Int) {
         var guests = mutableListOf<GuestDonationReceiptResponse>()
 
         val guestList = mutableListOf<GuestDonationInfo>()
-        val adapter = ManagerMainDonationAdapter(guestList)
+        val adapter = ManagerMainDonationAdapter(supportFragmentManager,guestList)
 
         // 리사이클러뷰에 레이아웃 매니저 연결
         binding.rvGuestListByManager.layoutManager =

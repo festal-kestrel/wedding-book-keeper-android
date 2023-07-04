@@ -59,6 +59,17 @@
           android:fontFamily="@font/spoqa_regular"
           android:textColor="@color/tx_light_gray"
           android:textSize="8sp" />
+
+        <TextView
+          android:id="@+id/txt_guest_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="5dp"
+          android:text="ID"
+          android:visibility="gone"
+          android:textColor="@color/tx_light_gray"
+          android:textSize="8sp" />
+
       </LinearLayout>
 
       <TextView

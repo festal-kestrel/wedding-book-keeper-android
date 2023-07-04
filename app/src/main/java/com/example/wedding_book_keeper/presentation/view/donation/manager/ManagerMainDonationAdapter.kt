@@ -1,18 +1,28 @@
 package com.example.wedding_book_keeper.presentation.view.donation.manager
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
+import com.example.wedding_book_keeper.presentation.view.donation.manager.ApprovalDialogFragment.Companion.TAG
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
+class ManagerMainDonationAdapter(
+    private val fragmentManager: FragmentManager,
+    var guestList: MutableList<GuestDonationInfo>) :
     RecyclerView.Adapter<ManagerMainDonationAdapter.CustomViewHolder>() {
     private var filteredGuestList: MutableList<GuestDonationInfo> = guestList
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view =
@@ -32,9 +42,69 @@ class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) 
         holder.amount.text = item.formattedAmount
         holder.donationDate.text = item.weddingDate
         holder.checkBox.isChecked = item.isChecked
+        holder.guestId.text = item.guestId.toString()
 
         holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
             item.isChecked = isChecked
+        }
+
+        holder.checkBox.setOnClickListener{
+            if (item.isChecked){
+                val dialogFragment = ApprovalDialogFragment.newInstance()
+                dialogFragment.setOnApprovalListener(object :
+                    ApprovalDialogFragment.OnApprovalListener {
+                    override fun onApproval() {
+                        // 승인 api 호출
+                        WeddingBookKeeperClient.weddingService.patchDonationApproval(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
+                            .enqueue(object : Callback<Unit> {
+                                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                                    if (response.isSuccessful) {
+                                        val body = response.body()
+                                        body?.let {
+                                            Log.d("Wedding", "승인성공")
+                                        }
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<Unit>, t: Throwable) {
+                                    // handle error
+                                }
+                            })
+                        // 현재 프래그먼트로 돌아가는 코드 작성
+                        fragmentManager.popBackStack()
+                    }
+                })
+                dialogFragment.show(fragmentManager, TAG)
+            }
+            else{
+                //리젝션 다이얼로그 위랑 똑같이
+                // 여긴 onRejection 이런식으로 하면 되겠지
+                val dialogFragment = RejectionDialogFragment.newInstance()
+                dialogFragment.setOnRejectionListener(object :
+                    RejectionDialogFragment.OnRejectionListener {
+                    override fun onRejection() {
+                        // 승인 api 호출
+                        WeddingBookKeeperClient.weddingService.patchDonationRejection(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
+                            .enqueue(object : Callback<Unit> {
+                                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                                    if (response.isSuccessful) {
+                                        val body = response.body()
+                                        body?.let {
+                                            Log.d("Wedding", "반려성공")
+                                        }
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<Unit>, t: Throwable) {
+                                    // handle error
+                                }
+                            })
+                        // 현재 프래그먼트로 돌아가는 코드 작성
+                        fragmentManager.popBackStack()
+                    }
+                })
+                dialogFragment.show(fragmentManager, TAG)
+            }
         }
     }
 
@@ -45,6 +115,7 @@ class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) 
         val amount = itemView.findViewById<TextView>(R.id.txt_gift_amount)
         val donationDate = itemView.findViewById<TextView>(R.id.txt_donation_date)
         val checkBox = itemView.findViewById<CheckBox>(R.id.btn_checkbox)
+        val guestId = itemView.findViewById<TextView>(R.id.txt_guest_id)
     }
 
     fun setItemsApi(guestDonationReceipts: MutableList<GuestDonationReceiptResponse>) {
