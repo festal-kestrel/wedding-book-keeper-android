@@ -6,7 +6,9 @@
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@color/white"
+    >
 
     <TextView
       android:id="@+id/txt_connect_desc"
@@ -68,16 +70,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-      android:id="@+id/txt_admin_link"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="30dp"
-      android:text="결혼식 관리자이신가요?"
-      android:textColor="@color/tx_gray"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/btn_partner_connect" />
+
 
     <ImageView
       android:id="@+id/btn_next"

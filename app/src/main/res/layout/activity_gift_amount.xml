@@ -7,6 +7,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@color/white"
             android:gravity="center_horizontal"
             tools:context=".presentation.view.guest.LoginActivity">
 
@@ -34,8 +35,7 @@
                     android:text="전달한 축의금 금액을 입력해주세요"
                     android:fontFamily="@font/kyobohandwriting2020"
                     android:textColor="@color/tx_gray"
-                    android:textSize="@dimen/font_medium"
-                    android:layout_marginTop="50dp"
+                    android:textSize="@dimen/font_large"
 
                     android:textAlignment="center" />
 

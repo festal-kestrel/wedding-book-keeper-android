@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.data.remote
 
+import com.example.wedding_book_keeper.data.remote.api.AuthService
 import com.example.wedding_book_keeper.data.remote.api.WeddingService
 import com.example.wedding_book_keeper.presentation.config.AuthInterceptor
 import com.example.wedding_book_keeper.presentation.view.guest.api.LoginService
@@ -24,8 +25,13 @@ object WeddingBookKeeperClient {
         provideApiRetrofit(WeddingService::class.java)
     }
 
+
     val loginService: LoginService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         provideApiRetrofit(LoginService::class.java)
+
+    val authService: AuthService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+        provideApiRetrofit(AuthService::class.java)
+
     }
 
     private fun <T> provideApiRetrofit(clazz: Class<T>): T = Retrofit.Builder()

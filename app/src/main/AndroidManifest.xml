@@ -35,6 +35,11 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.donation.guest.GuestMainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
     </activity>
     <activity
       android:exported="true"
@@ -87,11 +92,6 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.LoginActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
     </activity>
     <activity
       android:exported="true"
@@ -103,5 +103,6 @@
   </application>
 
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
