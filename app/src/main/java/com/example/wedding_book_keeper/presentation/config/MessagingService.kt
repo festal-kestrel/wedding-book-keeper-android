@@ -47,7 +47,7 @@ class MessagingService : FirebaseMessagingService() {
         val memberOrdering = if (isGroomSide.toBoolean()) "$groom & $bride" else "$bride & $groom"
         val messageBody = "${memberOrdering}의 결혼식이 곧 시작해요!"
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(com.example.wedding_book_keeper.R.mipmap.wbk_logo)
+            .setSmallIcon(R.drawable.wbk_notification)
             .setContentTitle(remoteMessage.data.get("title"))
             .setContentText(messageBody)
             .setAutoCancel(true)

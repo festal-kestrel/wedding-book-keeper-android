@@ -16,6 +16,13 @@
     android:usesCleartextTraffic="true"
     tools:targetApi="31">
 
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_icon"
+      android:resource="@drawable/wbk_notification" />
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_color"
+      android:resource="@color/pt_light_pink" />
+
 
     <activity
       android:exported="true"
