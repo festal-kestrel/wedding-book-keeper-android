@@ -3,6 +3,7 @@ package com.example.wedding_book_keeper.presentation.view.guest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityGuestRelationsBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
@@ -25,14 +26,20 @@ class GuestRelationsActivity :
         }
 
         binding.btnGoGiftAmount.setOnClickListener {
-            var relationDesc = binding.editRelation.text.toString()
-            val intent = Intent(this, GiftAmountActivity::class.java)
-            intent.putExtra("guestSide", if (guestSide != "-1") guestSide.toInt() else -1)
-            intent.putExtra("relationDesc", relationDesc)
-            intent.putExtra("weddingId", weddingId)  // weddingId 추가
-            Log.d("qr", "Provided_relationDesc: ${intent.getStringExtra("relationDesc")}")
-            Log.d("qr", "Provided_guestSide: ${intent.getIntExtra("guestSide", -1)}")
-            startActivity(intent)
+            val relationDesc = binding.editRelation.text.toString()
+
+            if(relationDesc.isEmpty() || guestSide == "-1") {
+                Toast.makeText(this, "신랑,신부 측 선택과 관계를 작성해 주세요.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, GiftAmountActivity::class.java)
+                intent.putExtra("guestSide", if (guestSide != "-1") guestSide.toInt() else -1)
+                intent.putExtra("relationDesc", relationDesc)
+                intent.putExtra("weddingId", weddingId)  // weddingId 추가
+                Log.d("qr", "Provided_relationDesc: ${intent.getStringExtra("relationDesc")}")
+                Log.d("qr", "Provided_guestSide: ${intent.getIntExtra("guestSide", -1)}")
+                startActivity(intent)
+            }
         }
+
     }
 }
