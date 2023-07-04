@@ -15,16 +15,12 @@ import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceipt
 import com.example.wedding_book_keeper.data.remote.response.Role
 import com.example.wedding_book_keeper.databinding.ActivityManagerMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
-import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainDonationAdapter
-import com.example.wedding_book_keeper.presentation.view.donation.couple.FilterFragment
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 class ManagerMainActivity :
@@ -83,7 +79,6 @@ class ManagerMainActivity :
                                 showGuestDonationList(guests)
                             }
                             Log.d("hong", "onResponse: ${guests}")
-                            showToastMessage("성공")
                         }
                     }
                 }

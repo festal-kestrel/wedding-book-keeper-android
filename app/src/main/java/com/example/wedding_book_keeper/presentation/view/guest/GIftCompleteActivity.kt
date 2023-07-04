@@ -2,14 +2,12 @@ package com.example.wedding_book_keeper.presentation.view.guest
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityGiftCompleteBinding
-import com.example.wedding_book_keeper.databinding.ActivityGuestRelationsBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 

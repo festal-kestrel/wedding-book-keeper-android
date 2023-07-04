@@ -11,16 +11,12 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import android.os.Build
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
-import com.example.wedding_book_keeper.presentation.view.MainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.guest.api.LoginService
 import com.example.wedding_book_keeper.presentation.view.guest.dto.TokenResponse
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,7 +44,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                 if (error != null) {
                     Log.e(TAG, "카카오계정으로 로그인 실패", error)
                 } else if (token != null) {
-//                    val intent = Intent(this, MainActivity::class.java)
                     val intent = Intent(this, GuestMainActivity::class.java)
                     Log.i(TAG, "카카오계정으로 로그인 성공, 카카오토큰 == ${token.accessToken}")
                     try {

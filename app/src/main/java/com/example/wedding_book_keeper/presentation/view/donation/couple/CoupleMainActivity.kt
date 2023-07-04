@@ -97,7 +97,6 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
                                 showGuestDonationList(guests)
                             }
                             Log.d("hong", "onResponse: ${guests}")
-                            showToastMessage("성공")
                         }
                     }
                 }

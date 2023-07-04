@@ -69,7 +69,6 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
                         editor.putString("weddingDate", it.weddingDate?.let { it1 -> formatDate(it1) })
                         editor.apply()
                         Log.d("hong", "onResponse: ${response.body()}")
-                        showToastMessage("성공")
 
                         // WeddingInfoResponse의 groomName, brideName 조회
                         Log.d("hong", "groomName: ${response.body()?.groomName}")
