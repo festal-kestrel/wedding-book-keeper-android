@@ -33,9 +33,12 @@ interface WeddingService {
         val donationAmount: Int,
         val relation: String,
         val isGroomSide: Int,
+        val fcmToken: String
     )
+
     @POST("weddings/{weddingId}/guests/new")
     fun postMemberWeddingInfo(@Path("weddingId") weddingId: Int, @Body info: MemberWeddingInfo): Call<Void>
+
     @GET("weddings/{weddingId}/qr")
     fun getWeddingQr(
         @Path("weddingId") weddingId: Int
