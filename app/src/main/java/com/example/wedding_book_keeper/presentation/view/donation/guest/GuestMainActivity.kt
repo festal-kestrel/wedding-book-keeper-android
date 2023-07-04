@@ -5,16 +5,20 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
+import com.example.wedding_book_keeper.data.remote.response.DonationReceiptResponse
+import com.example.wedding_book_keeper.data.remote.response.DonationReceiptsResponse
 import com.example.wedding_book_keeper.databinding.ActivityGuestMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
-import com.example.wedding_book_keeper.presentation.view.guest.GuestRelationsActivity
-import com.example.wedding_book_keeper.presentation.view.guest.ViewQrcodeActivity
 import com.example.wedding_book_keeper.presentation.view.guest.WebViewActivity
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -22,6 +26,12 @@ import java.time.format.DateTimeFormatter
 class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activity_guest_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        initEvent()
+        getDonationList()
+    }
+
+    private fun initEvent() {
 
         binding.btnMypage.setOnClickListener {
             val intent = Intent(this, CoupleMyPageActivity::class.java)
@@ -32,8 +42,6 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
-        initView()
-
 
         binding.txtSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -48,23 +56,42 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
         })
     }
 
-    private fun initView() {
-        val weddingList = mutableListOf<GuestWeddingInfo>()
+    private fun getDonationList() {
+        var donations = mutableListOf<DonationReceiptResponse>()
 
+        val weddingList = mutableListOf<GuestWeddingInfo>()
         val adapter = GuestMainWeddingAdapter(weddingList)
+
+        // 리사이클러뷰에 레이아웃 매니저를 연결
         binding.rvWeddingList.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvWeddingList.setHasFixedSize(true)
         binding.rvWeddingList.adapter = adapter
 
-        // 샘플 데이터
-        val newWeddings = mutableListOf(
-            GuestWeddingInfo("홍길동", "ssid", 100000, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))),
-            GuestWeddingInfo("jinwook", "김길순", 100000, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"))),
-            GuestWeddingInfo("서명현", "bbs", 100000, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm")))
-        )
+        WeddingBookKeeperClient.weddingService.getDonationList().enqueue(object : Callback<DonationReceiptsResponse> {
+            override fun onResponse(call: Call<DonationReceiptsResponse>, response: Response<DonationReceiptsResponse>) {
+                if (response.isSuccessful) {
+                    val body = response.body()
+                    body?.let {
+                        it.donations?.let { donationReceipts ->
+                            donations.addAll(donationReceipts)
+                            showDonationList(donations)
+                        }
 
-        adapter.setItems(newWeddings)
+                        Log.d("hong", "onResponse: ${donations}")
+                        showToastMessage("성공")
+                    }
+                }
+            }
+
+            private fun showDonationList(donations: MutableList<DonationReceiptResponse>) {
+                adapter.setItemsApi(donations);
+            }
+
+            override fun onFailure(call: Call<DonationReceiptsResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
     }
-
 }

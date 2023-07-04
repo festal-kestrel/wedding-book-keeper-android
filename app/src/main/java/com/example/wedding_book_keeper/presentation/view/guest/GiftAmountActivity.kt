@@ -13,6 +13,8 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.api.WeddingService
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -89,16 +91,37 @@ class GiftAmountActivity :
             } catch (e: NumberFormatException) {
                 donationAmount = editGiftAmount.replace("원", "").toInt()
             }
-            postMemberWeddingInfo(weddingId, donationAmount, relationDesc.toString(), guestSide)
+
+            getFcmToken { token ->
+                if (token != null) {
+                    Log.d("FCM", token)
+                    postMemberWeddingInfo(weddingId, donationAmount, relationDesc.toString(), guestSide, token)
+                } else {
+                    Log.e("FCM", "NO FCM TOKEN ERROR")
+                }
+            }
         }
     }
 
-    private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, relation: String, isGroomSide: Int) {
+    private fun getFcmToken(callback: (String?) -> Unit) {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val token = task.result
+                callback(token)
+            } else {
+                Log.w("FCM", "Fetching FCM registration token failed", task.exception)
+                callback(null)
+            }
+        }
+    }
+
+    private fun postMemberWeddingInfo(weddingId: Int, donationAmount: Int, relation: String, isGroomSide: Int, fcmToken: String) {
         val info = WeddingService.MemberWeddingInfo(
             weddingId = weddingId,
             donationAmount = donationAmount,
             relation = relation,
-            isGroomSide = isGroomSide
+            isGroomSide = isGroomSide,
+            fcmToken = fcmToken
         )
 
         WeddingBookKeeperClient.weddingService.postMemberWeddingInfo(weddingId, info).enqueue(object : Callback<Void> {
@@ -109,6 +132,7 @@ class GiftAmountActivity :
                     Log.d("qr", "Failure: ${response.errorBody()}")
                 }
             }
+
             override fun onFailure(call: Call<Void>, t: Throwable) {
                 Log.e("qr", "Error: ${t.message}")
             }
