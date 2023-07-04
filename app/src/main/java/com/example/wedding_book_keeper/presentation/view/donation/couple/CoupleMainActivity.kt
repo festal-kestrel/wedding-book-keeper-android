@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.presentation.view.donation.couple
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptsResponse
 import com.example.wedding_book_keeper.data.remote.response.Role
+import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
@@ -32,7 +34,7 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
             startActivity(intent)
         }
 
-        getGuestList(90)
+        getGuestList(3)
         initView()
     }
 
@@ -87,6 +89,9 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
                     if (response.isSuccessful) {
                         val body = response.body()
                         body?.let {
+                            binding.txtGroomName.text = it.groomName
+                            binding.txtBridalName.text = it.brideName
+                            it.brideName
                             it.guests?.let { guestDonationReceipts ->
                                 guests.addAll(guestDonationReceipts)
                                 showGuestDonationList(guests)
