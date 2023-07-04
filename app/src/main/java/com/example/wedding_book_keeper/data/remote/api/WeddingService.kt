@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.data.remote.api
 
+import android.widget.TextView
 import com.example.wedding_book_keeper.data.remote.request.WeddingCreateRequest
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
 import com.example.wedding_book_keeper.data.remote.response.DonationReceiptsResponse
@@ -63,4 +64,16 @@ interface WeddingService {
         @Path("weddingId") weddingId: Int,
         @Query("role") role: Role
     ): Call<GuestDonationReceiptsResponse>
+
+    @PATCH("weddings/{weddingId}/guests/{guestId}/paid/approval")
+    fun patchDonationApproval(
+        @Path("weddingId") weddingId: Int,
+        @Path("guestId") guestId: Int
+    ): Call<Unit>
+
+    @PATCH("weddings/{weddingId}/guests/{guestId}/paid/rejection")
+    fun patchDonationRejection(
+        @Path("weddingId") weddingId: Int,
+        @Path("guestId") guestId: Int
+    ): Call<Unit>
 }
