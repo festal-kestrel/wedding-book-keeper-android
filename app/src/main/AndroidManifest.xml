@@ -91,6 +91,9 @@
       android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
     <activity
       android:exported="true"
+      android:name=".presentation.view.wedding.schedule.LocationActivity" />
+    <activity
+      android:exported="true"
       android:name=".presentation.view.guest.LoginActivity">
     </activity>
     <activity
