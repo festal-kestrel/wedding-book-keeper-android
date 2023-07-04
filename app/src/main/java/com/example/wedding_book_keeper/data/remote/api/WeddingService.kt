@@ -1,5 +1,6 @@
 package com.example.wedding_book_keeper.data.remote.api
 
+import com.example.wedding_book_keeper.data.remote.request.WeddingCreateRequest
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
@@ -9,7 +10,6 @@ import retrofit2.http.Body
 import retrofit2.http.GET;
 import retrofit2.http.POST
 import retrofit2.http.PATCH
-import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface WeddingService {
@@ -18,6 +18,11 @@ interface WeddingService {
     fun getWeddingInfo(
         @Path("weddingId") weddingId: Int
     ): Call<WeddingInfoResponse>
+
+    @POST("weddings")
+    fun createWedding(
+        @Body weddingCreateRequest: WeddingCreateRequest
+    ): Call<Unit>
 
     data class MemberWeddingInfo(
         val weddingId: Int,

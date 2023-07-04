@@ -6,6 +6,6 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface LoginService {
-    @POST("api/v1/oauth/authorize")
+    @POST("oauth/authorize")
     fun authorize(@Query("token") token: String): Call<TokenResponse>
 }
