@@ -9,6 +9,7 @@ import com.example.wedding_book_keeper.data.remote.request.WeddingCreateRequest
 import com.example.wedding_book_keeper.databinding.ActivityLocationBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.introduction.IntroductionActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.introduction.NewIntroActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,9 +27,9 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
             val weddingLocation = binding.editLocation.text.toString()
             val weddingDate = getWeddingDate()
             saveWeddingInfo(weddingLocation, weddingDate)
-
-            val intent = Intent(this, IntroductionActivity::class.java);
-            startActivity(intent)
+        }
+        binding.btnGoBack.setOnClickListener{
+            finish()
         }
     }
 
@@ -48,7 +49,7 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                 ).enqueue(object : Callback<Unit> {
                     override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                         if (response.isSuccessful) {
-                            val intent = Intent(this@LocationActivity, IntroductionActivity::class.java)
+                            val intent = Intent(this@LocationActivity, NewIntroActivity::class.java)
                             startActivity(intent)
                             return;
                         }

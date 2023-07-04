@@ -18,26 +18,29 @@
       <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="200dp"
+        android:gravity="center"
         android:orientation="vertical">
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="관리자 코드"
           android:fontFamily="@font/spoqa_regular"
-          android:textSize="@dimen/font_large" />
+          android:text="관리자 코드"
+          android:textColor="@color/tx_gray"
+          android:textSize="@dimen/font_larger" />
         <TextView
           android:id="@+id/txt_admin_code"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
-          android:text="LQ23ST6X"
           android:fontFamily="@font/spoqa_medium"
+          android:text="LQ23ST6X"
+          android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_largest" />
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
           android:fontFamily="@font/spoqa_regular"
           android:text="위 코드를 축의금 관리자에게 전해주세요"
           android:textSize="@dimen/font_small" />
@@ -49,7 +52,7 @@
         style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="315dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/square_pink_btn"
         android:text="코드 복사하기" />
     </LinearLayout>
@@ -71,9 +74,10 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="30dp"
           android:layout_alignParentStart="true"
-          android:layout_centerVertical="true"
+          android:layout_alignParentTop="true"
           android:background="@null"
           android:src="@drawable/back_arrow" />
 
@@ -81,12 +85,12 @@
           android:id="@+id/btn_toolbar_title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_centerInParent="true"
-          android:paddingTop="5dp"
-
+          android:layout_marginTop="30dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
           android:fontFamily="@font/spoqa_medium"
           android:text="관리자 등록하기"
-          android:textColor="@color/tx_light_gray"
+          android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_large" />
 
       </RelativeLayout>

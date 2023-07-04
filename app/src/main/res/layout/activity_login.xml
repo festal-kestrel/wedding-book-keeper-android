@@ -19,7 +19,6 @@
       android:gravity="center"
       android:text="너에게 난, 나에게 넌"
       android:textColor="@color/tx_gray"
-      android:textFontWeight="600"
       android:textSize="@dimen/font_largest" />
     <TextView
       android:layout_width="match_parent"

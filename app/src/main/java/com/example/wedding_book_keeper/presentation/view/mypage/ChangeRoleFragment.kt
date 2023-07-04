@@ -14,6 +14,7 @@ import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
 import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.manager.ManagerMainActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.partner.VerificationCodeDialogFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import retrofit2.Call
@@ -46,7 +47,7 @@ class ChangeRoleFragment(
         }
 
         binding.txtRoleCouple.setOnClickListener{
-            val intent = Intent(requireContext(), CoupleMainActivity::class.java)
+            val intent = Intent(requireContext(), PartnerConnectActivity::class.java)
             startActivity(intent)
         }
 

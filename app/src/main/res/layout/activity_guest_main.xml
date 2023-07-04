@@ -19,6 +19,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/mypage_icon_source" />
@@ -36,12 +37,13 @@
       android:layout_width="160dp"
       android:layout_height="50dp"
       android:textStyle="bold"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="40dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="10dp"
       android:layout_marginStart="20dp"
       android:fontFamily="@font/kyobohandwriting2020"
       android:text="너에게 난..."
-      android:textSize="34sp" />
+      android:textColor="@color/tx_gray"
+      android:textSize="@dimen/font_largest" />
 
     <EditText
       android:id="@+id/txt_search"

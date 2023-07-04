@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="start"
+    android:orientation="vertical"
+    tools:context=".presentation.view.wedding.introduction.ThirdIntroActivity">
+    <LinearLayout
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="105dp"
+      android:layout_marginLeft="60dp"
+      android:layout_marginRight="60dp"
+      android:gravity="center"
+      android:orientation="vertical">
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/spoqa_bold"
+        android:gravity="start"
+        android:text="하객 입장을 위해\n몇 가지를 더\n확인해주세요"
+        android:textColor="@color/tx_gray"
+        android:textFontWeight="100"
+        android:textSize="@dimen/font_largest" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:fontFamily="@font/spoqa_regular"
+        android:layout_marginTop="70dp"
+        android:gravity="start"
+        android:textColor="@color/tx_light_gray"
+        android:text="하객 입장용 QR코드"
+        android:textSize="@dimen/font_large" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:fontFamily="@font/spoqa_regular"
+        android:gravity="start"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/tx_light_gray"
+        android:text="배우자 등록 확인"
+        android:textSize="@dimen/font_large" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:fontFamily="@font/spoqa_regular"
+        android:gravity="start"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/tx_light_gray"
+        android:text="축의금 관리자 추가"
+        android:textSize="@dimen/font_large" />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+      style="@style/ButtonStyle"
+      android:id="@+id/btn_go_couple_my_page"
+      android:layout_marginTop="327dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:background="@drawable/square_pink_btn"
+      android:text="눌러서 확인 하기" />
+  </LinearLayout>
+
+</layout>

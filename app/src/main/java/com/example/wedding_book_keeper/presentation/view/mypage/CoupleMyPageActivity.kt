@@ -2,6 +2,7 @@ package com.example.wedding_book_keeper.presentation.view.mypage
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
@@ -9,6 +10,7 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,7 +23,8 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
         super.onCreate(savedInstanceState)
 
         binding.btnToolbarBack.setOnClickListener {
-            finish()
+            var intent = Intent(this, CoupleMainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.layoutRowWeddingInfo.setOnClickListener {

@@ -16,6 +16,7 @@ import com.example.wedding_book_keeper.databinding.ActivityGuestMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.guest.WebViewActivity
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
+import com.example.wedding_book_keeper.presentation.view.mypage.GuestMyPageActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,7 +33,7 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
     private fun initEvent() {
 
         binding.btnMypage.setOnClickListener {
-            val intent = Intent(this, CoupleMyPageActivity::class.java)
+            val intent = Intent(this, GuestMyPageActivity::class.java)
             startActivity(intent)
         }
 

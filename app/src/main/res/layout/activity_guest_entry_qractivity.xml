@@ -28,7 +28,7 @@
         style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="255dp"
         android:layout_below="@id/img_qr"
         android:background="@drawable/square_pink_btn"
         android:text="QR 코드 저장하기" />
@@ -50,9 +50,10 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="30dp"
           android:layout_alignParentStart="true"
-          android:layout_centerVertical="true"
+          android:layout_alignParentTop="true"
           android:background="@null"
           android:src="@drawable/back_arrow" />
 
@@ -61,11 +62,13 @@
           android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_centerInParent="true"
-          android:text="하객입장 QR"
+          android:layout_marginTop="30dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
           android:paddingTop="5dp"
           android:fontFamily="@font/spoqa_medium"
-          android:textColor="@color/tx_light_gray"
+          android:text="하객입장 QR"
+          android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_large" />
 
       </RelativeLayout>

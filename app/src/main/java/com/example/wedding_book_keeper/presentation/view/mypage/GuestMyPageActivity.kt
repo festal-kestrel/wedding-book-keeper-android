@@ -17,5 +17,8 @@ class GuestMyPageActivity : BaseActivity<ActivityGuestMyPageBinding>(R.layout.ac
                 onClick = ::onClick
             ).show(supportFragmentManager, ChangeRoleFragment.TAG)
         }
+        binding.btnToolbarBack.setOnClickListener{
+            finish()
+        }
     }
 }
