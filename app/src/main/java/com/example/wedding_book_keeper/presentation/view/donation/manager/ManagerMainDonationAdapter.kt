@@ -14,7 +14,6 @@ import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDo
 class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
     RecyclerView.Adapter<ManagerMainDonationAdapter.CustomViewHolder>() {
     private var filteredGuestList: MutableList<GuestDonationInfo> = guestList
-    var isChecked = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view =
@@ -69,7 +68,7 @@ class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) 
         }
         notifyDataSetChanged()
     }
-
+    
     private fun convertToGuestDonationInfo(guestDonationReceipts: MutableList<GuestDonationReceiptResponse>): MutableList<GuestDonationInfo> {
         val guestDonationInfos = mutableListOf<GuestDonationInfo>()
         for (guestDonationReceipt in guestDonationReceipts) {

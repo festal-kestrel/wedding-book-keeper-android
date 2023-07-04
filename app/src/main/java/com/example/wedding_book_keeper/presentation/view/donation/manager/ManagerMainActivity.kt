@@ -29,6 +29,7 @@ import java.time.format.DateTimeFormatter
 @RequiresApi(Build.VERSION_CODES.O)
 class ManagerMainActivity :
     BaseActivity<ActivityManagerMainBinding>(R.layout.activity_manager_main) {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -96,5 +97,4 @@ class ManagerMainActivity :
                 }
             })
     }
-
 }
