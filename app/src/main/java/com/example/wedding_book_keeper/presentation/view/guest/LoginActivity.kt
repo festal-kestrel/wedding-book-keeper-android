@@ -11,6 +11,7 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
@@ -18,13 +19,15 @@ import com.example.wedding_book_keeper.presentation.view.MainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.guest.api.LoginService
 import com.example.wedding_book_keeper.presentation.view.guest.dto.TokenResponse
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
+    private lateinit var loginService: LoginService
     private val TAG = "LOGIN"
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
