@@ -2,7 +2,6 @@ package com.example.wedding_book_keeper.presentation.view.donation.couple
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

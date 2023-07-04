@@ -1,9 +1,7 @@
 package com.example.wedding_book_keeper.presentation.view.guest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.wedding_book_keeper.R
-import com.example.wedding_book_keeper.databinding.ActivityQrBinding
 import com.example.wedding_book_keeper.databinding.ActivityViewQrcodeBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 

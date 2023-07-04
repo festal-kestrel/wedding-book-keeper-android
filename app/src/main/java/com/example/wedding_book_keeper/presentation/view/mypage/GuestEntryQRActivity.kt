@@ -46,7 +46,6 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
                         editor.putString("qrImgUrl", it.qrImgUrl)
                         editor.apply()
                         Log.d("hong", "onResponse: ${response.body()}")
-                        showToastMessage("성공")
 
                         updateUI()
                     }

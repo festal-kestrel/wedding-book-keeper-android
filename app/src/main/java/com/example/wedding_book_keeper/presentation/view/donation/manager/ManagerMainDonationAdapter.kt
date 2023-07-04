@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
-import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainDonationAdapter
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
 
 class ManagerMainDonationAdapter(var guestList: MutableList<GuestDonationInfo>) :
