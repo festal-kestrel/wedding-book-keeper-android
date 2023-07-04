@@ -80,6 +80,7 @@
           android:layout_centerInParent="true"
           android:text="관리자 등록하기"
           android:textColor="@color/tx_light_gray"
+          android:fontFamily="@font"
           android:textSize="@dimen/font_medium" />
 
       </RelativeLayout>
