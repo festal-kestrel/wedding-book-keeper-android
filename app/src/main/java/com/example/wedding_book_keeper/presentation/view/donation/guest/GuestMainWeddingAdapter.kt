@@ -54,7 +54,7 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
         notifyDataSetChanged()
     }
 
-    fun convertToGuestWeddingInfo(donationReceipts: MutableList<DonationReceiptResponse>): MutableList<GuestWeddingInfo> {
+    private fun convertToGuestWeddingInfo(donationReceipts: MutableList<DonationReceiptResponse>): MutableList<GuestWeddingInfo> {
         val guestWeddingInfos = mutableListOf<GuestWeddingInfo>()
         for (donationReceipt in donationReceipts) {
             val guestWeddingInfo = convertToGuestWeddingInfo(donationReceipt)

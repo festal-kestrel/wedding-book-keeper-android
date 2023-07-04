@@ -6,5 +6,6 @@ data class GuestDonationReceiptResponse(
     val relation: String = "",
     val hasPaid: Boolean,
     val donationAmount: Int,
-    val weddingDate: String? = ""
+    val weddingDate: String? = "",
+    val isChecked: Boolean = false
 )

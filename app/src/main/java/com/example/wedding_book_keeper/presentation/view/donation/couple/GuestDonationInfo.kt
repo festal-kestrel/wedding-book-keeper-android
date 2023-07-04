@@ -8,7 +8,8 @@ data class GuestDonationInfo(
     val relation: String = "",
     val hasPaid: Boolean,
     val donationAmount: Int,
-    val weddingDate: String? = ""
+    val weddingDate: String? = "",
+    var isChecked: Boolean
 ) {
 
     val formattedAmount: String
@@ -23,7 +24,8 @@ data class GuestDonationInfo(
                 relation = guestDonationReceipt.relation,
                 hasPaid = guestDonationReceipt.hasPaid,
                 donationAmount = guestDonationReceipt.donationAmount,
-                weddingDate = guestDonationReceipt.weddingDate ?: ""
+                weddingDate = guestDonationReceipt.weddingDate ?: "",
+                isChecked = guestDonationReceipt.isChecked
             )
         }
     }
