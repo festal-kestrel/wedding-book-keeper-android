@@ -72,6 +72,7 @@ class GiftAmountActivity :
         binding.btnPrevPage.setOnClickListener {
             val intent = Intent(this, GuestRelationsActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
 
         binding.btnGoGiftComplete.setOnClickListener {
@@ -82,6 +83,7 @@ class GiftAmountActivity :
             } else {
                 val intent = Intent(this, GIftCompleteActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
             }
             try {
                 donationAmount = editGiftAmount.replace(",", "").replace("원", "").toInt()

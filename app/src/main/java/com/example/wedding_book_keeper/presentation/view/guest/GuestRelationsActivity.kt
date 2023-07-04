@@ -38,7 +38,13 @@ class GuestRelationsActivity :
                 Log.d("qr", "Provided_relationDesc: ${intent.getStringExtra("relationDesc")}")
                 Log.d("qr", "Provided_guestSide: ${intent.getIntExtra("guestSide", -1)}")
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
             }
+        }
+        binding.btnGoBack.setOnClickListener{
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
 
     }

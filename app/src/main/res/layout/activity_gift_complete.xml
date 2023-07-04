@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        >
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:gravity="center_horizontal"
-            tools:context=".presentation.view.guest.GIftCompleteActivity">
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".presentation.view.guest.GIftCompleteActivity">
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="축하해주셔서\n감사합니다"
-                android:textFontWeight="100"
-                android:textSize="@dimen/font_largest"
-                android:layout_marginTop="200dp"
-                android:fontFamily="@font/kyobohandwriting2020" />
 
-        <ImageView
-                android:layout_width="309dp"
-                android:layout_height="360dp"
-                android:layout_marginTop="210dp"
-                android:layout_marginLeft="70dp"
-                android:background="@drawable/wedding_couple_image" />
 
-    </LinearLayout>
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="130dp"
+      android:layout_marginLeft="60dp"
+      android:layout_marginRight="60dp"
+      android:fontFamily="@font/spoqa_bold"
+      android:textColor="@color/tx_gray"
+      android:gravity="start"
+      android:text="축하해주셔서\n감사합니다"
+      android:textFontWeight="100"
+      android:textSize="@dimen/font_largest" />
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginLeft="60dp"
+      android:layout_marginRight="60dp"
+      android:layout_marginTop="10dp"
+      android:paddingTop="10dp"
+      android:fontFamily="@font/tossfacefont"
+      android:gravity="start"
+      android:text="@string/emoji"
+      android:textFontWeight="100"
+      android:textSize="@dimen/font_largest" />
+
+    <ImageView
+      android:layout_width="309dp"
+      android:layout_height="360dp"
+      android:layout_marginTop="200dp"
+      android:layout_marginLeft="70dp"
+      android:background="@drawable/wedding_couple_image" />
+
+  </LinearLayout>
 
 </layout>

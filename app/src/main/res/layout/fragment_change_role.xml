@@ -13,10 +13,11 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginLeft="10sp"
+      android:fontFamily="@font/spoqa_medium"
       android:padding="20sp"
       android:text="하객"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
 
 
     <TextView
@@ -24,20 +25,22 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginLeft="10sp"
+      android:fontFamily="@font/spoqa_medium"
       android:padding="20sp"
       android:text="신랑/신부"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
 
 
     <TextView
       android:id="@+id/txt_role_admin"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:fontFamily="@font/spoqa_medium"
       android:layout_marginLeft="10sp"
       android:padding="20sp"
       android:text="관리자"
       android:textColor="@color/tx_gray"
-      android:textSize="18sp" />
+      android:textSize="@dimen/font_large" />
   </LinearLayout>
 </layout>

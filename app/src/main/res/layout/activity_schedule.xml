@@ -9,16 +9,31 @@
       android:gravity="center_horizontal"
       android:background="@color/white"
       >
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="30dp"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:ignore="MissingConstraints"
+          tools:layout_editor_absoluteX="30dp">
 
+            <androidx.appcompat.widget.AppCompatButton
+              android:id="@+id/btn_go_back"
+              android:layout_width="31dp"
+              android:layout_height="24dp"
+              android:background="@drawable/back_arrow" />
+        </LinearLayout>
         <TextView
           android:id="@+id/txt_schedule_desc"
-          android:layout_width="wrap_content"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="100dp"
-          android:fontFamily="@font/kyobohandwriting2020"
-          android:text="결혼식 날짜를 입력해 주세요"
-          android:textColor="#333333"
-          android:textSize="@dimen/font_larger"
+          android:layout_marginTop="135dp"
+          android:layout_marginLeft="60dp"
+          android:layout_marginRight="60dp"
+          android:fontFamily="@font/spoqa_bold"
+          android:text="결혼식 일자를\n입력해 주세요"
+          android:textColor="@color/tx_gray"
+          android:textSize="@dimen/font_largest"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
@@ -26,10 +41,12 @@
         <TextView
           android:id="@+id/txt_notice_desc"
           android:textStyle="bold"
-          android:layout_width="wrap_content"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="16dp"
-          android:fontFamily="@font/kyobohandwriting2020"
+          android:layout_marginLeft="60dp"
+          android:layout_marginRight="60dp"
+          android:fontFamily="@font/spoqa_medium"
           android:text="하객들에게 알림이 가요"
           android:textColor="@color/pt_light_pink"
           android:textSize="@dimen/font_medium"
@@ -43,7 +60,8 @@
           android:layout_height="wrap_content"
           android:layout_marginTop="50dp"
           android:text="2023년 6월 26일"
-          android:textColor="@color/tx_dark_gray"
+          android:textColor="@color/tx_gray"
+          android:fontFamily="@font/spoqa_regular"
           android:textSize="30sp"
           app:layout_constraintTop_toBottomOf="@id/txt_notice_desc"
           app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +73,8 @@
           android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
           android:text="오후 6시 30분"
-          android:textColor="@color/tx_dark_gray"
+          android:fontFamily="@font/spoqa_regular"
+          android:textColor="@color/tx_gray"
           android:textSize="20sp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +85,7 @@
           android:orientation="horizontal"
           android:layout_marginLeft="30dp"
           android:layout_marginRight="30dp"
+          android:layout_marginBottom="190dp"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent">
@@ -73,30 +93,32 @@
               android:id="@+id/dp_wedding_date"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginBottom="30dp"
               android:layout_marginLeft="-30dp"
-              android:layout_marginRight="-30dp"
+              android:layout_marginRight="-40dp"
               android:calendarViewShown="false"
               android:datePickerMode="spinner"
-              android:scaleX="0.8" />
+              android:scaleX="0.7"
+              android:scaleY="0.8"/>
             <TimePicker
               android:id="@+id/tp_wedding_time"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginLeft="-30dp"
+              android:layout_marginLeft="-40dp"
               android:layout_marginRight="-30dp"
-              android:scaleX="0.8"
+              android:scaleX="0.7"
+              android:scaleY="0.8"
               android:timePickerMode="spinner" />
         </LinearLayout>
-        <ImageView
+        <androidx.appcompat.widget.AppCompatButton
           android:id="@+id/btn_next"
-          android:layout_width="30dp"
+          style="@style/ButtonStyle"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginBottom="250dp"
-          android:layout_marginEnd="20dp"
+          android:background="@drawable/square_pink_btn"
+          android:text="예식장 입력하러 가기"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          app:srcCompat="@drawable/next_arrow" />
-
+          android:layout_marginBottom="120dp"
+          app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

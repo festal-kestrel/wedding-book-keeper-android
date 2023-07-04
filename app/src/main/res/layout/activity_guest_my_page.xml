@@ -24,7 +24,8 @@
         android:layout_weight="1"
         android:text="공지사항"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:fontFamily="@font/spoqa_medium"
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_qr"
@@ -50,8 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="앱 정보"
+        android:fontFamily="@font/spoqa_medium"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_admin_code"
@@ -77,8 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="회원 탈퇴"
+        android:fontFamily="@font/spoqa_medium"
         android:textColor="@color/tx_gray"
-        android:textSize="18sp" />
+        android:textSize="@dimen/font_large" />
 
       <Button
         android:id="@+id/btn_partner_register"
@@ -90,7 +93,7 @@
     </LinearLayout>
 
     <!-- Item 4 -->
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
       android:id="@+id/toolbar_mypage"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
@@ -117,7 +120,7 @@
           android:id="@+id/btn_toolbar_see_more"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginRight="10dp"
+          android:layout_marginRight="20dp"
           android:layout_alignParentEnd="true"
           android:layout_centerVertical="true"
           android:background="@null"
@@ -125,13 +128,14 @@
 
         <TextView
           android:id="@+id/btn_toolbar_title"
-          android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerInParent="true"
+          android:paddingTop="5dp"
+          android:fontFamily="@font/spoqa_medium"
           android:text="마이페이지"
           android:textColor="@color/tx_light_gray"
-          android:textSize="18sp" />
+          android:textSize="@dimen/font_large" />
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

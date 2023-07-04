@@ -16,6 +16,7 @@
       android:padding="20sp"
       android:text="전체"
       android:textColor="@color/tx_gray"
+      android:fontFamily="@font/spoqa_medium"
       android:textSize="@dimen/font_large" />
 
     <TextView
@@ -26,6 +27,7 @@
       android:padding="20sp"
       android:text="신랑측"
       android:textColor="@color/tx_gray"
+      android:fontFamily="@font/spoqa_medium"
       android:textSize="@dimen/font_large" />
 
     <TextView
@@ -36,6 +38,7 @@
       android:padding="20sp"
       android:text="신부측"
       android:textColor="@color/tx_gray"
+      android:fontFamily="@font/spoqa_medium"
       android:textSize="@dimen/font_large" />
 
   </LinearLayout>

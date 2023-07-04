@@ -17,6 +17,7 @@
                 android:layout_margin="30dp">
 
             <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_go_back"
                     android:layout_width="31dp"
                     android:layout_height="24dp"
                     android:background="@drawable/back_arrow" />
@@ -34,12 +35,13 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="신랑, 신부 측을 선택해주세요"
+                        android:gravity="start"
+                        android:text="신랑, 신부 측을\n선택해주세요"
                         android:textFontWeight="100"
-                        android:textSize="@dimen/font_larger"
-                        android:fontFamily="@font/kyobohandwriting2020"
-                        android:layout_marginTop="100dp" />
+                        android:textColor="@color/tx_gray"
+                        android:textSize="@dimen/font_largest"
+                        android:fontFamily="@font/spoqa_bold"
+                        android:layout_marginTop="50dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -52,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginTop="130dp">
+                        android:layout_marginTop="70dp">
 
                     <RadioButton
                             android:id="@+id/radio_btn_male"
@@ -93,12 +95,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="세부 관계를 입력해주세요"
-                    android:fontFamily="@font/kyobohandwriting2020"
+                    android:fontFamily="@font/spoqa_medium"
                     android:textColor="@color/tx_light_gray"
-                    android:textSize="@dimen/font_medium"
-                    android:layout_marginTop="50dp"
+                    android:textSize="@dimen/font_larger"
+                    android:layout_marginTop="90dp"
 
-                    android:textAlignment="center" />
+                    android:textAlignment="viewStart" />
 
             <EditText
                     android:id="@+id/edit_relation"
@@ -107,7 +109,7 @@
                     android:background="@drawable/edit_text_square"
                     android:hint="ex)현대ITE 7기 동기 일동"
                     android:textSize="@dimen/font_small"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="20dp" />
 
 
         </LinearLayout>

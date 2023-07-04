@@ -12,8 +12,8 @@
 
     <ImageView
       android:id="@+id/img_profile"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
       android:layout_marginTop="200dp"
       android:layout_marginBottom="50dp"
       android:layout_centerHorizontal="true"
@@ -35,18 +35,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-30dp"
-        android:layout_marginRight="-30dp"
+        android:layout_marginRight="-40dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        android:scaleX="0.8" />
+        android:scaleX="0.7"
+        android:scaleY="0.8"/>
 
       <TimePicker
         android:id="@+id/time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-30dp"
+        android:layout_marginLeft="-40dp"
         android:layout_marginRight="-30dp"
-        android:scaleX="0.8"
+        android:scaleX="0.7"
+        android:scaleY="0.8"
         android:timePickerMode="spinner" />
 
     </LinearLayout>
@@ -64,8 +66,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/picker_layout"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/spoqa_medium"
         android:text="결혼식 장소"
         android:textColor="@color/tx_gray"
         android:textSize="@dimen/font_medium" />
@@ -77,12 +81,7 @@
         android:layout_below="@id/txt_location_label"
         android:padding="13sp"
         android:background="@drawable/edit_text_square" />
-
-
-
-
     </LinearLayout>
-
     <TextView
       android:id="@+id/txt_dp_label"
       android:layout_width="wrap_content"
@@ -91,6 +90,7 @@
       android:layout_marginBottom="-20dp"
       android:layout_marginLeft="30dp"
       android:layout_below="@id/img_profile"
+      android:fontFamily="@font/spoqa_medium"
       android:gravity="center_horizontal"
       android:text="결혼식 날짜 및 시간"
       android:textColor="@color/tx_gray"
@@ -113,18 +113,19 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
           android:layout_alignParentStart="true"
           android:layout_centerVertical="true"
+          android:layout_marginLeft="10dp"
           android:background="@null"
           android:src="@drawable/back_arrow" />
 
         <TextView
           android:id="@+id/btn_toolbar_title"
-          android:textStyle="bold"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerInParent="true"
+          android:paddingTop="5dp"
+          android:fontFamily="@font/spoqa_medium"
           android:text="결혼식 정보 수정"
           android:textColor="@color/tx_light_gray"
           android:textSize="@dimen/font_large" />
@@ -136,6 +137,7 @@
           android:layout_marginRight="10dp"
           android:layout_alignParentEnd="true"
           android:layout_centerVertical="true"
+          android:fontFamily="@font/spoqa_bold"
           android:text="완료"
           android:textColor="@color/tx_dark_gray"
           android:textSize="@dimen/font_medium" />
