@@ -20,6 +20,7 @@
       android:layout_marginLeft="60dp"
       android:layout_marginRight="60dp"
       android:fontFamily="@font/spoqa_bold"
+      android:textColor="@color/tx_gray"
       android:gravity="start"
       android:text="축하해주셔서\n감사합니다"
       android:textFontWeight="100"

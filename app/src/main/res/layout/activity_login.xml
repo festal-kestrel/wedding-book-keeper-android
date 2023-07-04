@@ -11,6 +11,10 @@
             android:gravity="center_horizontal"
             tools:context=".presentation.view.guest.LoginActivity">
 
+        <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center" />
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -19,14 +23,24 @@
                 android:textFontWeight="600"
                 android:textSize="@dimen/font_largest"
                 android:layout_marginTop="200dp"
+                android:textColor="@color/tx_gray"
                 android:fontFamily="@font/kyobohandwriting2020" />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="축의금과 결혼식 관리를 보다 손쉽게"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/font_medium"
+                android:textColor="@color/tx_gray"
+                android:fontFamily="@font/spoqa_light" />
 
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="간편하게 로그인하고\n다양한 서비스를 이용해보세요."
                 android:textAlignment="center"
-                android:fontFamily="@font/inter_black"
+                android:fontFamily="@font/spoqa_medium"
                 android:layout_marginTop="150dp"
                 android:textSize="@dimen/font_medium" />
 
@@ -35,7 +49,7 @@
                 android:layout_width="300dp"
                 android:layout_height="45dp"
                 android:background="@drawable/kakao_login_btn"
-                android:layout_marginTop="300dp" />
+                android:layout_marginTop="270dp" />
     </LinearLayout>
 
 </layout>
