@@ -49,8 +49,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
 //        })
 
 
-
-
         binding.btnKakao.setOnClickListener {
 
             val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->

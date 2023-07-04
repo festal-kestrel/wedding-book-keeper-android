@@ -17,31 +17,6 @@ class WeddingBookKeeperApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-//        FirebaseMessaging.getInstance().isAutoInitEnabled = true
-
-//        val TAG = "notification"
-//        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-//            if (!task.isSuccessful) {
-//                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
-//                return@OnCompleteListener
-//            }
-//
-//            // Get new FCM registration token
-//            val token = task.result
-//
-//            // Log and toast
-////            val msg = getString(R.string.msg_token_fmt, token)
-//            Log.d(TAG, token)
-//            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-//        })
-
-        // Sets up permissions request launcher.
-
-//            refreshUI()
-
-
-
         // KaKao SDK  초기화
         KakaoSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
     }

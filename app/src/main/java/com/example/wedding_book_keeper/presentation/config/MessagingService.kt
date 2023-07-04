@@ -26,33 +26,8 @@ import com.google.firebase.messaging.ktx.remoteMessage
 class MessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-
-        // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "From: ${remoteMessage.from}")
-        Log.d(TAG, "From: ${remoteMessage}")
-        Log.d(TAG, "From: ${remoteMessage.data}")
-        Log.d(TAG, "From: ${remoteMessage.data.get("title")}")
-        Log.d(TAG, "From: ${remoteMessage.data.get("groom")}")
-        Log.d(TAG, "From: ${remoteMessage.data.get("bride")}")
-
         sendNotification(remoteMessage)
-//
-//        remoteMessage.data.get("title")?.let { sendNotification(it) }
-//
-//        // Check if message contains a notification payload.
-//        remoteMessage.notification?.let {
-//            Log.d(TAG, "Message Notification Body: ${it.body}")
-//            it.body?.let { body -> sendNotification(body) }
-//        }
-
-        // Also if you intend on generating your own notifications as a result of a received FCM
-        // message, here is where that should be initiated. See sendNotification method below.
     }
-
-
-//    private fun sendRegistrationToServer(token: String?) {
-//        Log.d(TAG, "sendRegistrationTokenToServer($token)")
-//    }
 
     private fun sendNotification(remoteMessage: RemoteMessage) {
         val intent = Intent(this, MainActivity::class.java)
@@ -69,7 +44,7 @@ class MessagingService : FirebaseMessagingService() {
         val groom = remoteMessage.data.get("groom")
         val bride = remoteMessage.data.get("bride")
         val isGroomSide = remoteMessage.data.get("isGroomSide")
-        val memberOrdering = if(isGroomSide.toBoolean())  "$groom & $bride" else "$bride & $groom"
+        val memberOrdering = if (isGroomSide.toBoolean()) "$groom & $bride" else "$bride & $groom"
         val messageBody = "${memberOrdering}의 결혼식이 곧 시작해요!"
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(com.example.wedding_book_keeper.R.mipmap.wbk_logo)
@@ -81,7 +56,6 @@ class MessagingService : FirebaseMessagingService() {
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        // Since android Oreo notification channel is needed.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 channelId,
