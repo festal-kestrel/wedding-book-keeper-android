@@ -9,8 +9,8 @@
     android:hardwareAccelerated="true"
     android:icon="@mipmap/wbk_logo"
     android:label="@string/app_name"
-    android:name=".presentation.GlobalApplication"
     android:roundIcon="@mipmap/wbk_logo_round"
+    android:name=".WeddingBookKeeperApplication"
     android:supportsRtl="true"
     android:theme="@style/Theme.Weddingbookkeeper"
     android:usesCleartextTraffic="true"
@@ -53,7 +53,7 @@
       android:name=".presentation.view.mypage.GuestMyPageActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.WebViewActivity"/>
+      android:name=".presentation.view.guest.WebViewActivity" />
     <activity
       android:exported="false"
       android:name=".presentation.view.guest.ViewQrcodeActivity" />
@@ -96,6 +96,9 @@
     <activity
       android:exported="true"
       android:name=".presentation.view.wedding.schedule.ScheduleActivity" />
+    <activity
+      android:exported="true"
+      android:name=".presentation.view.wedding.schedule.LocationActivity" />
     <activity
       android:exported="true"
       android:name=".presentation.view.guest.LoginActivity">

@@ -40,10 +40,10 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
                     binding.txtCode.text = response.body()?.verificationCode
                     return;
                 }
-                showToast("실패")
+                showToast("유효하지 않거나 만료된 인증 코드입니다.")
             }
 
-            override fun onFailure(call: retrofit2.Call<VerificationCodeResponse>, t: Throwable) {
+            override fun onFailure(call: Call<VerificationCodeResponse>, t: Throwable) {
                 showToast("실패")
             }
         })
