@@ -87,7 +87,6 @@ class GuestMainActivity : BaseActivity<ActivityGuestMainBinding>(R.layout.activi
             }
 
             override fun onFailure(call: Call<DonationReceiptsResponse>, t: Throwable) {
-                TODO("Not yet implemented")
                 Log.e("GUESTMAINACTIVITY", "retrofit error")
             }
         })

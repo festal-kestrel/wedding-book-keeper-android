@@ -93,7 +93,7 @@ class ManagerMainActivity :
                 }
 
                 override fun onFailure(call: Call<GuestDonationReceiptsResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    Log.e("getGuestList", "Error: ${t.message}")
                 }
             })
     }

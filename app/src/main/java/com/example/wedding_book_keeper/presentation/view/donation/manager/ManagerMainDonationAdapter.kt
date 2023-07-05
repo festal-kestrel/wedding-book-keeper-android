@@ -67,7 +67,7 @@ class ManagerMainDonationAdapter(
                                 }
 
                                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                                    // handle error
+                                    Log.e("patchDonationApproval", "Error: ${t.message}")
                                 }
                             })
                         // 현재 프래그먼트로 돌아가는 코드 작성
@@ -77,8 +77,6 @@ class ManagerMainDonationAdapter(
                 dialogFragment.show(fragmentManager, TAG)
             }
             else{
-                //리젝션 다이얼로그 위랑 똑같이
-                // 여긴 onRejection 이런식으로 하면 되겠지
                 val dialogFragment = RejectionDialogFragment.newInstance()
                 dialogFragment.setOnRejectionListener(object :
                     RejectionDialogFragment.OnRejectionListener {
@@ -96,7 +94,7 @@ class ManagerMainDonationAdapter(
                                 }
 
                                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                                    // handle error
+                                    Log.e("patchDonationRejection", "Error: ${t.message}")
                                 }
                             })
                         // 현재 프래그먼트로 돌아가는 코드 작성
