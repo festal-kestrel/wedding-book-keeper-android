@@ -4,7 +4,9 @@ import com.example.wedding_book_keeper.data.remote.request.WeddingCreateRequest
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
 import com.example.wedding_book_keeper.data.remote.response.DonationReceiptsResponse
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptsResponse
+import com.example.wedding_book_keeper.data.remote.response.ManagerVerificationCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.Role
+import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
@@ -63,4 +65,9 @@ interface WeddingService {
         @Path("weddingId") weddingId: Int,
         @Query("role") role: Role
     ): Call<GuestDonationReceiptsResponse>
+
+    @GET("weddings/{weddingId}verification-code")
+    fun getManagerVerificationCode(
+        @Path("weddingId") weddingId: Int,
+    ): Call<ManagerVerificationCodeResponse>
 }
