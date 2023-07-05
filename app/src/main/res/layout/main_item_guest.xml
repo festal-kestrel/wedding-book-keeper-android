@@ -7,7 +7,8 @@
     android:layout_marginTop="10dp"
     android:layout_marginRight="25dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    app:cardElevation="3dp">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,18 +23,18 @@
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            app:srcCompat="@drawable/profile_img" />
+            app:srcCompat="@drawable/couple_circle" />
 
         <TextView
             android:id="@+id/txt_groom_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="25dp"
-            android:fontFamily="@font/spoqa_bold"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/spoqa_medium"
             android:text="홍길동"
-            android:textColor="@color/tx_light_gray"
-            android:textSize="14sp" />
+            android:textColor="@color/tx_gray"
+            android:textSize="@dimen/font_medium" />
 
         <ImageView
             android:id="@+id/heart_source"
@@ -47,10 +48,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/spoqa_bold"
+            android:fontFamily="@font/spoqa_medium"
             android:text="김길순"
-            android:textColor="@color/tx_light_gray"
-            android:textSize="14sp" />
+            android:textColor="@color/tx_gray"
+            android:textSize="@dimen/font_medium" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,9 +67,9 @@
                 android:layout_gravity="right"
               android:fontFamily="@font/spoqa_bold"
                 android:text="100,000원"
-                android:textColor="@color/tx_light_gray"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/tx_gray"
+                android:textSize="@dimen/font_medium"
+              />
 
             <TextView
                 android:id="@+id/txt_donation_date"
@@ -78,8 +79,8 @@
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/spoqa_regular"
                 android:text="2023.06.23 16:30"
-                android:textColor="@color/tx_light_gray"
-                android:textSize="10sp" />
+                android:textColor="@color/tx_gray"
+                android:textSize="@dimen/font_small" />
 
         </LinearLayout>
 

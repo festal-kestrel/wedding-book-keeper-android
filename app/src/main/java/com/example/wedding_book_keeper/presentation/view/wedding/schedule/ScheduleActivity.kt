@@ -3,6 +3,7 @@ package com.example.wedding_book_keeper.presentation.view.wedding.schedule
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityScheduleBinding
@@ -12,11 +13,10 @@ import java.util.Locale
 
 
 class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity_schedule) {
-
+    private lateinit var txtCode: String
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initView()
         initEvent()
     }
@@ -30,8 +30,12 @@ class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity
     @RequiresApi(Build.VERSION_CODES.O)
     private fun initEvent() {
         binding.btnNext.setOnClickListener {
+            txtCode= intent.getStringExtra("txtCode").toString()
+            Log.d("txtCode","받아온 값 : "+intent.getStringExtra("txtCode"))
             val intent = Intent(this, LocationActivity::class.java);
             intent.putExtra("weddingDate", formatWeddingDate())
+            intent.putExtra("txtCode", txtCode)
+
             startActivity(intent)
         }
         binding.btnGoBack.setOnClickListener{

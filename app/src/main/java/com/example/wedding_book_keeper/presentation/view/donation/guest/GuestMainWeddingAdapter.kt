@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.data.remote.response.DonationReceiptResponse
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestWeddingInfo.Companion.convertToGuestWeddingInfo
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingInfo>) :
     RecyclerView.Adapter<GuestMainWeddingAdapter.CustomViewHolder>() {
@@ -28,7 +30,7 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
         holder.groomName.text = item.groomName
         holder.brideName.text = item.brideName
         holder.amount.text = item.formattedAmount
-        holder.donationDate.text = item.weddingDate
+        holder.donationDate.text = item.weddingDate?.let { formatDate(it) }
     }
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -62,5 +64,10 @@ class GuestMainWeddingAdapter(private var weddingList: MutableList<GuestWeddingI
         }
         return guestWeddingInfos;
     }
-
+    private fun formatDate(dateString: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("yy.MM.dd  HH:mm", Locale.getDefault())
+        val date = inputFormat.parse(dateString)
+        return outputFormat.format(date)
+    }
 }

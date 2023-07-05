@@ -21,6 +21,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.layout.activity_partner_connect) {
+    private var txtCode: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -75,6 +77,9 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
     private fun initEvent() {
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, ScheduleActivity::class.java)
+            Log.d("txtCode","partnerConnectAct : "+binding.txtCode.text)
+            intent.putExtra("txtCode", binding.txtCode.text)
+
             startActivity(intent)
         }
         binding.btnGoBack.setOnClickListener{
