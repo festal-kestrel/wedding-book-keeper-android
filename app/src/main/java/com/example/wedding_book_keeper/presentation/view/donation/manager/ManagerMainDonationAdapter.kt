@@ -16,6 +16,8 @@ import com.example.wedding_book_keeper.presentation.view.donation.manager.Approv
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class ManagerMainDonationAdapter(
     private val fragmentManager: FragmentManager,
@@ -40,7 +42,7 @@ class ManagerMainDonationAdapter(
         holder.relation.text = item.relation
         holder.guestName.text = item.guestName
         holder.amount.text = item.formattedAmount
-        holder.donationDate.text = item.weddingDate
+        holder.donationDate.text = item.weddingDate?.let { formatDate(it) }
         holder.checkBox.isChecked = item.isChecked
         holder.guestId.text = item.guestId.toString()
 
@@ -146,5 +148,11 @@ class ManagerMainDonationAdapter(
             guestDonationInfos.add(guestDonationInfo)
         }
         return guestDonationInfos
+    }
+    private fun formatDate(dateString: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("yy.MM.dd  HH:mm", Locale.getDefault())
+        val date = inputFormat.parse(dateString)
+        return outputFormat.format(date)
     }
 }

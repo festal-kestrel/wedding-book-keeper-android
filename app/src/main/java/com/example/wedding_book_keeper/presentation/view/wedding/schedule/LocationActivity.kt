@@ -15,10 +15,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity_location) {
+    private var txtCode: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        txtCode = intent.getStringExtra("txtCode").toString()
+        Log.d("txtCode", "스케쥴화면, 받아온 값 : $txtCode")
         initEvent()
     }
 
@@ -50,6 +52,7 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                     override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                         if (response.isSuccessful) {
                             val intent = Intent(this@LocationActivity, NewIntroActivity::class.java)
+                            intent.putExtra("txtCode", txtCode)
                             startActivity(intent)
                             return;
                         }
