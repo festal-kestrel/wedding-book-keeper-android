@@ -53,7 +53,7 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
             }
 
             override fun onFailure(call: Call<WeddingQrResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("getWeddingQr", "Error: ${t.message}")
             }
         })
     }

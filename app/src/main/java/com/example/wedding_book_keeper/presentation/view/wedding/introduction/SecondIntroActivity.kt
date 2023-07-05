@@ -19,7 +19,6 @@ class SecondIntroActivity : BaseActivity<ActivitySecondIntroBinding>(R.layout.ac
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         txtCode = intent.getStringExtra("txtCode").toString()
-        Log.d("txtCode","세컨드화면, 받아온값 : "+txtCode)
         val intent = Intent(this, ThirdIntroActivity::class.java)
         intent.putExtra("txtCode", txtCode)
 

@@ -18,7 +18,6 @@ class ThirdIntroActivity : BaseActivity<ActivityThirdIntroBinding>(R.layout.acti
     override fun onCreate(savedInstanceState: Bundle?) {
         txtCode = intent.getStringExtra("txtCode").toString()
         super.onCreate(savedInstanceState)
-        Log.d("txtCode", "마지막 받아온값 : " +txtCode)
 
         val codeCopyDialogFragment = CodeCopyDialogFragment.newInstance(txtCode.toString())
         codeCopyDialogFragment.show(supportFragmentManager, CodeCopyDialogFragment.TAG)

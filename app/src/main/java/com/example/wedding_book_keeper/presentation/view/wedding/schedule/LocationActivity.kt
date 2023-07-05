@@ -53,6 +53,7 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                         if (response.isSuccessful) {
                             val intent = Intent(this@LocationActivity, NewIntroActivity::class.java)
                             intent.putExtra("txtCode", txtCode)
+
                             startActivity(intent)
                             return;
                         }
