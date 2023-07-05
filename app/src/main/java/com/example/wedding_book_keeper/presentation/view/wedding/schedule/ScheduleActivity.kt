@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityScheduleBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
+import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
 import java.util.Locale
 
 
@@ -32,6 +33,9 @@ class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity
             val intent = Intent(this, LocationActivity::class.java);
             intent.putExtra("weddingDate", formatWeddingDate())
             startActivity(intent)
+        }
+        binding.btnGoBack.setOnClickListener{
+           finish()
         }
 
         binding.dpWeddingDate.setOnDateChangedListener { view, year, monthOfYear, dayOfMonth ->

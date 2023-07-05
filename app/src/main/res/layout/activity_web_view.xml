@@ -27,7 +27,7 @@
       android:paddingLeft="60dp"
       android:paddingRight="60dp"
       android:layout_height="wrap_content"
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="20dp"
       android:text="아래의 결혼식이\n맞나요?"
       android:textColor="@color/tx_gray"
       android:textAlignment="viewStart"
@@ -37,7 +37,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
-      android:layout_marginTop="100dp"
+      android:layout_marginTop="120dp"
       android:gravity="center">
       <TextView
         android:id="@+id/txt_groom_name"
@@ -91,7 +91,7 @@
       android:background="@null"
       android:layout_marginTop="215dp"
       android:fontFamily="@font/spoqa_medium"
-      android:textColor="@color/tx_gray"
+      android:textColor="@color/tx_light_gray"
       android:text="이 결혼식이 아니에요..." />
 
     <androidx.appcompat.widget.AppCompatButton

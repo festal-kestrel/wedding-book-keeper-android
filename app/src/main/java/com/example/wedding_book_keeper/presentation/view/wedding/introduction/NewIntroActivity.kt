@@ -7,20 +7,18 @@ import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.R
-import com.example.wedding_book_keeper.databinding.ActivityIntroductionBinding
+import com.example.wedding_book_keeper.databinding.ActivityNewIntroBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
-import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 
-
-class IntroductionActivity : BaseActivity<ActivityIntroductionBinding>(R.layout.activity_introduction) {
-    private val delayMillis: Long = 5000 // 5초
+class NewIntroActivity : BaseActivity<ActivityNewIntroBinding>(R.layout.activity_new_intro) {
+    private val delayMillis: Long = 3000 // 5초
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val nextActivityIntent = Intent(this, CoupleMainActivity::class.java)
+        val nextActivityIntent = Intent(this, SecondIntroActivity::class.java)
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(nextActivityIntent)

@@ -113,9 +113,10 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="30dp"
           android:layout_alignParentStart="true"
-          android:layout_centerVertical="true"
-          android:layout_marginLeft="10dp"
+          android:layout_alignParentTop="true"
           android:background="@null"
           android:src="@drawable/back_arrow" />
 
@@ -123,24 +124,26 @@
           android:id="@+id/btn_toolbar_title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_centerInParent="true"
-          android:paddingTop="5dp"
+          android:layout_marginTop="30dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
           android:fontFamily="@font/spoqa_medium"
           android:text="결혼식 정보 수정"
-          android:textColor="@color/tx_light_gray"
+          android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_large" />
 
         <TextView
           android:id="@+id/btn_toolbar_confirm"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginRight="10dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginRight="30dp"
           android:layout_alignParentEnd="true"
-          android:layout_centerVertical="true"
-          android:fontFamily="@font/spoqa_bold"
+          android:layout_alignParentTop="true"
+          android:fontFamily="@font/spoqa_medium"
           android:text="완료"
-          android:textColor="@color/tx_dark_gray"
-          android:textSize="@dimen/font_medium" />
+          android:textColor="@color/tx_gray"
+          android:textSize="@dimen/font_large" />
 
       </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

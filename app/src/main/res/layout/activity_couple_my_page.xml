@@ -11,7 +11,7 @@
       android:id="@+id/btn_wedding_info"
       android:layout_width="20dp"
       android:layout_height="20dp"
-      android:layout_marginRight="16dp"
+      android:layout_marginRight="60dp"
       android:layout_alignParentEnd="true"
       android:layout_centerVertical="true"
       android:background="@drawable/right_bracket_arrow" />
@@ -47,7 +47,7 @@
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
           android:fontFamily="@font/kyobohandwriting2020"
-          android:text="홍길동"
+          android:text="신랑"
           android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_larger" />
 
@@ -63,7 +63,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:fontFamily="@font/kyobohandwriting2020"
-          android:text="김길순"
+          android:text="신부"
           android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_larger" />
 
@@ -75,9 +75,10 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/kyobohandwriting2020"
         android:gravity="center_horizontal"
-        android:text="2023년 07월 01일 03:30"
+        android:layout_marginTop="10dp"
+        android:text="2023년 07월 01일 17:30"
         android:textColor="@color/tx_gray"
-        android:textSize="@dimen/font_large" />
+        android:textSize="@dimen/font_medium" />
 
       <TextView
         android:id="@+id/txt_location"
@@ -87,7 +88,7 @@
         android:gravity="center_horizontal"
         android:text="프라자호텔 3층 웨딩홀"
         android:textColor="@color/tx_gray"
-        android:textSize="@dimen/font_larger" />
+        android:textSize="@dimen/font_medium" />
 
     </LinearLayout>
 
@@ -96,7 +97,7 @@
       android:id="@+id/layout_row_qr"
       android:layout_width="match_parent"
       android:layout_height="70dp"
-      android:layout_marginTop="60dp"
+      android:layout_marginTop="80dp"
       android:layout_marginLeft="40dp"
       android:layout_below="@id/layout_row_wedding_info"
       android:padding="16dp"
@@ -115,6 +116,7 @@
         android:id="@+id/btn_qr"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginRight="40dp"
         android:background="@drawable/right_bracket_arrow" />
 
     </LinearLayout>
@@ -140,6 +142,7 @@
         android:textSize="@dimen/font_large" />
       <Button
         android:id="@+id/btn_admin_code"
+        android:layout_marginRight="40dp"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/right_bracket_arrow" />
@@ -169,6 +172,7 @@
         android:id="@+id/btn_partner_register"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginRight="40dp"
         android:background="@drawable/right_bracket_arrow" />
 
     </LinearLayout>
@@ -190,32 +194,34 @@
           android:id="@+id/btn_toolbar_back"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginLeft="10dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="30dp"
           android:layout_alignParentStart="true"
-          android:layout_centerVertical="true"
-          android:background="@null"
 
+          android:layout_alignParentTop="true"
+          android:background="@null"
           android:src="@drawable/back_arrow" />
 
         <ImageButton
           android:id="@+id/btn_toolbar_see_more"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="20dp"
+          android:layout_width="25dp"
+          android:layout_height="25dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginRight="30dp"
           android:layout_alignParentEnd="true"
-          android:layout_centerVertical="true"
-          android:background="@null"
-          android:src="@drawable/see_more" />
+          android:layout_alignParentTop="true"
+          android:background="@drawable/see_more" />
 
         <TextView
           android:id="@+id/btn_toolbar_title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_centerInParent="true"
-          android:paddingTop="5dp"
+          android:layout_marginTop="30dp"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
           android:fontFamily="@font/spoqa_medium"
           android:text="마이페이지"
-          android:textColor="@color/tx_light_gray"
+          android:textColor="@color/tx_gray"
           android:textSize="@dimen/font_large" />
 
       </RelativeLayout>
