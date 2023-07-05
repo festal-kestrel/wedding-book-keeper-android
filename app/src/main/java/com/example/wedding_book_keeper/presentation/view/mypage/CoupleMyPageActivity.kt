@@ -82,7 +82,7 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
             }
 
             override fun onFailure(call: Call<WeddingInfoResponse>, t: Throwable) {
-                // handle error
+                Log.e("getWeddingInfo", "Error: ${t.message}")
             }
         })
     }

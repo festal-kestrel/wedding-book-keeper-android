@@ -56,7 +56,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
             }
 
             override fun onFailure(call: Call<WeddingManagerCodeResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("getManagerCode", "Error: ${t.message}")
             }
         })
     }

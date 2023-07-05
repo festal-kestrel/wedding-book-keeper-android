@@ -81,7 +81,7 @@ class WeddingDatePickerActivity : BaseActivity<ActivityWeddingDatePickerBinding>
                 }
 
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    // handle error
+                    Log.e("updateWeddingInfo", "Error: ${t.message}")
                 }
             })
     }
