@@ -85,6 +85,10 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
         binding.btnGoBack.setOnClickListener{
             finish()
         }
+        binding.txtEnterMainPage.setOnClickListener{
+            val intent = Intent(this, CoupleMainActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnPartnerRegister.setOnClickListener {
             val dialogFragment = VerificationCodeDialogFragment.newInstance()
             dialogFragment.setOnVerificationCodeEnteredListener(object :
