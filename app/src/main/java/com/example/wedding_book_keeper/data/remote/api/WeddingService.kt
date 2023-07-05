@@ -8,6 +8,7 @@ import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceipt
 import com.example.wedding_book_keeper.data.remote.response.ManagerVerificationCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.Role
 import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
+import com.example.wedding_book_keeper.data.remote.response.WeddingCreateResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingManagerCodeResponse
 import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
@@ -29,7 +30,7 @@ interface WeddingService {
     @POST("weddings")
     fun createWedding(
         @Body weddingCreateRequest: WeddingCreateRequest
-    ): Call<Unit>
+    ): Call<WeddingCreateResponse>
 
     data class MemberWeddingInfo(
         val weddingId: Int,
@@ -67,7 +68,7 @@ interface WeddingService {
         @Query("role") role: Role
     ): Call<GuestDonationReceiptsResponse>
 
-    @GET("weddings/{weddingId}verification-code")
+    @GET("weddings/{weddingId}/verification-code")
     fun getManagerVerificationCode(
         @Path("weddingId") weddingId: Int,
     ): Call<ManagerVerificationCodeResponse>

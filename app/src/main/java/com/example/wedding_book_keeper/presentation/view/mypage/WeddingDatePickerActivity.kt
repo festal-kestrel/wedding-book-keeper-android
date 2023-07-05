@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.WeddingUpdateInformationRequest
 import com.example.wedding_book_keeper.databinding.ActivityWeddingDatePickerBinding
@@ -39,7 +40,7 @@ class WeddingDatePickerActivity : BaseActivity<ActivityWeddingDatePickerBinding>
             var newLocation = binding.txtNewLocation.text.toString()
             var newDateTime = formattedDate + " " + formattedTime
 
-            updateWeddingInfo(90, WeddingUpdateInformationRequest(location = newLocation, newDateTime))
+            updateWeddingInfo(WeddingBookKeeperApplication.prefs.weddingId, WeddingUpdateInformationRequest(location = newLocation, newDateTime))
 
             var intent = Intent(this, CoupleMyPageActivity::class.java)
             startActivity(intent)

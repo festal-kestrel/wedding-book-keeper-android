@@ -23,6 +23,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activity_admin_code) {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -46,6 +47,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun initView() {
         getManagerVerificationCode()
     }
@@ -55,7 +57,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
     }
 
     private fun getWeddingQr(weddingId: Int) {
-        WeddingBookKeeperClient.weddingService.getManagerCode(weddingId).enqueue(object : Callback<WeddingManagerCodeResponse> {
+        WeddingBookKeeperClient.weddingService.getManagerCode(WeddingBookKeeperApplication.prefs.weddingId).enqueue(object : Callback<WeddingManagerCodeResponse> {
             override fun onResponse(call: Call<WeddingManagerCodeResponse>, response: Response<WeddingManagerCodeResponse>) {
                 if (response.isSuccessful) {
                     val body = response.body()
@@ -77,7 +79,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getManagerVerificationCode() {
-        WeddingBookKeeperClient.weddingService.getManagerVerificationCode(3)
+        WeddingBookKeeperClient.weddingService.getManagerVerificationCode(WeddingBookKeeperApplication.prefs.weddingId)
             .enqueue(object : Callback<ManagerVerificationCodeResponse> {
             override fun onResponse(
                 call: Call<ManagerVerificationCodeResponse>,
@@ -85,11 +87,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
             ) {
                 if (response.isSuccessful) {
                     Log.d("TAG", "onResponse: ${response.body()}")
-                    binding.txtAdminCode.text = response.body()?.weddingId.toString()
-                    WeddingBookKeeperApplication.prefs.weddingId=response.body()?.weddingId
-                    val intent = Intent(this@AdminCodeActivity, ManagerMainActivity::class.java)
-                    startActivity(intent)
-                    return;
+                    binding.txtAdminCode.text = response.body()?.verificationCode
                 }
             }
             override fun onFailure(call: Call<ManagerVerificationCodeResponse>, t: Throwable) {

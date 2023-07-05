@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMyPageBinding
@@ -59,7 +60,7 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
     }
 
     private fun getWeddingInfo(weddingId: Int) {
-        WeddingBookKeeperClient.weddingService.getWeddingInfo(weddingId).enqueue(object : Callback<WeddingInfoResponse> {
+        WeddingBookKeeperClient.weddingService.getWeddingInfo(WeddingBookKeeperApplication.prefs.weddingId).enqueue(object : Callback<WeddingInfoResponse> {
             override fun onResponse(call: Call<WeddingInfoResponse>, response: Response<WeddingInfoResponse>) {
                 if (response.isSuccessful) {
                     val body = response.body()

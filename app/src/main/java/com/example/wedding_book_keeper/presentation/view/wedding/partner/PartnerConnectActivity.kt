@@ -95,15 +95,17 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
                     ).enqueue(object : Callback<Unit> {
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                             if (response.isSuccessful) {
+                                showToast("배우자 인증에 성공하였습니다.")
                                 val intent = Intent(this@PartnerConnectActivity, CoupleMainActivity::class.java)
                                 startActivity(intent)
                                 return;
                             }
-                            showToast("실패")
+                            showToast("배우자 인증에 실패하였습니다.")
                         }
 
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            showToast("실패")
+                            showToast("서버 오류입니다..")
+                            Log.d("TAG", t.message.toString())
                         }
                     })
                 }

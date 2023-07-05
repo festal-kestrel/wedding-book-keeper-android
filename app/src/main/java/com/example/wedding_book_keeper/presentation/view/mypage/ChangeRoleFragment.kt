@@ -11,9 +11,8 @@ import androidx.annotation.RequiresApi
 import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.VerificationCodeRequest
-import com.example.wedding_book_keeper.data.remote.response.ManagerVerificationCodeResponse
+import com.example.wedding_book_keeper.data.remote.response.VerifyManagerVerificationCodeResponse
 import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
-import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.manager.ManagerMainActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.partner.PartnerConnectActivity
@@ -61,10 +60,11 @@ class ChangeRoleFragment(
                 override fun onVerificationCodeEntered(verificationCode: String) {
                     WeddingBookKeeperClient.authService.verifyManagerVerificationCode(
                         VerificationCodeRequest(verificationCode)
-                    ).enqueue(object : Callback<ManagerVerificationCodeResponse> {
-                        override fun onResponse(call: Call<ManagerVerificationCodeResponse>, response: Response<ManagerVerificationCodeResponse>) {
+                    ).enqueue(object : Callback<VerifyManagerVerificationCodeResponse> {
+                        override fun onResponse(call: Call<VerifyManagerVerificationCodeResponse>, response: Response<VerifyManagerVerificationCodeResponse>) {
                             if (response.isSuccessful) {
                                 Toast.makeText(view.getContext(), "관리자 인증에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                                WeddingBookKeeperApplication.prefs.weddingId= response.body()?.weddingId!!
                                 val intent = Intent(requireContext(), ManagerMainActivity::class.java)
                                 startActivity(intent)
                                 return;
@@ -72,7 +72,7 @@ class ChangeRoleFragment(
                             Toast.makeText(view.getContext(), "관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
                         }
 
-                        override fun onFailure(call: Call<ManagerVerificationCodeResponse>, t: Throwable) {
+                        override fun onFailure(call: Call<VerifyManagerVerificationCodeResponse>, t: Throwable) {
                             Toast.makeText(view.getContext(), "관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
                         }
                     })

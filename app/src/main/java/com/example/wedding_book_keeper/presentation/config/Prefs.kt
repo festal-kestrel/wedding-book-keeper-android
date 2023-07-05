@@ -13,9 +13,9 @@ class Prefs(context: Context) {
             prefs.edit().putString("token", value).apply()
         }
 
-    var weddingId: Int?
+    var weddingId: Int
         get() = prefs.getInt("weddingId", 0)
         set(value) {
-            prefs.edit().putInt("weddingId", value!!).apply()
+            prefs.edit().putInt("weddingId", value).apply()
         }
 }

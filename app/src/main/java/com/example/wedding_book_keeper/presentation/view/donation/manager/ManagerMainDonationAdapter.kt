@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
@@ -57,7 +58,7 @@ class ManagerMainDonationAdapter(
                     ApprovalDialogFragment.OnApprovalListener {
                     override fun onApproval() {
                         // 승인 api 호출
-                        WeddingBookKeeperClient.weddingService.patchDonationApproval(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
+                        WeddingBookKeeperClient.weddingService.patchDonationApproval(WeddingBookKeeperApplication.prefs.weddingId, Integer.parseInt(holder.guestId.text.toString()))
                             .enqueue(object : Callback<Unit> {
                                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                                     if (response.isSuccessful) {
@@ -84,7 +85,7 @@ class ManagerMainDonationAdapter(
                     RejectionDialogFragment.OnRejectionListener {
                     override fun onRejection() {
                         // 승인 api 호출
-                        WeddingBookKeeperClient.weddingService.patchDonationRejection(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
+                        WeddingBookKeeperClient.weddingService.patchDonationRejection(WeddingBookKeeperApplication.prefs.weddingId, Integer.parseInt(holder.guestId.text.toString()))
                             .enqueue(object : Callback<Unit> {
                                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                                     if (response.isSuccessful) {
@@ -94,7 +95,6 @@ class ManagerMainDonationAdapter(
                                         }
                                     }
                                 }
-
                                 override fun onFailure(call: Call<Unit>, t: Throwable) {
                                     Log.e("patchDonationRejection", "Error: ${t.message}")
                                 }

@@ -4,11 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.WeddingCreateRequest
+import com.example.wedding_book_keeper.data.remote.response.WeddingCreateResponse
 import com.example.wedding_book_keeper.databinding.ActivityLocationBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
-import com.example.wedding_book_keeper.presentation.view.wedding.introduction.IntroductionActivity
 import com.example.wedding_book_keeper.presentation.view.wedding.introduction.NewIntroActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -48,9 +49,14 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                         weddingLocation,
                         weddingDate
                     )
-                ).enqueue(object : Callback<Unit> {
-                    override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                ).enqueue(object : Callback<WeddingCreateResponse> {
+                    override fun onResponse(call: Call<WeddingCreateResponse>, response: Response<WeddingCreateResponse>) {
                         if (response.isSuccessful) {
+                            /**
+                             * WEDDING_ID 저장
+                             */
+                            WeddingBookKeeperApplication.prefs.weddingId = 90
+//                            WeddingBookKeeperApplication.prefs.weddingId = response.body()?.weddingId!!
                             val intent = Intent(this@LocationActivity, NewIntroActivity::class.java)
                             intent.putExtra("txtCode", txtCode)
 
@@ -59,7 +65,7 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                         }
                     }
 
-                    override fun onFailure(call: Call<Unit>, t: Throwable) {
+                    override fun onFailure(call: Call<WeddingCreateResponse>, t: Throwable) {
                         Log.d("TAG", "onFailure: ${t.message}")
                     }
                 })
