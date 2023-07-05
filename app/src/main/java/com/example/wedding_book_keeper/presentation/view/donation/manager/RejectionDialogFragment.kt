@@ -34,6 +34,7 @@ class RejectionDialogFragment : DialogFragment() {
             dismiss()
         }
         binding.btnCancel.setOnClickListener {
+            onConfirmClickListener?.onCancel()
             dismiss()
         }
     }
@@ -49,6 +50,7 @@ class RejectionDialogFragment : DialogFragment() {
 
     interface OnRejectionListener {
         fun onRejection()
+        fun onCancel()
     }
 
     companion object {
