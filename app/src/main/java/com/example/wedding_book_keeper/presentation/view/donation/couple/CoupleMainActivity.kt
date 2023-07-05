@@ -1,12 +1,12 @@
 package com.example.wedding_book_keeper.presentation.view.donation.couple
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
@@ -14,7 +14,6 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptsResponse
 import com.example.wedding_book_keeper.data.remote.response.Role
-import com.example.wedding_book_keeper.data.remote.response.WeddingInfoResponse
 import com.example.wedding_book_keeper.databinding.ActivityCoupleMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
@@ -102,7 +101,14 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
                 }
 
                 private fun showGuestDonationList(guests: MutableList<GuestDonationReceiptResponse>) {
-                    adapter.setItemsApi(guests);
+                    adapter.setItemsApi(guests)
+                    if(guests.isEmpty()) {
+                        // If the list is empty, show the blank image view
+                        binding.txtNoItem.visibility = View.VISIBLE
+                    } else {
+                        // If the list is not empty, hide the blank image view
+                        binding.txtNoItem.visibility = View.GONE
+                    }
                 }
 
                 override fun onFailure(call: Call<GuestDonationReceiptsResponse>, t: Throwable) {
