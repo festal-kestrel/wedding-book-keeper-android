@@ -58,6 +58,14 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
 
             showToast("복사 완료")
         }
+        binding.txtCodeDesc.setOnClickListener{
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val adminCode = binding.txtCode.text.toString()
+            val clipData = ClipData.newPlainText("admin_code", adminCode)
+            clipboardManager.setPrimaryClip(clipData)
+
+            showToast("복사 완료")
+        }
     }
 
     private fun showToast(message: String) {
@@ -68,6 +76,9 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
         binding.btnNext.setOnClickListener {
             val intent = Intent(this, ScheduleActivity::class.java)
             startActivity(intent)
+        }
+        binding.btnGoBack.setOnClickListener{
+            finish()
         }
         binding.btnPartnerRegister.setOnClickListener {
             val dialogFragment = VerificationCodeDialogFragment.newInstance()

@@ -18,6 +18,7 @@
         android:id="@+id/btn_mypage"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginRight="10dp"
         android:layout_alignParentEnd="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
@@ -35,12 +36,14 @@
     <TextView
       android:layout_width="160dp"
       android:layout_height="50dp"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="40dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginBottom="10dp"
       android:layout_marginStart="20dp"
       android:fontFamily="@font/kyobohandwriting2020"
       android:text="관리자"
-      android:textSize="34sp" />
+      android:textColor="@color/tx_gray"
+      android:textStyle="bold"
+      android:textSize="@dimen/font_largest" />
 
     <EditText
       android:id="@+id/editText"
