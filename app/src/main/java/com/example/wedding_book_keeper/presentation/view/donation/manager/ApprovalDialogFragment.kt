@@ -34,6 +34,7 @@ class ApprovalDialogFragment : DialogFragment() {
             dismiss()
         }
         binding.btnCancel.setOnClickListener {
+            onConfirmClickListener?.onCancel()
             dismiss()
         }
     }
@@ -49,6 +50,7 @@ class ApprovalDialogFragment : DialogFragment() {
 
     interface OnApprovalListener {
         fun onApproval()
+        fun onCancel()
     }
 
     companion object {
