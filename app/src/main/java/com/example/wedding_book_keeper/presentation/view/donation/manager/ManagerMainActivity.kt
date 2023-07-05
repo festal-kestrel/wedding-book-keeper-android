@@ -16,6 +16,7 @@ import com.example.wedding_book_keeper.data.remote.response.Role
 import com.example.wedding_book_keeper.databinding.ActivityManagerMainBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
+import com.example.wedding_book_keeper.presentation.view.mypage.AdminMyPageActivity
 import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,10 +37,14 @@ class ManagerMainActivity :
 
         getGuestList(90)
         initView()
-        initEvent()
     }
 
     private fun initView() {
+
+        binding.btnMypage.setOnClickListener {
+            val intent = Intent(this, AdminMyPageActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -54,15 +59,11 @@ class ManagerMainActivity :
         })
     }
 
-    private fun initEvent() {
-//        binding.btnCheck
-    }
-
     private fun getGuestList(weddingId: Int) {
         var guests = mutableListOf<GuestDonationReceiptResponse>()
 
         val guestList = mutableListOf<GuestDonationInfo>()
-        val adapter = ManagerMainDonationAdapter(supportFragmentManager,guestList)
+        val adapter = ManagerMainDonationAdapter(supportFragmentManager, guestList)
 
         // 리사이클러뷰에 레이아웃 매니저 연결
         binding.rvGuestListByManager.layoutManager =
