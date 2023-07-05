@@ -76,15 +76,12 @@ class ManagerMainDonationAdapter(
                                     Log.e("patchDonationApproval", "Error: ${t.message}")
                                 }
                             })
-                        // 현재 프래그먼트로 돌아가는 코드 작성
                         fragmentManager.popBackStack()
                     }
 
                     @RequiresApi(Build.VERSION_CODES.O)
                     override fun onCancel() {
-                        Log.d("item", "${item.isChecked}")
-                        item.isChecked = false
-                        Log.d("item_after", "${item.isChecked}")
+                        holder.checkBox.isChecked = false
                     }
                 })
                 dialogFragment.show(fragmentManager, TAG)
@@ -110,8 +107,12 @@ class ManagerMainDonationAdapter(
                                     Log.e("patchDonationRejection", "Error: ${t.message}")
                                 }
                             })
-                        // 현재 프래그먼트로 돌아가는 코드 작성
                         fragmentManager.popBackStack()
+                    }
+
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onCancel() {
+                        holder.checkBox.isChecked = true
                     }
                 })
                 dialogFragment.show(fragmentManager, TAG)
