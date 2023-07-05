@@ -6,39 +6,50 @@
 
   </data>
   <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:background="@drawable/square_white_box"
+    android:padding="15dp">
 
     <TextView
       android:id="@+id/title_approval"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="30dp"
       android:text="승인하시겠습니까?"
-      android:textColor="#333333"
-      android:textSize="18sp"
+      android:fontFamily="@font/spoqa_regular"
+      android:textColor="@color/tx_gray"
+      android:textSize="@dimen/font_large"
       android:textStyle="bold"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
       android:id="@+id/btn_cancel"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
+      android:layout_width="100dp"
+      android:layout_height="40dp"
+      android:layout_marginTop="25dp"
+      android:background="@drawable/square_pink_btn"
+      android:fontFamily="@font/spoqa_regular"
       android:text="취소"
+      android:textColor="@color/white"
+      android:textSize="@dimen/font_small"
       app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/title_approval" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
       android:id="@+id/btn_confirm"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_width="100dp"
+      android:layout_height="40dp"
+      android:layout_marginTop="25dp"
       android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
+      android:background="@drawable/square_pink_btn"
+      android:fontFamily="@font/spoqa_regular"
       android:text="확인"
+      android:textColor="@color/white"
+      android:textSize="@dimen/font_small"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@id/btn_cancel"
       app:layout_constraintTop_toBottomOf="@id/title_approval" />
