@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.VerificationCodeRequest
+import com.example.wedding_book_keeper.data.remote.response.ManagerVerificationCodeResponse
 import com.example.wedding_book_keeper.databinding.FragmentChangeRoleBinding
 import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
 import com.example.wedding_book_keeper.presentation.view.donation.guest.GuestMainActivity
@@ -51,32 +53,27 @@ class ChangeRoleFragment(
             startActivity(intent)
         }
 
-        binding.txtRoleAdmin.setOnClickListener{
+        binding.txtRoleAdmin.setOnClickListener {
 
             val dialogFragment = VerificationCodeDialogFragment.newInstance()
             dialogFragment.setOnVerificationCodeEnteredListener(object :
                 VerificationCodeDialogFragment.OnVerificationCodeEnteredListener {
                 override fun onVerificationCodeEntered(verificationCode: String) {
-                    WeddingBookKeeperClient.authService.verifyPartnerVerificationCode(
-                        //verifyPartnerVerification -> 관리자 인증으로 수정 요망
+                    WeddingBookKeeperClient.authService.verifyManagerVerificationCode(
                         VerificationCodeRequest(verificationCode)
-                    ).enqueue(object : Callback<Unit> {
-                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                    ).enqueue(object : Callback<ManagerVerificationCodeResponse> {
+                        override fun onResponse(call: Call<ManagerVerificationCodeResponse>, response: Response<ManagerVerificationCodeResponse>) {
                             if (response.isSuccessful) {
-                                Toast.makeText(view.getContext(),"관리자 인증에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(view.getContext(), "관리자 인증에 성공했습니다.", Toast.LENGTH_SHORT).show();
                                 val intent = Intent(requireContext(), ManagerMainActivity::class.java)
                                 startActivity(intent)
                                 return;
                             }
-                            else{
-                                Toast.makeText(view.getContext(),"관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                                //api연결 시 else문 삭제 요망
-
-                            }
+                            Toast.makeText(view.getContext(), "관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
                         }
 
-                        override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            Toast.makeText(view.getContext(),"관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        override fun onFailure(call: Call<ManagerVerificationCodeResponse>, t: Throwable) {
+                            Toast.makeText(view.getContext(), "관리자 인증에 실패했습니다.", Toast.LENGTH_SHORT).show();
                         }
                     })
                 }
