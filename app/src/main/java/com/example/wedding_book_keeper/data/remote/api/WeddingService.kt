@@ -84,4 +84,8 @@ interface WeddingService {
         @Path("weddingId") weddingId: Int,
         @Path("guestId") guestId: Int
     ): Call<Unit>
+
+    @GET("weddings/me")
+    fun getExistingWedding(
+    ): Call<WeddingCreateResponse>
 }
