@@ -1,11 +1,16 @@
 package com.example.wedding_book_keeper.presentation.view.donation.manager
 
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wedding_book_keeper.R
@@ -14,6 +19,7 @@ import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.presentation.view.donation.couple.GuestDonationInfo
 import com.example.wedding_book_keeper.presentation.view.donation.manager.ApprovalDialogFragment.Companion.TAG
+import com.example.wedding_book_keeper.presentation.view.mypage.CoupleMyPageActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,10 +28,10 @@ import java.util.Locale
 
 class ManagerMainDonationAdapter(
     private val fragmentManager: FragmentManager,
+
     var guestList: MutableList<GuestDonationInfo>) :
     RecyclerView.Adapter<ManagerMainDonationAdapter.CustomViewHolder>() {
     private var filteredGuestList: MutableList<GuestDonationInfo> = guestList
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view =
@@ -73,8 +79,12 @@ class ManagerMainDonationAdapter(
                                     Log.e("patchDonationApproval", "Error: ${t.message}")
                                 }
                             })
-                        // 현재 프래그먼트로 돌아가는 코드 작성
                         fragmentManager.popBackStack()
+                    }
+
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onCancel() {
+                        holder.checkBox.isChecked = false
                     }
                 })
                 dialogFragment.show(fragmentManager, TAG)
@@ -84,8 +94,8 @@ class ManagerMainDonationAdapter(
                 dialogFragment.setOnRejectionListener(object :
                     RejectionDialogFragment.OnRejectionListener {
                     override fun onRejection() {
-                        // 승인 api 호출
-                        WeddingBookKeeperClient.weddingService.patchDonationRejection(WeddingBookKeeperApplication.prefs.weddingId, Integer.parseInt(holder.guestId.text.toString()))
+                        // 반려 api 호출
+                        WeddingBookKeeperClient.weddingService.patchDonationRejection(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
                             .enqueue(object : Callback<Unit> {
                                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                                     if (response.isSuccessful) {
@@ -99,8 +109,12 @@ class ManagerMainDonationAdapter(
                                     Log.e("patchDonationRejection", "Error: ${t.message}")
                                 }
                             })
-                        // 현재 프래그먼트로 돌아가는 코드 작성
                         fragmentManager.popBackStack()
+                    }
+
+                    @RequiresApi(Build.VERSION_CODES.O)
+                    override fun onCancel() {
+                        holder.checkBox.isChecked = true
                     }
                 })
                 dialogFragment.show(fragmentManager, TAG)

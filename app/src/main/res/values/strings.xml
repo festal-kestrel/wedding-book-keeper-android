@@ -1,10 +1,9 @@
 <resources>
   <string name="app_name">wedding-book-keeper</string>
-
+  <string name="no_guests">아직 참석한 하객이 없어요!\n\n하객의 QR입장이 완료되면\n\n참석한 하객의 목록과\n\n축의금을 확인할 수 있어요</string>
   <string name="confirm">확인</string>
   <string name="cancel">취소</string>
   <string name="default_notification_channel_id">wedding-book-keepr-channel</string>
-  <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="emoji">😍🎉</string>
   <string name="emoji_wedding">🎉 💍</string>

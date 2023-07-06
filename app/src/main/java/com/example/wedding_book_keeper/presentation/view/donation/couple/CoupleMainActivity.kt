@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
@@ -100,7 +101,14 @@ class CoupleMainActivity : BaseActivity<ActivityCoupleMainBinding>(R.layout.acti
                 }
 
                 private fun showGuestDonationList(guests: MutableList<GuestDonationReceiptResponse>) {
-                    adapter.setItemsApi(guests);
+                    adapter.setItemsApi(guests)
+                    if(guests.isEmpty()) {
+                        // If the list is empty, show the blank image view
+                        binding.txtNoItem.visibility = View.VISIBLE
+                    } else {
+                        // If the list is not empty, hide the blank image view
+                        binding.txtNoItem.visibility = View.GONE
+                    }
                 }
 
                 override fun onFailure(call: Call<GuestDonationReceiptsResponse>, t: Throwable) {
