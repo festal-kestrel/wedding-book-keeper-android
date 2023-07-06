@@ -14,6 +14,7 @@ import java.util.Locale
 
 class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity_schedule) {
     private lateinit var txtCode: String
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,22 +25,22 @@ class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity
     private fun initView() {
         binding.txtSelectedDate.text =
             "${binding.dpWeddingDate.year}년 ${binding.dpWeddingDate.month + 1}월 ${binding.dpWeddingDate.dayOfMonth}일"
-        binding.txtSelectedTime.text = "오후 ${binding.tpWeddingTime.hour}시 ${binding.tpWeddingTime.minute}분"
+        binding.txtSelectedTime.text = formatTime(binding.tpWeddingTime.hour, binding.tpWeddingTime.minute)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun initEvent() {
         binding.btnNext.setOnClickListener {
-            txtCode= intent.getStringExtra("txtCode").toString()
-            Log.d("txtCode","받아온 값 : "+intent.getStringExtra("txtCode"))
+            txtCode = intent.getStringExtra("txtCode").toString()
+            Log.d("txtCode", "받아온 값 : " + intent.getStringExtra("txtCode"))
             val intent = Intent(this, LocationActivity::class.java);
             intent.putExtra("weddingDate", formatWeddingDate())
             intent.putExtra("txtCode", txtCode)
 
             startActivity(intent)
         }
-        binding.btnGoBack.setOnClickListener{
-           finish()
+        binding.btnGoBack.setOnClickListener {
+            finish()
         }
 
         binding.dpWeddingDate.setOnDateChangedListener { view, year, monthOfYear, dayOfMonth ->
@@ -47,8 +48,19 @@ class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(R.layout.activity
         }
 
         binding.tpWeddingTime.setOnTimeChangedListener { view, hourOfDay, minute ->
-            binding.txtSelectedTime.text = "오후 ${hourOfDay}시 ${minute}분"
+            formatTime(hourOfDay, minute)
         }
+    }
+
+    private fun formatTime(hourOfDay: Int, minute: Int): String {
+        val formattedHour = if (hourOfDay > 12) {
+            "오후 ${hourOfDay - 12}"
+        } else {
+            "오전 $hourOfDay"
+        }
+        val formattedTime = "${formattedHour}시 ${minute}분"
+        binding.txtSelectedTime.text = formattedTime
+        return formattedTime
     }
 
     private fun formatWeddingDate(): String {
