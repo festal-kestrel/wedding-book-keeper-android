@@ -3,6 +3,8 @@ package com.example.wedding_book_keeper.presentation.view.wedding.introduction
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import com.example.wedding_book_keeper.R
 import com.example.wedding_book_keeper.databinding.ActivityIntroductionBinding
@@ -18,9 +20,11 @@ class ThirdIntroActivity : BaseActivity<ActivityThirdIntroBinding>(R.layout.acti
     override fun onCreate(savedInstanceState: Bundle?) {
         txtCode = intent.getStringExtra("txtCode").toString()
         super.onCreate(savedInstanceState)
+        Handler(Looper.getMainLooper()).postDelayed({
+            val codeCopyDialogFragment = CodeCopyDialogFragment.newInstance(txtCode.toString())
+            codeCopyDialogFragment.show(supportFragmentManager, CodeCopyDialogFragment.TAG)
+        }, 2000)
 
-        val codeCopyDialogFragment = CodeCopyDialogFragment.newInstance(txtCode.toString())
-        codeCopyDialogFragment.show(supportFragmentManager, CodeCopyDialogFragment.TAG)
 
         binding.btnGoCoupleMyPage.setOnClickListener{
             val intent = Intent(this, CoupleMyPageActivity::class.java)

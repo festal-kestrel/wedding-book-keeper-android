@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="bg_light_gray">#111113</color>
+  <color name="bg_gray">#16171A</color>
+  <color name="bg_dark_gray">#575761</color>
+  <color name="db_light2_gray">#202020</color>
+  <color name="tx_white">#FBFBFB</color>
+  <color name="tx_light_gray">#484A51</color>
+  <color name="tx_gray">#ECECED</color>
+  <color name="tx_dark_gray">#BFBFBF</color>
+  <color name="pt_light_pink">#EF7481</color>
+  <color name="pt_pink">#DA4D53</color>
+  <color name="pt_blue">#A8BDE3</color>
+  <color name="black">#FFFFFF</color>
+  <color name="white">#111113</color>
+
+</resources>
