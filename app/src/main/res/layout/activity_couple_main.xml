@@ -23,7 +23,7 @@
         android:layout_marginRight="10dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@drawable/mypage_icon_source" />
+        android:src="@drawable/single_mypage_img" />
 
       <TextView
         android:layout_width="wrap_content"
