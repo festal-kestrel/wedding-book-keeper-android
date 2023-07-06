@@ -94,8 +94,8 @@ class ManagerMainDonationAdapter(
                 dialogFragment.setOnRejectionListener(object :
                     RejectionDialogFragment.OnRejectionListener {
                     override fun onRejection() {
-                        // 반려 api 호출
-                        WeddingBookKeeperClient.weddingService.patchDonationRejection(weddingId = 90, Integer.parseInt(holder.guestId.text.toString()))
+                        // 승인 api 호출
+                        WeddingBookKeeperClient.weddingService.patchDonationRejection(WeddingBookKeeperApplication.prefs.weddingId, Integer.parseInt(holder.guestId.text.toString()))
                             .enqueue(object : Callback<Unit> {
                                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                                     if (response.isSuccessful) {
