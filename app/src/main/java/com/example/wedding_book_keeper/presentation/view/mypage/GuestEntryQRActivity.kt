@@ -29,7 +29,7 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
         binding.btnToolbarBack.setOnClickListener {
             finish()
         }
-        getWeddingQr(90)
+        getWeddingQr(WeddingBookKeeperApplication.prefs.weddingId)
 
         binding.textSaveQrBtn.setOnClickListener {
             saveImageToGallery()

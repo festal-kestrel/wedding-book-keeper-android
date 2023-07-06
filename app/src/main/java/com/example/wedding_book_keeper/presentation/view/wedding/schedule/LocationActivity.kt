@@ -52,11 +52,7 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>(R.layout.activity
                 ).enqueue(object : Callback<WeddingCreateResponse> {
                     override fun onResponse(call: Call<WeddingCreateResponse>, response: Response<WeddingCreateResponse>) {
                         if (response.isSuccessful) {
-                            /**
-                             * WEDDING_ID 저장
-                             */
-                            WeddingBookKeeperApplication.prefs.weddingId = 90
-//                            WeddingBookKeeperApplication.prefs.weddingId = response.body()?.weddingId!!
+                            WeddingBookKeeperApplication.prefs.weddingId = response.body()?.weddingId!!
                             val intent = Intent(this@LocationActivity, NewIntroActivity::class.java)
                             intent.putExtra("txtCode", txtCode)
 

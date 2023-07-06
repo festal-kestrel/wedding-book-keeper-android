@@ -29,7 +29,7 @@ class AdminCodeActivity : BaseActivity<ActivityAdminCodeBinding>(R.layout.activi
 
         initView();
         initEvent();
-        getWeddingQr(90)
+        getWeddingQr(WeddingBookKeeperApplication.prefs.weddingId)
     }
 
     private fun initEvent() {

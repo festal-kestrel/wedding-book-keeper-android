@@ -56,7 +56,7 @@ class CoupleMyPageActivity : BaseActivity<ActivityCoupleMyPageBinding>(R.layout.
                 onClick = ::onClick
             ).show(supportFragmentManager, ChangeRoleFragment.TAG)
         }
-        getWeddingInfo(90)
+        getWeddingInfo(WeddingBookKeeperApplication.prefs.weddingId)
     }
 
     private fun getWeddingInfo(weddingId: Int) {
