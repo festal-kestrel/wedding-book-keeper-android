@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.api.WeddingService
 import com.example.wedding_book_keeper.databinding.ActivityGiftAmountBinding

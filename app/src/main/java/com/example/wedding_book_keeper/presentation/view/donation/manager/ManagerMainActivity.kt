@@ -9,6 +9,7 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptResponse
 import com.example.wedding_book_keeper.data.remote.response.GuestDonationReceiptsResponse
@@ -35,7 +36,7 @@ class ManagerMainActivity :
             startActivity(intent)
         }
 
-        getGuestList(90)
+        getGuestList(WeddingBookKeeperApplication.prefs.weddingId)
         initView()
     }
 
@@ -71,7 +72,7 @@ class ManagerMainActivity :
         binding.rvGuestListByManager.setHasFixedSize(true)
         binding.rvGuestListByManager.adapter = adapter
 
-        WeddingBookKeeperClient.weddingService.getGuestList(weddingId, role = Role.MANAGER)
+        WeddingBookKeeperClient.weddingService.getGuestList(WeddingBookKeeperApplication.prefs.weddingId, role = Role.MANAGER)
             .enqueue(object : Callback<GuestDonationReceiptsResponse> {
                 override fun onResponse(
                     call: Call<GuestDonationReceiptsResponse>,

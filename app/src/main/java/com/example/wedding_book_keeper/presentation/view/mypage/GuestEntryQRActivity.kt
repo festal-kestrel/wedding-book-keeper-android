@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.response.WeddingQrResponse
 import com.example.wedding_book_keeper.databinding.ActivityGuestEntryQractivityBinding
@@ -28,7 +29,7 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
         binding.btnToolbarBack.setOnClickListener {
             finish()
         }
-        getWeddingQr(90)
+        getWeddingQr(WeddingBookKeeperApplication.prefs.weddingId)
 
         binding.textSaveQrBtn.setOnClickListener {
             saveImageToGallery()
@@ -36,7 +37,7 @@ class GuestEntryQRActivity : BaseActivity<ActivityGuestEntryQractivityBinding>(R
     }
 
     private fun getWeddingQr(weddingId: Int) {
-        WeddingBookKeeperClient.weddingService.getWeddingQr(weddingId).enqueue(object : Callback<WeddingQrResponse> {
+        WeddingBookKeeperClient.weddingService.getWeddingQr(WeddingBookKeeperApplication.prefs.weddingId).enqueue(object : Callback<WeddingQrResponse> {
             override fun onResponse(call: Call<WeddingQrResponse>, response: Response<WeddingQrResponse>) {
                 if (response.isSuccessful) {
                     val body = response.body()

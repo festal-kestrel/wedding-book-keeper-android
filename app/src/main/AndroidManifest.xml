@@ -41,13 +41,7 @@
     </activity>
     <activity
       android:exported="true"
-      android:name=".presentation.view.donation.guest.GuestMainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+      android:name=".presentation.view.donation.guest.GuestMainActivity"/>
     <activity
       android:exported="true"
       android:name=".presentation.view.mypage.GuestMyPageActivity" />
@@ -104,7 +98,13 @@
       android:name=".presentation.view.wedding.schedule.LocationActivity" />
     <activity
       android:exported="true"
-      android:name=".presentation.view.guest.LoginActivity" />
+      android:name=".presentation.view.guest.LoginActivity" >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
     <activity
       android:exported="true"
       android:name=".presentation.view.MainActivity" />

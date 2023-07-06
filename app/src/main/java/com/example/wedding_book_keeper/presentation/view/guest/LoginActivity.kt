@@ -31,12 +31,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         // 테스트 할때 pref 비우기 위한 코드
 //        WeddingBookKeeperApplication.prefs.token = null
 
-        if (WeddingBookKeeperApplication.prefs.token != null) {
-            val intent = Intent(this, GuestMainActivity::class.java)
-            startActivity(intent)
-            finish()
-            return
-        }
+//        if (WeddingBookKeeperApplication.prefs.token != null) {
+//            val intent = Intent(this, GuestMainActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//            return
+//        }
 
         binding.btnKakao.setOnClickListener {
 

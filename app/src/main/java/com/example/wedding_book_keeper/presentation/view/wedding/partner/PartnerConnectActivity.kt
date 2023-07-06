@@ -8,9 +8,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.wedding_book_keeper.R
+import com.example.wedding_book_keeper.WeddingBookKeeperApplication
 import com.example.wedding_book_keeper.data.remote.WeddingBookKeeperClient
 import com.example.wedding_book_keeper.data.remote.request.VerificationCodeRequest
 import com.example.wedding_book_keeper.data.remote.response.VerificationCodeResponse
+import com.example.wedding_book_keeper.data.remote.response.VerifyPartnerVerificationCodeResponse
 import com.example.wedding_book_keeper.databinding.ActivityPartnerConnectBinding
 import com.example.wedding_book_keeper.presentation.config.BaseActivity
 import com.example.wedding_book_keeper.presentation.view.donation.couple.CoupleMainActivity
@@ -96,18 +98,21 @@ class PartnerConnectActivity : BaseActivity<ActivityPartnerConnectBinding>(R.lay
                 override fun onVerificationCodeEntered(verificationCode: String) {
                     WeddingBookKeeperClient.authService.verifyPartnerVerificationCode(
                         VerificationCodeRequest(verificationCode)
-                    ).enqueue(object : Callback<Unit> {
-                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                    ).enqueue(object : Callback<VerifyPartnerVerificationCodeResponse> {
+                        override fun onResponse(call: Call<VerifyPartnerVerificationCodeResponse>, response: Response<VerifyPartnerVerificationCodeResponse>) {
                             if (response.isSuccessful) {
+                                showToast("배우자 인증에 성공하였습니다.")
+                                WeddingBookKeeperApplication.prefs.weddingId = response.body()?.weddingId!!
                                 val intent = Intent(this@PartnerConnectActivity, CoupleMainActivity::class.java)
                                 startActivity(intent)
                                 return;
                             }
-                            showToast("실패")
+                            showToast("배우자 인증에 실패하였습니다.")
                         }
 
-                        override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            showToast("실패")
+                        override fun onFailure(call: Call<VerifyPartnerVerificationCodeResponse>, t: Throwable) {
+                            showToast("서버 오류입니다..")
+                            Log.d("TAG", t.message.toString())
                         }
                     })
                 }
