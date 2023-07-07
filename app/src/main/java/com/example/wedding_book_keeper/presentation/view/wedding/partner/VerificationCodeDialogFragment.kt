@@ -31,7 +31,6 @@ class VerificationCodeDialogFragment : DialogFragment() {
         binding.btnSubmit.setOnClickListener {
             val verificationCode = binding.editVerificationCode.text.toString().trim()
             onSubmitClickListener?.onVerificationCodeEntered(verificationCode)
-            Toast.makeText(context, "인증번호 : $verificationCode", Toast.LENGTH_SHORT).show()
             dismiss()
         }
         binding.btnCancel.setOnClickListener {
